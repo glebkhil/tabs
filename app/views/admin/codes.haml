@@ -1,0 +1,22 @@
+- if !@codes.nil?
+  %table{width: '100%'}
+    %thead
+      %tr
+        %th Код
+        %th Использован
+        %th Клиент
+    - @codes.each do |it|
+      - t = Client[it[:client]]
+      %tr
+        %td{width: '15%'}
+          %span.dlighted= "#{it.code}"
+        %td
+          = human_date(it.used)
+        %td
+          - if !t.nil?
+            = icn('id')
+            %b= t.id
+            %a.no-underline.blue{href: url("/client/#{t.id}")}
+              = "@" + t.username
+          - else
+            = "n/a"

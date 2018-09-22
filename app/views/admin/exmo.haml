@@ -1,0 +1,22 @@
+%h3 Коды EXMO USD
+%p
+  В этой таблице перечислены все EXMO USD коды, полученные через серис TokenBar.
+  Чтобы начать принимать коды сервиса TokenBar, просто активируйте его в меню
+  %b Методы оплаты.
+  После активации коды будут поступать в эту талицу.
+- if !@codes.nil?
+  %table{width: '100%'}
+    %thead
+      %tr
+        %th{width: '10%'} Дата
+        %th{width: '70%'} Код
+        %th{width: '30'} Клад
+    %tbody
+      - @codes.each do |code|
+        %tr
+          %td{nowrap: true}
+            = human_date(code.created)
+          %td
+            %span.dlighted= code.code
+          %td
+            = "#{code.item}"

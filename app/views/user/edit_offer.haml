@@ -1,0 +1,64 @@
+%h3 Редактировани предложение
+%p
+  Измените данные, которые возможно поменять или удалите это предложение и создайте новое.
+%form{:method=>'post', :action=> url("/edit_offer/#{@item.id}"), autocomplete: 'on', enctype: 'multipart/form-data'}
+  %select#prod{name: 'b22_product', onchange: "update_prices()", required: true}
+    %option{value: "", disabled: true, selected: true} Выберите продукт
+    - Product.available_by_bot(hb_bot).each do |p|
+      - puts p.inspect
+      %option{value: p[:prod], selected: @item.product == p[:prod]}= Product[p[:prod  ]].russian
+  %select{name: 'b22_prc', id: 'b22_p', required: true}
+    %option{value: "", disabled: true, selected: true} Выберите фасовку
+    - ps = Product[@item.product]
+    - prcs = ps.prices_hash(hb_bot)
+    - prcs.each do |price, details|
+      %option{value: price, selected: price == @item.prc}= "#{details.keys[0]} за #{hb_bot.amo(details.values[0])}"
+  %select{:name => 'b22_escrow', id: 'b22_e', required: true, autocomplete: 'off'}
+    %option{value: '', disabled: true, selected: true} Выберите период
+    %option{name: 'escrow_period', value: '1'} Страховка 1 день
+    %option{name: 'escrow_period', value: '2', selected: true} Страховка 2 дня
+    %option{name: 'escrow_period', value: '3'} Страховка 3 дня
+    %option{name: 'escrow_period', value: '4'} Страховка 4 дня
+    %option{name: 'escrow_period', value: '5'} Страховка 5 дней
+    %option{name: 'escrow_period', value: '10'} Страховка 10 дней
+  %select{:name => 'b22_escrow_paid_by', id: 'b22_payeer', required: true, autocomplete: 'off'}
+    %option{value: '', disabled: true, selected: true} Кем оплачивается
+    %option{value: Item::ESCROW_PAID_BY_BUYER, selected: @item.escrow_paid_by == Item::ESCROW_PAID_BY_BUYER} покупателем
+    %option{value: Item::ESCROW_PAID_BY_SELLER, selected: @item.escrow_paid_by == Item::ESCROW_PAID_BY_SELLER} продавцом
+    %option{value: Item::ESCROW_PAID_BY_EQUAL, selected: @item.escrow_paid_by == Item::ESCROW_PAID_BY_EQUAL} пополам
+  %br
+  %input{type: 'url', name: 'b22_picture', required: true, placeholder: 'Картинка для предложения', size: 100, value: @item.img}
+  %br
+  %input{name: 'shipment', type: 'radio', value: Item::SHIPMENT_MAIL, required: true, checked: @item.shipment == Item::SHIPMENT_MAIL} Почтой
+  %input{name: 'shipment', type: 'radio', value: Item::SHIPMENT_LOCATION, required: true, checked: @item.shipment == Item::SHIPMENT_LOCATION} Кладом
+  %input{name: 'shipment', type: 'radio', value: Item::SHIPMENT_BOTH, required: true, checked: @item.shipment == Item::SHIPMENT_BOTH} Почтой или кладом
+  -#%br
+  -#%p#choose_upload
+  -#  Загрузка кладов
+  -#  %input{name: 'upload_type', type: 'radio', onchange: "$('#choose_upload').hide();$('#_file, #upload_submit').show();$('#_file').attr('required', true);"} Файлами
+  -#  %input{name: 'upload_type', type: 'radio', onchange: "$('#choose_upload').hide();$('#_links, #upload_submit').show();$('#_links').attr('required', true);"} Ссылками
+  -#%input.hide{name: 'file[]', type: 'file', multiple: true, id: '_file'}
+  %p
+    %textarea{:style => 'white-space:pre-wrap;', id: '_links', :name => 'b22_full', rows: 10, cols: 100, :placeholder=>'Ваши условия сделки'}= @item.full.nil? ? File.read("#{ROOT}/config/escrow.txt") : @item.full
+  %input{id: 'upload_submit', :type=>'submit', :value => 'Добавить оптовое предложение'}
+%p
+  = icn(hb_bot.icon_info)
+  Если Вы не видите в списке нужную Вам фасовку и цены, перейдите в раздел редактирования цен и установите их.
+:javascript
+  function update_districts() {
+    city = $('#city').val()
+    $.get("#{url('/districts_by_city/item/' + @item.id.to_s + '/city/')}" + city).
+      done(function(data) {
+        $('#b22_d').html(data);
+        // $('#show_btn').hide();
+        // $('#hidden').show();
+      })
+  }
+  function update_prices() {
+    prod = $('#prod').val();
+    $.get("#{url('/prices_by_product/product/')}" + prod).
+      done(function(data) {
+        $('#b22_p').html(data);
+        // $('#hidden_prices').show();
+      })
+  }

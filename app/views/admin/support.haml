@@ -1,0 +1,20 @@
+%h3 Проверка кода Easypay
+%p Чтобы проверить код пополнения Easypay, вбейте его целиком или часть.
+%form.inline{:method=>'post', :action=>'/search_codes', autocomplete: 'on'}
+  %input{:type=>'text', :name => 'code', :size=>'20', :placeholder=>'Код или часть кода', required: true}
+  %input{:type => 'submit', value: 'Искать'}
+%h3 Погасить код
+%p Чтобы погасить код Easypay, вбейте его полностью. Плюс/минус минута добавится автоматически.
+%form.inline{:method=>'post', :action=>'/usecode', autocomplete: 'on'}
+  %input{:type=>'text', :name => 'code', :size=>'20', :placeholder=>'Код полностью', required: true}
+  %input{:type => 'submit', value: 'Погасить'}
+%h3 Найти клад по номеру
+%p Введите номер клада
+%form.inline{:method=>'post', :action=>'/find_item', autocomplete: 'on'}
+  %input{:type => 'number', :name => 'item', :size=>'10', :placeholder=>'Номер клада', required: true}
+  %input{:type => 'submit', value: 'Найти'}
+%h3 Поиск клиента
+%p Чтобы найти клиента в базе, введите либо ник либо номер клиента в системе.
+%form.inline{:method=>'post', :action=>'/search_client', autocomplete: 'on'}
+  %input{:type=>'text', :name => 'client', :size=>'18', :placeholder=>'Номер клиента'}
+  %input{:type => 'submit', value: 'Найти'}

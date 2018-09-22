@@ -1,0 +1,31 @@
+%h3 Последние логи
+%table{width: '100%'}
+  %thead
+    %tr
+      %th{width: '20%'} инициатор
+      %th{width: '15%'} источник
+      %th{width: '55%'} действие
+  %tbody.no-shadow
+    - recs.each do |log|
+      %tr
+        %td.no-wrap
+          - cl = Client[log.client]
+          - if !cl.nil?
+            - if !cl.system?
+              = icn('id')
+              = log.client
+              %a.blue{href: url("/client/#{cl.id}")}
+                = cl.username
+            - else
+              = cl.description
+        %td
+          %span.dlighted= log.initiator
+          %span.small.dark
+            = human_date_short(log.logged)
+            = " "
+            = human_time(log.logged)
+        %td
+          = log.action
+          = log.params
+
+

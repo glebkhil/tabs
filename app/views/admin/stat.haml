@@ -1,0 +1,7 @@
+- @cities.each do |cit|
+  = icn(hb_bot.icon_geo)
+  %a.big{href: url("/stat/#{cit[:rus]}")}= cit[:rus]
+- if @city
+  - @products.each do |p|
+    = icn(p[:entity_icon])
+    %a{href: url("/product_stat/#{@city.russian}/#{p[:entity_id]}")}= p[:entity_russian]

@@ -1,0 +1,79 @@
+%h2 Основной BTC кошель
+%table{width: '100%'}
+  %tr
+    %td{colspan: 8, height: '10px'}
+  %thead
+    %tr
+      %th Валюта
+      %th Кошелек
+      %th.right Пришло
+      %th.right Ушло
+      %th.right Доступно
+      %th.right Детали
+  %tbody
+    %tr
+      %td.big{width: '10%'}
+        - met = Meth[@btc.meth]
+        - btc_client = Client[met.client]
+        %img{width: '70px', style: 'align-vertical: middle;', src: url("images/payments/#{met.title}.png")}
+      %td{width: '30%'}
+        %span.btc-wallet= @btc.address
+        -#%td
+        -#  %span.bold.dlighted= wallet.label
+      %td.right{width: '10%'}
+        %span.blue{href: url("/wallet/#{@btc.id}")}= hb_bot.amo_currency(btc_client.credited, "BTC", "BTC")
+      %td.right{width: '10%'}
+        %span.blue{href: url("/wallet/#{@btc.id}")}= hb_bot.amo_currency(btc_client.debited, "BTC", "BTC")
+      %td.right{width: '10%'}
+        = hb_bot.amo_currency(btc_client.available_cash, "BTC", "BTC")
+      %td.right
+        %button{href: url("/wallet/#{@btc.id}")} Перевести BTC
+    %tr
+      %td{colspan: 5}
+        %p
+          %br
+          = icn(hb_bot.icon_info)
+          Список Ваших BTC кошельков. Вы можете пополнять любой из перечисленных выше кошельков. Каждый из них навсегда остается вашим.
+%br
+%h2 Принимающие кошельки
+%table{width: '100%'}
+  %tr
+    %td{colspan: 8, height: '10px'}
+      .col3
+        = "&#160;"
+  %thead
+    %tr
+      %th{width: '100px'}
+      %th Метод
+      -#%th Имя
+      %th.right Пришло
+      %th.right Ушло
+      %th.right Доступно
+      %th.right Статус
+      %th.right Детали
+  %tbody.no-shadow
+    - @wallets.each do |wallet|
+      %tr
+        %td{width: '5%'}
+          - met = Meth[wallet.meth]
+          - meth_client = Client[met.client]
+          %img{height: '20px', style: 'align-vertical: middle;', src: url("images/payments/#{met.title}.png")}
+        %td
+          = "#{Meth[wallet.meth].russian}"
+        -#%td
+        -#  %span.bold.dlighted= wallet.label
+        %td.right
+          %a.blue{href: url("/wallet/#{wallet.id}")}= hb_bot.amo(meth_client.credited)
+        %td.right
+          %a.blue{href: url("/wallet/#{wallet.id}")}= hb_bot.amo(meth_client.debited)
+        %td.right
+          = hb_bot.amo(hb_bot.payment_balance(met))
+        %td.right
+          Следующий вывод через 3 часа 20 минут
+        %td.right
+          - if wallet.is_auto != 1
+            %a.blue{href: url("/wallet/#{wallet.id}")} включить автомат
+          - else
+            %span.reputation.dlighted
+              = icn('twisted_rightwards_arrows')
+              авто

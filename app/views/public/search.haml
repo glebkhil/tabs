@@ -1,0 +1,15 @@
+- if hb_operator
+  - if hb_operator.newcomer == 1
+    = partial 'partials/newcomer'
+- @escrows.each do |item|
+  - @prod = Product[item.product]
+  - @cl = Client[item.client]
+  - @bbot = Bot[@cl.bot]
+  - @img = Item.where(product: @prod.id, bot: @bbot.id).exclude(img: nil)
+  - @shipments = Item.where(product: @prod.id, bot: @bbot.id).distinct(:shipment)
+  - @periods = Item.where(product: @prod.id, bot: @bbot.id).distinct(:escrow)
+  = partial 'partials/escrow/metadata'
+  .clear
+%p
+  = pagina @escrows
+  = "<b>#{@escrows.current_page}</b> из <b>#{@escrows.total_pages}</b>"

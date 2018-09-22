@@ -1,0 +1,8 @@
+%html
+  %head
+    = partial 'partials/head'
+    %link{type: 'text/css', href: url("css/blog.css?t=#{Time.now.to_i}"), rel: 'stylesheet'}
+  %body.login-body.center
+    %p
+      =yield
+

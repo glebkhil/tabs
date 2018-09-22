@@ -1,0 +1,42 @@
+-#%ul.top-menu.big
+-#  %li
+-#    %a.bold.green.no-underline.huge{href: url('/')}
+-#      Dark_API
+-#      %span.blue 1.0
+-#  %li
+-#  %li
+-#    %a{href: '/intro#api'} Платежные API
+-#  %li
+-#    %a{href: '/intro#price'} Сколько стоит?
+-#  %li
+-#    %a{href: '/price#ref'} Реферальные
+-#  %li
+-#    %a{href: '/price#contact'} Связь
+%ul.top-menu
+  %li
+    %a.green.no-underline{href: url('/recommended')}
+      %img{src: url('images/darkside.png'), height: '32px', style: 'vertical-align: middle'}
+  = partial 'partials/menu'
+  %li
+    = kladov(Darkside::System::item_total)
+  %li
+    = klientov(Darkside::System::client_total)
+  %li
+    = magazinov(Darkside::System::shop_total)
+  -#%li
+  -#  = usd(Dark::Side.today_turnover)
+  -#  сегодня
+  %li
+    = icn('bow')
+    %a{href: url('/recommended')} Мы рекомендуем
+  %li.hide-if-mobile
+    = icn('sos')
+    %a.blue{href: url('/help')} Помощь
+  %li
+    = icn('arrow_upper_right')
+    %a.blue{href: url('/register')} Регистрация
+  %li
+    = icn('arrow_down')
+    %a.blue{href: url('/auth')} Вход
+
+

@@ -1,0 +1,9 @@
+%html
+  %head
+    = partial 'partials/head'
+    %link{type: 'text/css', href: url("css/b22.css?t=#{Time.now.to_i}"), rel: 'stylesheet'}
+  %body
+    = partial "partials/not_logged_menu"
+    = styled_flash
+    =yield
+

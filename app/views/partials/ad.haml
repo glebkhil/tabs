@@ -1,0 +1,15 @@
+%tr
+  %td
+    %b.dark= "##{item.id}"
+  %td
+    %a.blue{onclick: "$('#spam_#{item.id}').toggle()"}= item.label
+  %td
+    = "#{ago(item.created)} назад"
+  %td
+    = item.readable_status.downcase
+  %td
+    %a.blue{href: url("/spam/delete/#{item.id}")} Удалить
+%tr
+  %td{colspan: '5'}
+    %pre.hide{id: "spam_#{item.id}"}
+      = item.text

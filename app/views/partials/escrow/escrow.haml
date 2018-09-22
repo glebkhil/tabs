@@ -1,0 +1,10 @@
+%h3
+  = icn('package')
+  = "Сделка ##{trade.id} застрахована до #{escrow.created + escrow.escrow.day}."
+%ul
+  %li
+    Сумма сделки
+    %span.bold.dlighted= escrow.readable_status
+  %li
+    Комиссия
+    %span.bold.dlighted= escrow.commission

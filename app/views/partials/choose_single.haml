@@ -1,0 +1,9 @@
+%tr
+  %td
+    %b.dark= "##{item.id}"
+  %td
+    %b.blue= item.label
+  %td
+    = "#{ago(item.created)} назад"
+  %td
+    %a.blue{href: url("/assign_ad/#{item.id}/#{@group}")} Добавить один показ в день

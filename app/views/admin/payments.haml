@@ -1,0 +1,45 @@
+%h2 Методы оплаты и настройки
+%p
+  Устанавливайте цены на Вашу продукцию и указывайте вес позиции.
+  С левой cтороны от двоеточия имя параметра. После двоеточия - значение. Клиентам Вашего бота будут
+  доступны только те методы оплаты, которые установлены вами вручную.
+  = "#{icn(hb_bot.icon_warning)} Обратите внимание!"
+  Настройки платежных систем устанавливаются в формате приведенном в примере ниже.
+- if @pays
+  %table
+    - @pays.each do |m|
+      %tr
+        %td{width: '5%'}
+          - met = Meth[m.meth]
+          %img{height: '20px', style: 'align-vertical: middle;', src: url("images/payments/#{met.title}.png")}
+        %td{width: '10%'}
+          %b= met.russian
+          %br
+        %td.left{width: '70%'}
+          - if m.params
+            - JSON.parse(m.params).each do |key, value|
+              %span.no-wrap
+                = icon('key')
+                %span.small.dark= key
+                %b.dlighted.normal= value.truncate(30)
+%p
+  %select{style: 'width:70%', onchange: "location.href='/payments/'+$(this).val()"}
+    - Meth.where(status: Meth::METHOD_PUBLIC).each do |p|
+      %option{value: p.id, selected: @meth == p}
+        %a{href: url("/payments/#{p.id}")}= p.russian
+- if @payment
+  %p
+    %form{method: 'post', action: url("/save_payments")}
+      %input{type: 'hidden', name: 'payment', value: @payment.id}
+      - yml = @payment.params
+      = puts yml.inspect
+      - param_str = ""
+      - JSON.parse(yml, symbolize_keys: false).to_hash.each do |key, value|
+        - param_str << "#{key}: '#{value}'\n"
+      %textarea{name: 'pars', rows: 5, style: 'width: 90%;white-space: pre-wrap !important;', placeholder: "Настройки метода в формате YAML"}= param_str
+      %br
+      %input{type: 'submit', value: 'Сохранить'}
+      - if @payment.status == Payment::ACTIVE
+        %button.red-btn{type: 'button', onclick: "location.href='/stop_payment/#{@payment.id}'" }
+          Выключить
+          = @meth.russian

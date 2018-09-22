@@ -1,0 +1,27 @@
+%h2
+  = icn(@product.icon)
+  = "#{@product.russian} в #{@city.russian}"
+= partial 'partials/stat'
+- col_count = hb_bot.prod_qnts(@product)
+%table{width: '100%'}
+  %thead
+    %th{width: '15%'}= Date.today.strftime("%b, %Y")
+    - col_count.each do |q|
+      %th= Price[q].qnt
+  %tbody
+    - Date.today.all_month.each do |dat|
+      %tr
+        %td.nowrap
+          %span.small.gray= dat.strftime("%b, ")
+          %span.small.normal= dat.strftime("%d")
+        - col_count.each do |pric|
+          - pp = Price[pric]
+          %td.nowrap
+            - p = Price.find(product: @product.id, bot: hb_bot.id, qnt: pp.qnt)
+            - sls = hb_bot.sales_amount_by_product_and_date_and_qnt(@city, dat, pp)
+            - if !sls.nil?
+              = sls[:sales]
+              = "на"
+              = hb_bot.amo(!sls.nil? ? sls[:prcc] : 0)
+            - else
+              %span.gray -

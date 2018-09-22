@@ -1,0 +1,7 @@
+DataDirectory /code/theautobot/tmp/tor_30301/data
+ControlPort 30301
+HiddenServiceDir /code/theautobot/tmp/tor_30301/hidden_service
+HiddenServicePort 80 localhost:5000
+PidFile /code/theautobot/tmp/tor_30301/pid
+RunAsDaemon 1
+SocksPort 0

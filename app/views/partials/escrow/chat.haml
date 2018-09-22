@@ -1,0 +1,16 @@
+%h2 Публичная переписка
+%p
+  Обратите внимание, что эта переписка видна только покупателю и продавцу.
+%ul.vert
+  - @messages.each do |mess|
+    %li.dark
+      - sender = Client[mess.sender]
+      = "<span class='bold blue'>#{sender.username}</span>@#{Bot[sender.bot].title} "
+      %span.black.small= "#{human_date_short(mess.created)}, #{human_time(mess.created)}"
+      %span.green >
+      %span.black= mess.message
+- if !no_input
+  %p
+    %form{action: url("/say_escrow/#{@escrow.id}"), method: 'post'}
+      %input{type: 'text', :name => 'message', :placeholder=>'Ваще сообщение', size: 40}
+      %input{type: 'submit', value: 'Отправить'}

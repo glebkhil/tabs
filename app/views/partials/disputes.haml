@@ -1,0 +1,4 @@
+- disps = Dispute.where(client: vc.id).order(Sequel.desc(:id))
+- if disps.count > 0
+  - disps.each do |t|
+    = partial 'partials/dispute_box', locals: {t: t}

@@ -1,0 +1,28 @@
+= partial 'partials/escrow/metadata'
+%pre= @item.full
+.announcement
+  %ul.vert
+    %li
+      Продавец должен подтвердить готовность провести сделку.
+    %li
+      На счету Покупателя заблокировано
+      %b= usd(@escrow.amount)
+      до момента завершения сделки.
+    %li
+      Страховая комиссия
+      %b= usd(@escrow.commission)
+      снята с Покупателя. Комиссионные возврату не подлежат.
+    %li
+      Подробнее прочитать о системе страхования сделок
+      %a{href: url('/help')} тут можно
+      = "."
+    %p
+      = icn('warning')
+      Если продавец не подтвердит готовность, сделка аннулируется, а средства вернуться к покупателю автоматически.
+%p
+  - if !hb_operator.escrow_buyer?(@escrow)
+    %button.green-btn{onclick: location("/confirm_escrow/#{@escrow.id}")} Подтердить
+    %button.red-btn{onclick: location("/delete_escrow/#{@escrow.id}")} Отказаться
+  - else
+    %button.red-btn{onclick: location("/deny_escrow/#{@escrow.id}")} Отменить
+= partial 'partials/escrow/chat', locals: {no_input: false}

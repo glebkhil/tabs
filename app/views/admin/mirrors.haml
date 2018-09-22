@@ -1,0 +1,5 @@
+%h3 Зеркала бота
+%p Введите список номеров зеркальных ботов. Каждый номер на новой строке.
+%textarea{name: 'mirrors', rows: 10, style: 'white-space: pre-wrap !important;', placeholder: "Номера ботов в системе"}
+  - hb_bot.mirrors.each do |mir|
+    = "#{mir.id}\n"

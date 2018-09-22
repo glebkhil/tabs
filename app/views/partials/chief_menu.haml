@@ -1,0 +1,25 @@
+%a.bold.no-underline.big.blue{href: url('/items')}
+  = hb_bot[:tele]
+%span.small.dark.dlighted= "v#{Version.current}"
+Сегодня
+= prodazh(Darkside::System.sales_count_by_day(Date.today))
+на
+= hb_bot.amo(Darkside::System.sales_amount_by_day(Date.today))
+%a{href: url('/items')} Клады
+%a{href: url('/clients')} Клиенты
+%a{href: url('/spam')} Рассылки
+%a{href: url('/bots')} Боты
+-#%a{href: url('/cmd')} Команда
+%span.blue= "@#{session['_operator'].username}"
+%b= session['_operator'].readable_role(hb_bot)
+%a.no-underline.big{href: url('/auth/exit')}= icn('arrow_right_hook')
+%br
+-#%form.inline{:method=>'post', :action=>'/search_client', autocomplete: 'on'}
+-#  %input{:type=>'text', :name => 'client', :size=>'15', :placeholder=>'Клиент ID'}
+-#  %input{:type => 'submit', value: 'Искать'}
+%form.inline{:method=>'post', :action=>'/search_codes', autocomplete: 'on'}
+  %input{:type=>'text', :name => 'code', :size=>'20', :placeholder=>'Код или часть кода'}
+  %input{:type => 'submit', value: 'Искать'}
+%form.inline{:method=>'post', :action=>'/usecode', autocomplete: 'on'}
+  %input{:type=>'text', :name => 'code', :size=>'20', :placeholder=>'Код полностью'}
+  %input{:type => 'submit', value: 'Погасить'}

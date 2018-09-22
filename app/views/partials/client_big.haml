@@ -1,0 +1,7 @@
+- if !client.nil?
+  - if client.avatar == ''
+    %img.avatar-large.dshadow{src: url('images/smile.svg')}
+  - else
+    %img.avatar-large.dshadow{src: url(client.avatar)}
+- else
+  unknown

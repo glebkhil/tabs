@@ -1,0 +1,141 @@
+%h2 Реклама в группах
+%p
+  Отметье галкой Телеграм чаты и группы, в которых Вы хотите размещать рекламу. Чтобы менять настройки групп, наведите мышкой на соответствующие колонки и кликните. Нажмите Enter чтобы сохранить.
+  %b Cost Per Post (CPP)
+  это оплата за каждый пост.
+  %b Ограничения
+  это максимальное количество рекламных постов в одну группу в один день.
+- if @groups.nil?
+  %p Ни одной группы и чата не добавлено.
+- else
+  %table{width: '100%'}
+    %thead
+      %th{width: '4%'} #
+      %th{width: '25%'} Чат / Группа
+      %th{width: '16%'} Добавлено
+      %th{width: '5%'} Людей
+      %th{width: '6%'}
+        CPP
+      %th.no-wrap{width: '6%'}
+        Лимиты
+      %th{width: '12%'} Выполнено
+      %th{width: '8%'} На сумму
+      %th{width: '8%'} Бронь
+      %th{width: '8%'}
+      %th
+    %tbody
+      - @groups.each do |item|
+        %tr
+          %td
+            %span.dark.bold= "##{item.id}"
+          %td
+            %span.blue= "#{item.title.truncate(30)}"
+          %td.no-wrap
+            %span.dark= human_date_short(item.created) + " "
+            -#%span.small.dark= human_time(item.created)
+            - if !item.client.nil?
+              %a.blue{href: url("/client/#{Client[item.client].id}")}= Client[item.client].description
+          %td
+            - people = item.configuration[:people]
+            = partial 'partials/editable', locals: {value: people, item: item, table: 'Group', column: 'people', amount: false}
+          %td
+            - cost = item.configuration[:cost]
+            = partial 'partials/editable', locals: {value: usd(cost), item: item, table: 'Group', column: 'cost', amount: true}
+          %td
+            - freq = item.configuration[:frequency]
+            = partial 'partials/editable', locals: {value: freq, item: item, table: 'Group', column: 'frequency', amount: false}
+            = " / "
+            - same_shop_daily = item.configuration[:daily]
+            %span.dark= partial 'partials/editable', locals: {value: same_shop_daily, item: item, table: 'Group', column: 'daily', amount: false}
+            - daily_fact = 0
+            - daily_conf = 0
+            - camps = Campaign.where(group: item.id, status: Campaign::ACTIVE)
+            - posts = Campaign.where(group: item.id, status: Campaign::ACTIVE).sum(:counter) || 0
+            - camps.each do |c|
+              - g = Group[item.id]
+              - daily_conf += g.configuration[:daily].to_i
+              - daily_fact = daily_fact + c.counter
+          %td.no-wrap.left
+            = postov(posts)
+            из
+            %span.dark= (freq.to_i).abs*Time.days_in_month(Date.today.month, Date.today.year)
+          %td= usd(posts * item.configuration[:cost].to_i)
+          %td= postov(daily_conf)
+          %td.no-wrap
+            - if item.my?(hb_operator)
+              - c = item.campaign_by(hb_bot)
+              - if !c
+                %a.blue{href: url("/choose_ad/#{item.id}")} Пост
+              - else
+                %a.blue{href: url("/choose_ad/#{item.id}")} Пост
+                %a.blue{onclick: "$('#item_#{item.id}').toggle()"} Показы
+            - else
+              %a.blue{href: url("/choose_ad/#{item.id}")} Пост
+              %a.blue{onclick: "$('#item_#{item.id}').toggle()"} Показы
+        - camps = Campaign.join(:spam, :spam__id => :campaign__spam).where(campaign__group: item.id, campaign__status: Campaign::ACTIVE)
+        %tr.hide.disputed{id: "item_#{item.id}"}
+          %td{colspan: 10}
+            %table{width: '60%'}
+              - camps.each do |cam|
+                - tt = Time.now.to_i.to_s
+                - sp = Spam[cam[:spam]]
+                - b = Bot[sp.bot]
+                - daily_total = item.configuration[:daily].to_i
+                %tr
+                  %td
+                    = "##{cam[:id]}"
+                  %td
+                    = sp.label || 'n/a'
+                  %td
+                    %a.blue{href: url("/shop/#{b.id}/#{b.tele}")}= b.tele
+                  %td
+                    = postov(daily_total)
+                    = "в день"
+  %p
+    = pagina @groups
+%h3
+  Добавить Телеграм группу
+%p
+  Добавляйте группы, в которых Вы админ. Если это не так, скорее всего владельцы группы быстро забанят бота.
+%form{action: url('/add_group'), method: 'post'}
+  %input{type: 'text', name: 'group', size: '25', placeholder: 'Название Telegram чата', required: true}
+  %button
+    Добавить
+%h3 Рекламные посты
+%p
+  Это список Вашиъ рекламных постов. Добавляйте и удаляйте объявления и редактируйте старые.
+- ads = Spam.where(bot: hb_bot.id, status: Spam::AD)
+- if ads.count == 0
+  %p
+    Здесь пусто. Добавьте рекламный пост.
+- else
+  %table{width: '100%'}
+    %thead
+      %th{width: '4%'} #
+      %th{width: '20%'} Пост
+      %th{width: '15%'} Добавлен
+      %th{width: '15%'} Статус
+      %th{width: '25%'}
+    %tbody
+      - ads.each do |item|
+        = partial 'partials/ad', locals: {item: item}
+%h3 Добавить рекламный пост
+%p
+  Создавайте посты в формате Markdown. Допускается использование иконок. Если этот пост предназначен для рекламного бота,
+%form{:method=>'post', :action=>'/ads', autocomplete: 'on'}
+  %input{type: 'text', :name => 'label', size: 50, :placeholder=>'Короткое имя рассылки', required: true}
+  %br
+  %textarea{:name => 'text', rows: 6, cols: 60, :placeholder=>'Текст сообщения с эмодзи', required: true}
+  %p
+    %input{type: 'submit', value: 'Добавить рассылку', name: 'add_spam'}
+%h3 Стандартные рассылки
+%p
+  Поставьте галку напротив рассылок, которые Вы хотите рассылать. Это стандартные рассылки, доступные каждому магазину.
+%form{:method=>'post', :action=>'/apply_astandard_ds', autocomplete: 'on'}
+  %input{type: 'checkbox', name: 'weekly_price'}
+  Еженедельная рассылка текущего прайса
+  %br
+  %input{type: 'checkbox', name: 'on_add'}
+  Автоматическая рассылка при добавлении более чем 50 кладов
+  %p
+    %input{type: 'submit', value: 'Сохранить настройки', name: 'add_spam'}

@@ -1,0 +1,91 @@
+%h2 Команда магазина
+%p
+  Здесь все Ваши сотрудники. Добавляйте новых, удаляйте старых.
+  = icn(hb_bot.icon_warning)
+  %b Обратите внимание,
+  что люди перечисленные на этой странице будут иметь полный или частичный доступ к данным Вашего магазина.
+- team = Team.where(bot: hb_bot.id, role: [Client::HB_ROLE_OPERATOR, Client::HB_ROLE_ADMIN, Client::HB_ROLE_KLADMAN, Client::HB_ROLE_SUPPORT])
+%table{width: '100%'}
+  %thead
+    %tr
+      %th{width: '25%'} # клиент
+      %th{width: '15%'} зарегался
+      %th роль
+      %th токен
+      %th
+      %th
+  %tbody.no-shadow
+    - team.each do |acc|
+      - c = Client[acc.client]
+      %tr{class: c.is_beneficiary?(hb_bot) ? 'disputed' : ''}
+        %td
+          = icn('id')
+          = c.id
+          %a.blue{href: url("/client/#{c.id}")}= c.username
+        %td
+          %span.small.dark
+            = human_date_short(c.created)
+            = " "
+            = human_time(c.created)
+        %td
+          - if c.is_beneficiary?(hb_bot)
+            = icn(hb_bot.icon)
+          = c.readable_role(hb_bot)
+        %td
+          %span.bold.blue= acc.token
+        -#%td
+        -#  = kladov(Item.where(client: c.id).count)
+        -#%td
+        -#  = hb_bot.amo(c.not_paid_cash)
+        -#%td
+        -#  = hb_bot.amo(c.paid_cash)
+        %td
+          - if !c.is_beneficiary?(hb_bot)
+            %a{href: url("/team/delete/#{c.id}")} Удалить
+        %td
+          %a{href: url("/revoke_token/#{c.id}")} Перевыпустить токен
+%h3 Добавить сотрудника
+%p
+  Чтобы добавить сотрудника в команду, выберите его роль и введите номер клиента из бота.
+  %form{:method=>'post', :action=>'/add_operator', autocomplete: 'on'}
+    %input{:type=>'text', :name => 'id', :size=>'15', :placeholder=>'Номер клиента', required: true}
+    %select#prod{name: 'role', required: true}
+      %option{value: Client::HB_ROLE_OPERATOR}=  t("roles.#{Client::HB_ROLE_OPERATOR}")
+      %option{value: Client::HB_ROLE_ADMIN}=  t("roles.#{Client::HB_ROLE_ADMIN}")
+      %option{value: Client::HB_ROLE_KLADMAN}=  t("roles.#{Client::HB_ROLE_KLADMAN}")
+      -#%option{value: Client::HB_ROLE_SUPPORT}=  t("roles.#{Client::HB_ROLE_SUPPORT}")
+    %input{:type=>'submit', :value => 'Добавить'}
+- if hb_bot.is_chief?
+  %h3 Подключенные боты
+  %table{width: '100%'}
+    %thead
+      %th Id
+      %th Название
+      %th Клады
+      %th Продажи
+      %th Всего
+      %th Комиссионные
+      %th Репутация
+      %th Комиссия, %
+    %tbody
+      - hb_bot.chief_sellers.each do |seller|
+        - s = Bot[seller]
+        %tr
+          %td
+            = "#{s.id}"
+          %td
+            %a.no-underline.blue{href: ''}= "@#{s.tele}"
+          %td
+            = "#{s.seller_items.count}"
+          %td
+            = "#{s.seller_sold_items.count}"
+          %td
+            = hb_bot.amo(s.seller_turnover)
+          %td
+            = hb_bot.amo(s.seller_commissions)
+          %td
+            - ben = s.beneficiary
+            - if ben
+              = reputation(ben)
+          %td
+            = "#{s.commission}%"

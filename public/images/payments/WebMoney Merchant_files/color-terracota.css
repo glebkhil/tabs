@@ -1,0 +1,96 @@
+h1.service-title a {
+	background-color: #b77368;
+}
+
+.service-block a.service-title:hover h2 {color:#b77368;} 
+
+ul.service-menu a:hover {
+	color: #b77368;
+}
+
+ul.service-menu a.service-tab-active {
+	color: #b77368!important;
+}
+
+li.service-sub-tabs > a.service-sub-tab-active {
+	background-color: #b77368;
+}
+
+h1.title-menu a.title-menu-active {
+	background-color: #b77368;
+}
+
+li.sidebar-menu-current a {
+	background-color: #b77368;
+}
+
+ul.pager li a.pager-current {
+	background-color: #b77368;
+}
+
+ul.wizard-steps > li.wizard-step-active {
+	background-color: #b77368;
+}
+
+ul.wizard-steps > li.wizard-step-active + li {
+	background: #f3f3f3 url(../img/background-terracota-wizard-arrow.png) center left no-repeat;
+}
+
+ul.page-tabs > li > a.page-tab-active {
+	background-color: #b77368;
+}
+
+a.sidebar-filter-active {
+	background-color: #b77368;
+}
+
+.form-loader {
+	background: transparent url(../img/loader-terracota.gif) 50% 50% no-repeat;
+}
+
+ul.level-3-menu li > a.current-menu,
+ul.level-3-menu li > a.current-menu:hover {
+	background-color: #b77368 !important;
+}
+
+span.service-menu-badge {
+	background-color: #b77368;
+}
+
+a.promo-slider-menu-selected {
+	background-color: #b77368 !important;
+}
+
+/* jgrowl colorizing */
+
+.jGrowl-closer {
+	background-color: #b77368;
+}
+
+/* jquery ui colorizing */
+
+.ui-widget-header {
+	border: 1px solid #b77368;
+	background-color: #b77368;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	border: 1px solid #b77368;
+	background-color: #b77368;
+}
+
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	text-decoration: none;
+}
+
+.ui-slider-handle.ui-state-active {
+	background-color: #b77368;
+}
+
+.ui-slider-amount {
+	color: #b77368 !important;
+}

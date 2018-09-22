@@ -1,0 +1,19 @@
+%h2
+  Вы привязываете пост к группе
+  %b= Group[@group].title
+%p
+  Вы хотите добавить один показ одного поста в этой группе. Вы можете добавить это пост к группе столько раз, сколько позволяет система.
+- ads = Spam.where(bot: hb_bot.id, status: Spam::AD)
+- if ads.count == 0
+  %p
+    Здесь пусто. Добавьте рассылку.
+- else
+  %table{width: '100%'}
+    %thead
+      %th{width: '4%'} #
+      %th{width: '20%'} Пост
+      %th{width: '15%'} Добавлен
+      %th{width: '25%'}
+    %tbody
+      - ads.each do |item|
+        = partial 'partials/choose_single', locals: {item: item}

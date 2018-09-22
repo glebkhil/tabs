@@ -1,0 +1,40 @@
+%h2
+  Всего
+  = klientov(Client.where(bot: hb_bot.id).count(:id))
+%p Здесь все клиенты Вашего бота и магазина. Чтобы увидеть больше данных о клиентах, нажмите на любого из них.
+%table{width: '100%'}
+  %thead
+    %tr
+      %th{width: '20%'} # клиент
+      %th{width: '15%'} зарегался
+      %th баланс
+      %th реферальные
+      %th покупок
+      %th пригласил
+  %tbody.no-shadow
+    - @list.each do |ac|
+      - acc = Client[ac[:id]]
+      %tr
+        %td
+          = icn('id')
+          = acc.id
+          %a.blue{href: url("/client/#{acc.id}")}= acc.username
+        %td
+          %span.small.dark
+            = human_date_short(acc.created)
+            = " "
+            = human_time(acc.created)
+        %td
+          = hb_bot.amo(acc.available_cash)
+        %td
+          = hb_bot.amo(acc.ref_cash)
+        %td
+          - spend = acc.buy_trades([Trade::FINALIZED, Trade::FINISHED, Trade::DISPUTED])
+          %b= spend.count
+          = "на"
+          %b=  hb_bot.amo(spend.sum(:price))
+        %td
+          - mst = acc.master
+          = !mst ? 'без реферала' : "[#{mst.id}] <b class='blue'>@" + mst.username+ "</b>"
+%p
+  = pagina @list

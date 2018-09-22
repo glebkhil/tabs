@@ -1,0 +1,7 @@
+#search
+  %form.inline{:method=>'post', :action=>'/search_client', autocomplete: 'on'}
+    -#%input{:type=>'text', :name => 'keyword', :size=>'16', :placeholder=>'Ключевое слово', autocomplete: 'off'}
+    %input{:type=>'text', :name => 'client', :size=>'7', :placeholder=>'Клиент'}
+    %input{:type=>'text', :name => 'item', :size=>'15', :placeholder=>'Клад'}
+    %input{:type => 'submit', value: 'Искать'}
+    -#%input{:type=>'text', :name => 'url', :size=>'15', :placeholder=>'Ссылка'}

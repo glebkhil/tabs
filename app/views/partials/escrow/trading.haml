@@ -1,0 +1,28 @@
+= partial 'partials/escrow/metadata'
+.announcement
+  %ul.vert
+    %li
+      На счету покупателя заблокировано
+      %b= usd(@escrow.amount)
+      до завершения этой сделки.
+    %li
+      Комиссия площадки
+      %b= usd(@escrow.commission)
+      возврату не подлежит.
+    %li
+      Через
+      %b= dney(@item.escrow)
+      эта сделка автоматически закроется в пользу продавца.
+    %li
+      Споры разрешаются через арбитра. Слово арбитра итоговое.
+    %li
+      Подробнее прочитать о системе страхования сделок можно
+      %a{href: url('/help')} тут
+%p
+  - if hb_operator.escrow_buyer?(@escrow)
+    %button.green-btn{onclick: location("/finalize_escrow/#{@escrow.id}")} Завершить сделку
+    - if @escrow.can_dispute?
+      %button.green-btn{onclick: location("/dispute_escrow/#{@escrow.id}")} Оспорить
+  - else
+    %button.red-btn{onclick: location("/deny_escrow/#{@escrow.id}")} Отменить
+= partial 'partials/escrow/chat', locals: {no_input: false}

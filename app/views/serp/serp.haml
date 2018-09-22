@@ -1,0 +1,24 @@
+%h2
+  = "#{icn(hb_bot.icon_geo)} #{filter.russian.capitalize}"
+%p
+  = "#{icn('warning')}"
+  %b Внимание друзья,
+  с оплатой Изипеем перебои. Оплата WEX кодами проходит всегда с первого раза.
+  При оплате WEX USD кодами, скидка на все. Как легко купить
+  WEX USD спрашивайте у оператороа.
+- btns.each do |v|
+  - if !v.empty?
+    %button.bot-btn{onclick: location(url("/s/#{next_filter.downcase}/#{v.values[1]}"))}
+      = v.values[0].truncate(11)
+      = "&#160;"
+- if !btns.empty?
+  %button.bot-btn{onclick: location(url("/s/#{prev.class.name.downcase}/#{prev.id}"))}= "#{icn('back')} Назад"
+  %button.bot-btn{onclick: location(url("/s/country/2"))}= "#{icn('construction_worker')} Главная"
+%p
+  %ul.vert
+    %li
+      %a.blue{href: url('')} Где взять WEX USD код?
+    %li
+      %a.blue{href: url('')} Трудоустройство
+    %l
+      %a.blue{href: url('')} Реферальная программа

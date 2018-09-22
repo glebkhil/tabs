@@ -1,0 +1,46 @@
+.bot-single
+  .log
+    %img.ava-list{src: bot.avatar, width: '200px', style: 'margin-bottom: .5em'}
+  .details-padding
+    %a.black.large.no-wrap.no-underline{href: url("/s/#{bot.id}")}= bot.title.truncate(14)
+    %p
+      Оценки
+      = icn('+1')
+      %b= Rank::positive(bot.beneficiary)
+      = icn('-1')
+      %b= Rank::negative(bot.beneficiary)
+      %br
+      Бот автопродаж
+      %b= bot.nickname
+      Поддержка
+      %b= bot.support_line
+      %br
+      Ветка на
+      %a.blue{href: bot.link}= get_domain_from_url(bot.link)
+      Оптовые
+      %a.blue{href: url("/offers/#{bot.id}")} предложенеия
+      %p
+        = bot.description
+      %p
+        Вы покупаете
+        = hb_buying.product_string
+        = (pr = Price[hb_buying.prc]).qnt
+        %br
+        Цена
+        %b= bot.amo(pr.price)
+        %br
+        Номер клада
+        %b= hb_buying.id
+        %br
+        Ваш баланс
+        = bot.amo(hb_operator.available_cash)
+        %br
+        Город
+        %b= "#{hb_buying.city_string}, #{hb_buying.district_string}"
+      %p
+        Пожалуйста, выберите метод оплаты.
+      %p
+        - @payments.each do |p|
+          - meth = Meth[p.meth]
+          %button{onclick: location("/payment/#{meth.russian}")}
+            = meth.russian

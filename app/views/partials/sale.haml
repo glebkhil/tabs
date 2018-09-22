@@ -1,0 +1,44 @@
+- buyer = Client[sale.buyer]
+- if sale.finished? or sale.finalized? or sale.pending?
+  %td
+    - prrr = Price[item.prc]
+    - if !prrr.nil?
+      = prrr.qnt
+  %td.no-wrap
+    - if !prrr.nil?
+      = icn('lock')
+      = hb_bot.amo(prrr.price)
+  -#%td
+  -#  %span= "##{trade.id}"
+  -#%td
+  -#  = icn('id')
+  -#  %b= "#{buyer.id}"
+- else
+  %td{colspan: 2}
+    = item.price_string
+%td
+  - if sale.finished?
+    - rnk = Rank::rank_by_trade(trade)
+    - if rnk == 2
+      = icn('-1')
+    - else
+      = icn('+1')
+    -#%span.small.dark
+    -#  = human_date_short(sale.closed)
+    -#  = " "
+    -#  = human_time(sale.closed)
+  - if sale.finalized?
+    = icn(hb_bot.icon_success)
+    -#= sale.readable_status
+    -#%span.small.dark
+    -#  = human_date_short(sale.closed)
+    -#  = " "
+    -#  = human_time(sale.closed)
+  - if sale.pending?
+    = icn(hb_bot.icon_wait)
+    -#= sale.readable_status
+    -#%span.small.dark
+    -#  = human_date_short(item.unlock)
+    -#  = " "
+    -#  = human_time(item.unlock)
+  %a.blue.no-underline{href: url("/client/#{buyer.id}")}= "@" + buyer.username

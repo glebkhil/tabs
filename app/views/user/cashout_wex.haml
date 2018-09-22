@@ -1,0 +1,11 @@
+%h3
+  Вывести баланс WEX кодом
+%p
+  В любое время Вы можете вывести любую сумму в WEX USD коде.
+  = icn('information_source')
+  %b Обратите внимание!
+  Заблокированные средства для вывода недоступны.
+%form{action: url('/cashout_wex'), method: 'post'}
+  %input{type: 'text', name: 'amount', size: '15', placeholder: 'Сумма в USD', required: true}
+  %button
+    Получить WEX код

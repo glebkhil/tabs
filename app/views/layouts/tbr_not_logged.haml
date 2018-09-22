@@ -1,0 +1,8 @@
+%html
+  %head
+    = partial 'partials/head'
+  %body.tbr_not_logged_body
+    = partial "partials/tbr_not_logged_menu"
+    = styled_flash
+    =yield
+

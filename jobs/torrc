@@ -1,0 +1,3 @@
+SocksPort 9050
+KeepalivePeriod 60
+NewCircuitPeriod 60

@@ -1,0 +1,22 @@
+= partial 'partials/escrow/metadata', locals: {img: @img}
+%pre= @bbot.description
+%p
+  - if !hb_operator
+    %p
+      = icon('information_source')
+      Вы не зарегистрированы. Чтобы начать работу или создать сделку,
+      придумайте никнейм для вашей учетной записи и зарегистрируйтесь.
+    %ul.vert
+      %li
+        %form{:method=>'post', :action=>'/register', autocomplete: 'on'}
+          %input{type: 'text', name: 'shop_name', size: '20', placeholder: 'Ваш никнейм', required: true}
+          %input{type: 'submit', value: 'Зарегистрироваться и создать сделку'}
+  - else
+    %form{action: url("/start_escrow/#{@item.id}"), onsubmit: "if ($('#agreement').val() != 'on') { return false;} "}
+      %input{type: 'submit', value: 'Начать сделку'}
+      %br
+      %input{type: 'checkbox', id: 'agreement', required: true}
+      Я согласен с
+      %a{href: '#', onclick: "$('#rules').toggle();"} правилами системы.
+%p.rules.hide
+  Правила системы

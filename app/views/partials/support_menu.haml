@@ -1,0 +1,13 @@
+%a.bold.no-underline.big.blue{href: url('/items')}
+  = hb_bot[:tele]
+%span.small.dark.dlighted= "v#{Version.current}"
+-#%a{href: url('/cmd')} Команда
+%a{href: url('/clients')} Клиенты
+%span.blue= "@#{session['_operator'].username}"
+%b= session['_operator'].readable_role(hb_bot)
+%a.no-underline.big{href: url('/auth/exit')}= icn('arrow_right_hook')
+%br
+-#%form.inline{:method=>'post', :action=>'/search_client', autocomplete: 'on'}
+-#  %input{:type=>'text', :name => 'client', :size=>'15', :placeholder=>'Клиент ID'}
+-#  %input{:type => 'submit', value: 'Искать'}
+= partial 'support'

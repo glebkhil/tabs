@@ -1,0 +1,7 @@
+- case trade.status
+  - when Trade::ESCROW_PENDING
+    = partial 'partials/escrow/pending', locals: {trade: trade}
+  - when Trade::FINISHED
+    = partial 'partials/escrow/finished', locals: {trade: trade}
+  - when Trade::ESCROW
+    = partial 'partials/escrow/escrow', locals: {trade: trade}

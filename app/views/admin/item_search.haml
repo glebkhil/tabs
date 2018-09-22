@@ -1,0 +1,14 @@
+%form.inline{:method=>'get', :action=>'/items', autocomplete: 'on'}
+  %select{name: 'city'}
+    %option{value: "", disabled: true, selected: true} Выберите город
+    - City.where(country: hb_bot.get_var('country')).each do |ci|
+      %option{value: ci.id}= ci.russian
+  %select{:name => 'district', required: true, autocomplete: 'off'}
+    - District.where(city: @city).each do |ci|
+      %option{value: ci.id}= ci.russian
+  %select{name: 'product', required: true}
+    - hb_bot.products_by_city(@city)
+    - Product.where(city: @bcity).each do |ci|
+      %option{value: ci.id}= ci.russian
+  %select{name: 'price', required: true}
+    = partial 'partials/price_input', locals: {list: nil}

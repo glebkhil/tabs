@@ -1,0 +1,125 @@
+- if !no_buts
+  %h3 Ввод/Вывод средств
+  %p Пополняйте баланс и выводите доступные средства WEX кодами автоматически.
+  %button{onclick: location("/deposit_wex")} Пополнить баланс
+  %button{onclick: location("/cashout_wex")} Вывести
+%h3 Внутренние счета
+%p Комиссионные, расходы, зарплаты.
+%table{width: '70%'}
+  %thead
+    %tr
+      %th{width: '30%'} Имя счета
+      %th{width: '30%'} Пришло
+      %th{width: '30%'} Ушло
+  %tbody
+    %tr
+      %td.gray{nowrap: true}
+        Easypay
+      %td.gray{nowrap: true}
+        - easy = hb_bot.system_client(Client::__easypay)
+        = usd(easy.first)
+      %td.gray{nowrap: true}
+        = usd(easy.last)
+    %tr
+      %td.gray{nowrap: true}
+        WEX
+      %td.gray{nowrap: true}
+        - easy = hb_bot.system_client(Client::__wex)
+        = usd(easy.first)
+      %td.gray{nowrap: true}
+        = usd(easy.last)
+    %tr
+      %td.gray{nowrap: true}
+        Комиссии
+      %td.gray{nowrap: true}
+        - easy = hb_bot.system_client(Client::__commission)
+        = usd(easy.first)
+      %td.gray{nowrap: true}
+        = usd(easy.last)
+    %tr
+      %td.gray{nowrap: true}
+        Страховка
+      %td.gray{nowrap: true}
+        - easy = hb_bot.system_client(Client::__escrow)
+        = usd(easy.first)
+      %td.gray{nowrap: true}
+        = usd(easy.last)
+    %tr
+      %td.gray{nowrap: true}
+        Зарплата расход
+      %td.gray{nowrap: true}
+        - easy = hb_bot.system_client(Client::__salary)
+        = usd(easy.first)
+      %td.gray{nowrap: true}
+        = usd(easy.last)
+    %tr
+      %td.gray{nowrap: true}
+        Закупка расход
+      %td.gray{nowrap: true}
+        - easy = hb_bot.system_client(Client::__purchase)
+        = usd(easy.first)
+      %td.gray{nowrap: true}
+        = usd(easy.last)
+    %tr
+      %td.gray{nowrap: true}
+        Прочие расходы
+      %td.gray{nowrap: true}
+        - easy = hb_bot.system_client(Client::__other)
+        = usd(easy.first)
+      %td.gray{nowrap: true}
+        = usd(easy.last)
+    %tr
+      %td.gray{nowrap: true}
+        Наличка
+      %td.gray{nowrap: true}
+        - easy = hb_bot.system_client(Client::__cash)
+        = usd(easy.first)
+      %td.gray{nowrap: true}
+        = usd(easy.last)
+%h3 Движение средств
+%p Движение Ваших средств за все время.
+%table{width: '100%'}
+  %thead
+    %tr
+      %th{width: '10%'} Дата
+      %th.right{width: '10%'} Сумма
+      %th.right{width: '5%'}
+      %th.left{width: '75%'} Детали
+      %th
+  %tbody
+    - @trans.each do |t|
+      - trans = Ledger[t[:id]]
+      %tr
+        %td.gray.left{nowrap: true}
+          = human_date_short(trans.created) + ", "
+          %span.small.dark= human_time(trans.created)
+        %td.black.right
+          - debit = Client[trans.debit]
+          - credit = Client[trans.credit]
+          - if !debit.me?(hb_operator)
+            - am = trans.amount
+          - else
+            - am = -1*trans.amount
+          = usd_color(am)
+        %td.left
+          &#160;
+        -#%td.left
+        -#  - if !debit.me?(hb_operator)
+        -#    - if !debit.bot? and !debit.system?
+        -#      %a{href: url("/client/#{debit.id}")}
+        -#        = "#{debit.description || debit.username}"
+        -#    - else
+        -#      = "#{debit.description || debit.username}"
+        -#  - if !credit.me?(hb_operator)
+        -#    - if !credit.bot? and !credit.system?
+        -#      %a.blue{href: url("/client/#{credit.id}")}
+        -#        = "#{credit.description || credit.username}"
+        -#    - else
+        -#      = "#{credit.description || credit.username}"
+        %td.left
+          = trans.details
+%p
+= pagina @trans
+= @trans.current_page
+= "из"
+= @trans.page_count

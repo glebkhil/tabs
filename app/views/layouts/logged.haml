@@ -1,0 +1,16 @@
+%html
+  %head
+    = partial 'partials/head'
+    %link{type: 'text/css', href: url("css/b22.css?t=#{Time.now.to_i}"), rel: 'stylesheet'}
+  %body
+    - if hb_bot.activated == 0
+      = partial "partials/user_menu"
+    - elsif hb_bot.is_chief?
+      = partial "partials/chief_menu"
+    - elsif hb_operator.is_admin?(hb_bot) and !hb_bot.is_chief?
+      = partial "partials/bene_menu"
+    - else
+      = partial "partials/user_menu"
+    %p
+      = styled_flash
+      =yield

@@ -1,0 +1,12 @@
+%h3
+  = icn('package')
+  = "Создайте сделку"
+%p
+  Для того, чтобы начать сделку, введите сумму сделки и айди клиента, с которым планируется сделка.
+%form{:method=>'post', :action=>'/create_trade', autocomplete: 'on', enctype: 'multipart/form-data'}
+  %input{type: 'number', name: 'amount', placeholder: 'Сумма в USD', size: 6, required: true}
+  %input{type: 'number', name: 'client', placeholder: 'ID клиента', size: 4, required: true}
+  %br
+  %textarea{name: 'message', placeholder: 'Ввше сообщение', cols: 60, rows: 3, required: true}
+  %br
+  %input{type: 'submit', value: 'Создать сделку'}

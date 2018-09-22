@@ -1,0 +1,50 @@
+%h3 Добавить розничные клады
+%p
+  Выберите город и заполните поля, которые появятся.
+%form{:method=>'post', :action=>'/batch', autocomplete: 'on', enctype: 'multipart/form-data'}
+  %select#city{name: 'b22_city', onchange: "update_districts()"}
+    %option{value: "", disabled: true, selected: true} Выберите город
+    - City.where(country: hb_bot.get_var('country')).each do |ci|
+      %option{value: ci.id}= ci.russian
+  %span#hidden.hide
+    %select{:name => 'b22_district', id: 'b22_d', required: true, autocomplete: 'off'}
+      = partial 'partials/district_input', locals: {list: nil}
+    %select#prod{name: 'b22_product', onchange: "update_prices()", required: true}
+      %option{value: "", disabled: true, selected: true} Выберите продукт
+      - Product.available_by_bot(hb_bot).each do |p|
+        - pss = Product[p[:prod]]
+        %option{value: pss.id}= pss.russian
+    %span#hidden_prices.hide
+      %select{name: 'prc', id: 'b22_p', required: true}
+      -#%br
+      -#%p#choose_upload
+      -#  Загрузка кладов
+      -#  %input{name: 'upload_type', type: 'radio', onchange: "$('#choose_upload').hide();$('#_file, #upload_submit').show();$('#_file').attr('required', true);"} Файлами
+      -#  %input{name: 'upload_type', type: 'radio', onchange: "$('#choose_upload').hide();$('#_links, #upload_submit').show();$('#_links').attr('required', true);"} Ссылками
+      -#%input.hide{name: 'file[]', type: 'file', multiple: true, id: '_file'}
+      %textarea{:style => 'white-space:pre-wrap;', id: '_links', :name => 'lines', rows: 10, cols: 100, :placeholder=>'Каждая ссылка на новой строке'}
+      %br
+      %input{type: 'text', name: 'mask', placeholde: 'маска фото хостинга', size: 20}
+      %br
+      %input{id: 'upload_submit', :type=>'submit', :value => 'Добавить все клады'}
+    %p
+      = icn(hb_bot.icon_info)
+      Если Вы не видите в списке нужную Вам фасовку и цены, перейдите в раздел редактирования цен и установите их.
+:javascript
+  function update_districts() {
+    city = $('#city').val()
+    $.get("#{url('/districts_by_city/city/')}" + city).
+      done(function(data) {
+        $('#b22_d').html(data);
+        $('#show_btn').hide();
+        $('#hidden').show();
+      })
+  }
+  function update_prices() {
+    prod = $('#prod').val();
+    $.get("#{url('/prices_by_product/product/')}" + prod).
+      done(function(data) {
+        $('#b22_p').html(data);
+        $('#hidden_prices').show();
+      })
+  }

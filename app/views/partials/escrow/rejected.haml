@@ -1,0 +1,18 @@
+= partial 'partials/escrow/details'
+.announcement
+  %ul.vert
+    %li
+      Продавец отменил сделку, извините.
+    %li
+      Сумма сделки
+      %b= usd(@escrow.amount)
+      возвращена покупателю в полном объеме.
+    %li
+      Комиссия за страховку
+      %b= usd(@escrow.commission)
+      Комиссионные возврату не подлежат.
+    %li
+      Подробнее прочитать о системе страхования сделок можно
+      %a{href: url('/help')} тут
+%pre= @item.full
+= partial 'partials/escrow/chat', locals: {no_input: true}

@@ -1,0 +1,43 @@
+- spend = @vc.buy_trades([Trade::FINALIZED, Trade::FINISHED, Trade::DISPUTED])
+= partial 'partials/client', locals: {vc: @vc, spend: spend}
+- if !spend.nil?
+  %h3 Сделки
+  %table{width: '100%'}
+    %thead
+      %tr
+        %th Продукт
+        %th Сделка / Клад
+        %th Статус
+        %th Фасовка
+        %th Код
+    - spend.each do |it|
+      - t = Trade[it[:trade]]
+      - seller = Bot[it.bot].beneficiary
+      - p = Product[it.product]
+      - i = Item[t.item]
+      %tr{class: t.disputed? ? 'disputed' : ''}
+        %td
+          = icn(p.icon)
+          = p.russian
+        %td{width: '15%'}
+          = "##{t.id}"
+          = ""
+          = "##{t.item}"
+        %td.dark.small
+          - rnk = Rank::rank_by_trade(t)
+          - if rnk == 2
+            = icn('-1')
+          - else
+            = icn('+1')
+          = human_date_short(it.sold)
+          = human_time(it.sold)
+        %td
+          - if !i.prc.nil?
+            = Price[i.prc].qnt
+          - else
+            = "нет данных"
+        %td
+          = t.code.nil? ? '' : icn('hash') + t.code.gsub(',', '')
+= partial 'user/statement', locals: {trans: @trans, no_buts: true, view_client: @vc}
+- recs = Rec.where(bot: hb_bot.id, client: @vc.id).order(Sequel.desc(:logged)).limit(200)
+= partial 'partials/logs', locals: {recs: recs}

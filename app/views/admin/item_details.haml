@@ -1,0 +1,29 @@
+%h2
+  Клад
+  = "##{@item.id}"
+%o
+  = @item.photo
+  %br
+  добавлено
+  %b= human_date(@item.created)
+  статус
+  %b= @item.readable_status
+  добавил
+  %b= Client[@item.client].username
+  %br
+  город
+  %b= City[@item.city].russian
+  район
+  %b= District[@item.district].russian
+- if !@trade.nil?
+  %h3
+    Сделка
+    %b= "##{@trade.id}"
+  %p
+    статус
+    %b= @trade.readable_status
+    способ оплаты
+    %b= Meth[@trade.meth].russian
+    %br
+    код пополнения
+    %b= @trade.code

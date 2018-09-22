@@ -1,0 +1,38 @@
+# Tor state file last generated on 2018-03-23 17:51:25 local time
+# Other times below are in UTC
+# You *do not* need to edit this file.
+
+Guard in=default rsa_id=EA147A10B261A03B863B428A8EB45513038E6793 nickname=Cayambe sampled_on=2018-03-17T17:38:46 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=70472C66522CF5AFBDF059DF2C32E11BA3BA60D6 nickname=iscariote sampled_on=2018-03-23T13:19:44 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=ED427B2362F926A260BA72E53E42A85A65B340B2 nickname=julia1984 sampled_on=2018-03-17T11:44:58 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=068308AD070849A71B8C1DB06C2509E82C40B908 nickname=radia0 sampled_on=2018-03-21T10:04:25 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=D760C5B436E42F93D77EF2D969157EEA14F9B39C nickname=DanWin1210 sampled_on=2018-03-22T14:49:54 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-14T20:34:24 confirmed_idx=0 pb_use_attempts=9.000000 pb_use_successes=9.000000 pb_circ_attempts=18.000000 pb_circ_successes=17.000000 pb_successful_circuits_closed=17.000000
+Guard in=default rsa_id=5F9730C9077BBEFACD4774220985F7005693DA7D nickname=FalscherGold sampled_on=2018-03-14T02:37:13 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=3B5C6ED2C1DECEB32BF1AD9B7B272F4CE9CE0656 nickname=billingham sampled_on=2018-03-21T23:16:26 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=BD6FFF1AD5A88A8D43870D43EC4450081B4B2BBA nickname=bonjour2 sampled_on=2018-03-11T22:20:05 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=1BAD20F78D7673CE97DB3EE210B43814D68384DE nickname=Clankus sampled_on=2018-03-20T16:42:20 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=AAC6AE4A8ED164C3657D64E3EF980EEBB4BBC8A1 nickname=BlackHall sampled_on=2018-03-17T19:38:07 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=3CCA722A0DB4E676B96109D61C4E9DCF2F0009EB nickname=1EpHny sampled_on=2018-03-14T06:10:22 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-13T14:57:30 confirmed_idx=3
+Guard in=default rsa_id=29FA511E67A31A1A874AABFB2B624AD122AE4ED4 nickname=darmon sampled_on=2018-03-13T23:35:59 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=876C7CE43774366250D3E768E690DAB9D4B5D5A3 nickname=rainbowland sampled_on=2018-03-14T18:52:18 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=0266B0660F3F20A7D1F3D8335931C95EF50F6C6B nickname=redjohn sampled_on=2018-03-13T12:43:53 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=BCEF908195805E03E92CCFE669C48738E556B9C5 nickname=EldritchReaper sampled_on=2018-03-22T07:04:39 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=94C0F99BA44AA4A6767C71333B8A66DBD1BC08C7 nickname=llama sampled_on=2018-03-17T16:30:44 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=44517C72DD0C7206E2B6E9FE3917406AE8AF3193 nickname=Shakira sampled_on=2018-03-14T21:09:29 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-22T19:34:56 confirmed_idx=2
+Guard in=default rsa_id=3BD3DD829C41A40122E72D78E26146A080F36DB0 nickname=jolly sampled_on=2018-03-19T13:19:37 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-14T20:40:23 confirmed_idx=1
+Guard in=default rsa_id=2076359FC3BEB6AB4D0F26C5419712A30CDE85D0 nickname=biggie sampled_on=2018-03-12T20:53:09 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=0D3EBA17E1C78F1E9900BABDB23861D46FCAF163 nickname=HY100 sampled_on=2018-03-15T22:25:55 sampled_by=0.3.1.9 listed=1
+TorVersion Tor 0.3.1.9 (git-727d3f1b5e6eeda7)
+LastWritten 2018-03-23 15:51:25
+TotalBuildTimes 13
+CircuitBuildTimeBin 225 1
+CircuitBuildTimeBin 425 1
+CircuitBuildTimeBin 475 3
+CircuitBuildTimeBin 575 1
+CircuitBuildTimeBin 625 1
+CircuitBuildTimeBin 725 1
+CircuitBuildTimeBin 775 1
+CircuitBuildTimeBin 825 1
+CircuitBuildTimeBin 925 1
+CircuitBuildTimeBin 975 1
+CircuitBuildTimeBin 1175 1

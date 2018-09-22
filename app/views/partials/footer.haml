@@ -1,0 +1,11 @@
+- if hb_client && hb_client.system?
+  .container.shift3.padding-top-large.margin-top-large
+    %ul.menu.padding-bottom-large
+      %li
+        %a.bold{href: url('/system/cash')} clients
+      %li
+        %a.bold{href: url('/system/clicks/valid')} valid clicks
+      %li
+        %a.bold{href: url('/system/clicks/invalid')} invalid clicks
+      %li
+        %a.bold{href: url('/system/clear')} clear

@@ -1,0 +1,31 @@
+%h2
+  = icn('id')
+  %b= "#{vc.id}"
+  %a.blue{href: url("/client/#{vc.id}")}= "@#{vc.username}"
+  %b= hb_bot.amo(vc.available_cash)
+  = icn('b')
+  = Bot[vc.bot].tele
+  - if vc.banned?
+    %button.red-btn ЗАБАНЕН
+    %a.normal.red.bold{href: url("/unban/#{vc.id}")} Разбанить
+  - else
+    %a.normal.red.bold{href: url("/ban/#{vc.id}")} Забанить
+%p
+  Покупок
+  %b= spend.count
+  = "на"
+  %b= hb_bot.amo(spend.sum(:price))
+  Бонусы
+  %b= hb_bot.amo(vc.bonuses_cash)
+  Реферальные
+  %b= hb_bot.amo(vc.ref_cash)
+  - if vc.master
+    Пригласил
+    %b.blue= "@#{vc.master.username}"
+%p
+  Чтобы пополнить счет клиенту, укажите сумму в гривнах. Если Вы хотите отнять деньги со счета, указывайте суммы со знаком минус.
+%form.inline{:method=>'post', :action=>'/add_cash', autocomplete: 'on'}
+  %input{:type=>'text', :name => 'amount', :size=>'15', required: true, :placeholder=>'Cумма в грн'}
+  %input{type: 'hidden', name: 'client', value: @vc.id}
+  %input{type: 'hidden', name: 'method', value: Meth::__debt.id}
+  %button Провести платеж

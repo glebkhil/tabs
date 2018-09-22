@@ -1,0 +1,26 @@
+%img.ava{src: bot.avatar}
+%br
+%a.big.no-wrap.blue{href: url("/s/#{bot.tele}")}
+  = bot.title.truncate(14).capitalize
+- if !bot.awards.nil?
+  %span.normal= bot.awards
+%br
+= icn('+1')
+%b= Rank::positive(bot.beneficiary)
+= icn('-1')
+%b= Rank::negative(bot.beneficiary)
+= icn('speech_balloon')
+%b= 13
+%br
+= bot.link_no_title
+%a.bold{href: bot.link}= "Форум"
+%a.bold{href: url('/offer/1')}= "Опт"
+%br
+В наличии
+%b= kladov(bot.active_items)
+-#Сегодня
+-#%a.bold{href: bot.link}= prodazh(bot.today_bot_sales(Date.today))
+%br
+%p
+  %button.bot-btn.btn-small
+    Зайти

@@ -1,0 +1,47 @@
+.mess
+  .small
+    - tr = Trade[t.trade]
+    - if !tr.nil?
+      - item = Item[tr.item]
+      - p = Product[item.product]
+      %b= "[#{t.trade}]"
+      = icn(p.icon)
+      = p.russian
+      - icons = item.fresh? ? "#{icon(hb_bot.icon_item_fresh)}" : ""
+      = "#{icons} #{!item.qnt.nil? ? item.qnt : ''}"
+    %a{href: url("/dispute/close/#{t.id}")} закрыть
+  .small
+    = "запрос создан "
+    = ago(t.created)
+    = "назад"
+  = t.question
+.mess-replied
+  - if t.answer.nil?
+    %form.inline{action: url("/dispute"), method: 'post'}
+      %input{type: 'hidden', name: 'answer', value: 'message'}
+      %input{type: 'hidden', name: 'disp', value: t.id}
+      %input{list: 'answers', style: 'width: auto', size: '85', placeholder: "#{icon('speech_balloon')} Выберите или введите ответ", type: 'text', name: 'mess'}
+      %datalist#answers
+        %option{value: "Ваш запрос закрыт оператором в связи с отсуствем его смысла."}
+        %option{value: "Успешная оплата. Вы можете купить другой клад со своего баланса."}
+        %option{value: "Пожалуйста прочитайте правила пользования ботом /rules и /payments во избежание подобных проблем в дальнейшем."}
+        %option{value: "Мы выполнили Вашу просьбу. Спасибо, что являетесь нашим клиентом."}
+        %option{value: "Ненаход передан кладчику. Ожидаем его пояснений. Вы получите ссобщщение, как только мы получим ответ."}
+        %option{value: "Перезакладов альфы не делаем. Читай правила /rules и никогда не обманывай."}
+      %button Ответить
+    - if !tr.nil?
+      %form.inline{action: url("/dispute"), method: 'post'}
+        %input{type: 'hidden', name: 'disp', value: t.id}
+        %input{type: 'hidden', name: 'answer', value: 'approve'}
+        %button{onclick: 'Ответить'} Возврат
+    - t = @vc.has_not_ranked_trade?(hb_bot)
+    - if !t.nil?
+      - trade = Trade[t[:id]]
+      - if !trade.nil?
+        %form.inline{:method=>'post', :action=>'/reitem', autocomplete: 'on'}
+          %input{type: 'hidden', name: 'client', value: @vc.id}
+          %input{:type=>'text', :name => 'amount', :size=>'10', :placeholder=>'грн.'}
+          %input{:type=>'submit', :value => 'Возврат'}
+  - else
+    = t.answer
+    .small= "Оператор #{icn('id')} #{t.operator} @#{Client[t.operator].username} ответил #{ago(t.created)} назад"

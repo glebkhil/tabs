@@ -1,0 +1,80 @@
+%ul.border-bot
+  %li
+    %a.green.no-underline{href: url('/recommended')}
+      %img{src: url('images/darkside.png'), height: '32px', style: 'vertical-align: middle'}
+  %li
+    = "&#160;"
+  %li
+    Бот
+    %b.dlighted= hb_bot.id
+    %span.blue= hb_bot.nickname
+  -#%li
+  -#  = kladov(hb_bot.active_items)
+  -#%li
+  -#  = klientov(hb_bot.active_clients)
+  -#%li
+  -#  = prodazh(hb_bot.sales)
+  %li
+    Баланс
+    %a.bold{href: url('/bot_statement')}= usd(hb_bot.beneficiary.available_cash)
+  %li
+    Долг
+    %a.bold{href: url('/pay')}= usd(hb_bot.not_paid)
+  %li
+    Коммиссия
+    %b= "#{hb_bot.commission}%"
+    -#= "/"
+    -#%b= "#{TSX_ESCROW_RATE}%"
+  %li
+    = "&#160;"
+  %li
+    = icn('id')
+  %li
+    %b= "#{session['_operator'].id}"
+    = "#{session['_operator'].username}"
+    %span.normal.dlighted= session['_operator'].readable_role(hb_bot)
+  %li
+    = "&#160;"
+  %li
+    = icn('arrow_right')
+    %a.blue{href: url('/auth/exit')} Выход
+  %li
+    = icn('art')
+    %a{href: url("/settings")} Настройки
+  %li
+    = icn('sos')
+    %a{href: url('/help')} Помощь
+%ul#menu2
+  %li
+    = icn('new')
+    %a{href: "#{url('/choose_type')}"} Добавить позицию
+  %li
+    = "&#160;"
+  %li
+    %a{href: url('/stat')} Стата
+  %li
+    %a{href: url('/items')} Клады
+  -#%li
+  -#  %a{href: url('/offers')} Предложения
+  -#%li
+  -#  %a{href: url('/escrows')} Сделки
+  %li
+    %a{href: url('/clients')} Клиенты
+  %li
+    %a{href: url('/team')} Команда
+  -#%li
+  -#  %a{href: url('/advertisement')} Реклама
+  %li
+    %a{href: url('/spam')} Рассылки
+  %li
+    %a{href: url('/logs')} Логи
+  %li
+    %a{href: url('/prices')} Цены
+  %li
+    %a{href: url('/payments')} Методы оплаты
+  %li
+    %a{href: url('/buttons')} Кастомные кнопки
+  %li
+    %a{href: url('/exmo')} EXMO коды
+  %li
+    %a{href: url('/support')} Поддержка

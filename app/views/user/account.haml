@@ -1,0 +1,30 @@
+%h2 Ваш акаунт
+%h3 Токен авторизации
+%p
+  Все что нужно для входа в личный кабинет это токен авторизации. Ваш токен авторизации ниже.
+  %br
+  = icn('warning')
+  %b Внимание!
+  Сохраните этот токен, так как никакой возможности восстановить его не будет.
+%p
+  %b.blue.big= hb_operator.my_token
+- if hb_bot.activated == 0
+  %h3 Открыть магазин
+  %p
+    Для того чтобы начать продажи, активируйте функции продавца. Это стоит $50. Пополните Ваш счет и активируйте.
+  %p
+    %form{action: url('/activate_shop'), method: 'post'}
+      %input{type: 'submit', value: 'Активировать'}
+%h3 Сервисный бот
+- if hb_operator.has_notify?(hb_bot)
+  %p
+    Сервисный бот привязан к токену.
+  = icn('id')
+  - n = Team.find(bot: hb_bot.id, client: hb_operator.id).notify
+  %b= n
+  = Client[n].username
+- else
+  %p
+    Для того, чтобы быстро реагировать на запросы Ваших клиентов, зайдите в сервисный бот
+    %a.bold.blue{href: "http://t.me/DarksideRobot"} @DarksideRobot
+    и введите токен авторизации.

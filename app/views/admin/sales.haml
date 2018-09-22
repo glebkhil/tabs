@@ -1,0 +1,45 @@
+- if @items.nil?
+  %p Здесь пусто.
+- else
+  %h3 Продажи
+  %table{width: '100%'}
+    %thead
+      - if hb_bot.is_chief?
+        %th Продавец
+      %th Клад
+      %th Время
+      %th Покупатель
+      %th &#160;
+    %tbody
+      - @items.each do |item|
+        - p = Product[item.product]
+        - t = Trade.find(item: item.id)
+        - if t.nil?
+          %tr.disputed
+            %td.center{colspan: 10}
+              Нарушена целостность данных.
+        - else
+          - buyer = Client[t.buyer]
+          - seller = Client[t.seller]
+          %tr
+            - if hb_bot.is_chief?
+              %td
+                - seller_shop = seller.shop?
+                = "[#{seller_shop.id}]"
+                %b.blue= "@" + seller_shop.tele
+            %td
+              = icn(p.icon)
+              = p.russian
+              - icons = item.fresh? ? "#{icon(hb_bot.icon_item_fresh)}" : ""
+              = "#{icons} #{!item.qnt.nil? ? item.qnt : ''} #{hb_bot.amo(item.price)}"
+              %a{href: ''}= District[item.district].russian
+            %td
+              = human_time(t.closed)
+            %td
+              = "[#{buyer.id}]"
+              %a.bold.blue.no-underline{href: url("/client/#{buyer.id}")}= "@" + buyer.username
+  %p
+    = pagina @items
+    = @items.current_page
+    = "из"
+    = @items.page_count

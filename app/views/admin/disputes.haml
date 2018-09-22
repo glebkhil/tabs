@@ -1,0 +1,6 @@
+%p
+  %h3
+    Данные о клиенте
+  - spend = @vc.buy_trades([Trade::FINALIZED, Trade::FINISHED, Trade::DISPUTED])
+  = partial 'partials/client', locals: {vc: @vc, spend: spend}
+= partial 'partials/disputes', locals: {vc: @vc, limit: 1000}

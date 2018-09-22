@@ -1,0 +1,22 @@
+- id = "edit_#{table}_#{column}_#{item.id}"
+%span.editable-panel{id: id, contentEditable: true}
+  = preserve(value || '??')
+:javascript
+  $("##{id}").on('keypress', function(e) {
+    if ((e.which == 13 || e.keyCode == 13) && e.shiftKey) {
+      $(this).val($(this).val() + "\n");
+      return;
+    } else if (e.which != 13 && e.keyCode != 13 && e.shiftKey) {
+      var $this = $(this);
+      e.preventDefault();
+      $this.trigger("focusout")
+      $.post("/upd/table/#{table}/item/#{item.id}/column/#{column}", { 'body': $this.html() }, function() {
+        $("##{id}").effect('bounce', 'slow');
+      })
+    } else {
+      return;
+    }
+  });
+
+
+-#/upd/table/:table/item/:item/column/:column/new_value/:new_value

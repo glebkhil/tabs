@@ -1,0 +1,33 @@
+%ul.border-bot
+  %li
+    %a.green.no-underline{href: url('/search')}
+      %img{src: url('images/darkside.png'), height: '32px'}
+  %li
+    = "&#160;"
+  %li
+    Баланс
+    %a.bold{href: url('/balance')}= usd(hb_bot.beneficiary.available_cash)
+    = icn('lock')
+    %a.bold{href: url('/balance')}= usd(hb_bot.beneficiary.locked_cash)
+  -#%li
+  -#  Долг
+    %a.bold{href: url('/pay')}= usd(hb_bot.not_paid)
+  %li
+    Комиссия
+    %b= "#{hb_bot.commission}%"
+  %li
+    Страховка
+    %b= "#{TSX_ESCROW_RATE}%"
+  %li
+    = "&#160;"
+  %li
+    %a{href: url('/help')} Как это работает?
+  %li
+    = "&#160;"
+  %li
+    = icn('id')
+    %a.bold{href: url("/account")}= "#{session['_operator'].username}"
+  %li
+    = session['_operator'].readable_role(hb_bot)
+    %a.no-underline{href: url('/auth/exit')}
+      = icn('arrow_right_hook')

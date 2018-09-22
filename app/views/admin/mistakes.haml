@@ -1,0 +1,14 @@
+- if !@mists.nil?
+  %table{width: '100%'}
+    %thead
+      %tr
+        %th Клиент
+        %th Сумма
+    - @mists.each do |it|
+      - t = Client[it[:client]]
+      %tr
+        %td{width: '15%'}
+          = "##{t.id}"
+        %td
+          = icn(p.icon)
+          = p.russian

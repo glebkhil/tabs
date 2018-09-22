@@ -1,0 +1,18 @@
+%a.bold.no-underline.big.blue{href: url('/')}
+  = hb_bot[:tele]
+#driven
+  %img{src: url('images/tsx.png'), width: '40px'}
+  %br
+  %span.small.dark= "v#{Version.current}"
+%a{href: url('/batch')} Добавить
+%a{href: url('/items')} Клады
+%a{href: url('/spam')} Рассылки
+%span.bold= hb_bot.amo(hb_operator.paid_cash)
+%span.bold
+  =icn('lock')
+  = hb_bot.amo(hb_operator.not_paid_cash)
+= icn('id')
+%b= session['_operator'].id
+%span= "@#{session['_operator'].username}"
+%b.dlighted= session['_operator'].readable_role(hb_bot)
+%a.no-underline.big{href: url('/auth/exit')}= icn('arrow_right_hook')

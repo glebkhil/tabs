@@ -1,0 +1,41 @@
+%h2 Рассылки клиентам бота
+%p
+  Вы можете делать рассылки клиентам Вашего бота. Рекомендуем делать рассылки не чаще одного раза в день.
+  = icn(hb_bot.icon_warning)
+  %b Обратите внимание,
+  что рассылки работают в порядке живой очереди. Новая рассылка стартует каждый час.
+  Список рассылок за прошлый месяц. Выберите из существующих или создайте новую.
+- messages = Spam.where(bot: hb_bot.id).exclude(status: Spam::AD).order(Sequel.desc(:created))
+- if messages.count == 0
+  %p
+    Здесь пусто. Добавьте рассылку.
+- else
+  %table{width: '100%'}
+    %thead
+      %th{width: '4%'} #
+      -#%th{width: '20%'} Рассылка
+      %th{width: '10%'} Кому
+      %th{width: '15%'} Добавлено
+      %th{width: '15%'} Статус
+      %th{width: '25%'}
+    %tbody
+      - messages.each do |item|
+        = partial 'partials/mess', locals: {item: item}
+%h3 Добавить рассылку
+%p
+  Создавайте посты в формате Markdown. Допускается использование иконок. Если этот пост предназначен для рекламного бота,
+%form{:method=>'post', :action=>'/spam', autocomplete: 'on'}
+  -#%input{type: 'text', :name => 'label', size: 50, :placeholder=>'Короткое имя рассылки', required: true}
+  -#%br
+  %textarea{:name => 'text', rows: 6, cols: 60, :placeholder=>'Текст сообщения с эмодзи', required: true}
+  %br
+  - if hb_bot.is_chief?
+    %input{type: 'radio', name: 'send_to', value: Spam::BOT_ADMINS} Админам ботов
+    %input{type: 'radio', name: 'send_to', value: Spam::BOT_ALL, selected: true} Всем клиентам
+  - else
+    %input{type: 'radio', value: Spam::BOT_CLIENTS, name: 'send_to', checked: true} Всем клиентам
+    %input{type: 'radio', value: Spam::BOT_ADMINS, name: 'send_to'} Всем админам
+    %input{type: 'radio', value: Spam::BOT_OPERATORS, name: 'send_to'} Всем сотрудникам
+  %br
+  %p
+    %input{type: 'submit', value: 'Добавить рассылку', name: 'add_spam'}

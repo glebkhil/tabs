@@ -1,0 +1,12 @@
+%h2 Мои оптовые предложения
+- if !@offers.nil?
+  - @offers.each do |item|
+    - @prod = Product[item.product]
+    - @prc = Price[item.prc]
+    - @bbot = Bot[item.bot]
+    - @item = item
+    = partial 'partials/escrow/metadata'
+  = pagina @offers
+- else
+  %p
+    Вы не создали ни одного оптового предложения. Нажмите меню Добавить и следуйте инструкциям.

@@ -1,0 +1,25 @@
+%h2 Ваши цены
+%p
+  Устанавливайте цены на Вашу продукцию и указывайте вес позиции. Цены устанавливаются в формате приведенном в примере ниже.
+  С левой cтороны от двоеточия фасовка в произвольной форме.
+  После двоеточия - цифра в гривнах без указания валюты.
+  = icn(hb_bot.icon_info)
+  %b Обратите внимание,
+  что Вы сможете добавлять только те клады, цены на которые установлены вами вручную.
+  Для удобства мы используем гривны, однако расчеты все мы производим в долларах.
+%p
+  = list_prices_web
+%p
+  %select{style: 'width:70%', onchange: "location.href='/prices/'+$(this).val()"}
+    - Product.available.each do |p|
+      %option{value: p.id, selected: @product == p}
+        %a{href: url("/prices/#{p.id}")}= p.russian
+        = icon(p[:icon] || 'smile')
+%p
+  - if @product
+    %form{method: 'post', action: url("/save_prices")}
+      %input{type: 'hidden', name: 'product', value: @product.id}
+      %textarea{name: 'prices', rows: 10, style: 'width: 40%;white-space: pre-wrap !important;', placeholder: "Цены в формате YAML"}= @product.prices(hb_bot)
+      %textarea.sample{name: 'prices_sample', rows: 10, style: 'width: 30%;white-space: pre-wrap !important;', placeholder: "Цены в формате YAML"}= File.read("#{ROOT}/config/price_example.yml")
+      %br
+      %input{type: 'submit', value: 'Сохранить'}

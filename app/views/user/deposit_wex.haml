@@ -1,0 +1,8 @@
+%h3
+  Пополнить баланс WEX USD кодом
+%p
+  Вы можете пополнить баланс WEX USD кодом. Коды других валют не принимаются. Средства будут зачислены автоматически без комиссии.
+%form{action: url('/deposit_wex'), method: 'post'}
+  %input{type: 'text', name: 'wex_usd', size: '50', placeholder: 'WEX USD код', required: true}
+  %button
+    Провести код

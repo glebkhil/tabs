@@ -1,0 +1,22 @@
+%tr
+  %td
+    %a.blue{onclick: "$('#spam_#{item.id}').toggle()"}= "##{item.id}"
+  -#%td
+  -#  = item.label
+  %td
+    = t("spam.kinds.#{item.kind}")
+  %td
+    = "#{ago(item.created)} назад"
+  %td
+    = item.readable_status.downcase
+  %td
+    - if item.status == Spam::AD
+      %a.blue{href: url("/cancel_ad/#{item.id}/#{@group}")} Остановить
+      %a.blue{href: url("/assign_ad/#{item.id}/#{@group}")} Назначить
+    - if item.status == Spam::SENT
+      %a.blue{href: url("/spam/restore/#{item.id}")} Повторить
+    %a.blue{href: url("/spam/delete/#{item.id}")} Удалить
+%tr
+  %td{colspan: '8'}
+    %pre.hide{id: "spam_#{item.id}"}
+      = item.text

@@ -1,0 +1,17 @@
+- @list.each_slice(3) do |slice|
+  - slice.each do |bot|
+    .listing
+      %div.ava
+        = icn(bot.icon, 'emoji-big')
+      %div.dets
+        .big.bold
+          = bot.tele
+          %span.big= reputation_web(bot.beneficiary)
+        %br
+        = kladov(bot.active_items)
+        = " в городах "
+        - bot.cities.each do |city|
+          = city[:russian]
+        %p= list_wholesale_prices(bot)
+      %button Купить
+      %div.clear

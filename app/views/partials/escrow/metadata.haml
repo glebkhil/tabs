@@ -1,0 +1,48 @@
+- prices = Price.dataset.where(bot: @bbot.id, product: @prod.id)
+- prcs = []
+- dni = []
+- shms = []
+- prices.each do |prc|
+  - prcs << prc.price
+- prcs.sort!
+- @periods.each do |p|
+  - dni << p.escrow
+- dni.sort!
+- @shipments.each do |s|
+  - shms << t("escrow_shipment.#{s.shipment.to_i}")
+- shms.sort!
+.escrow
+  .pic
+    %img{src: @img.first.img, width: '130px'}
+  .data.big
+    = "#{icn(@prod.icon)}"
+    %a{href: url("/offer/#{@cl.id}/#{@prod.id}")}
+      = "#{@prod.russian}"
+    %span.blue= "от #{usd(prcs.first).to_f.round} до #{usd(prcs.last)}"
+    %ul.normal
+      %li
+        Доставка
+        %b= shms.join(",")
+      %li
+        Страховка
+        %b= dni.join(",")
+        дней
+    %ul.normal
+      %li
+        Магазин
+        -#%img{src: !@bbot.avatar.nil? ? "/images/avatars/#{@bbot.avatar}" : @bbot.avatar, width: '16px'}
+        %a{href: url("/shop/#{@bbot.id}")}= @bbot.title
+      %li
+        👍
+        = Rank::positive(@bbot)
+        👎
+        = Rank::negative(@bbot)
+      %li
+        - if !@bbot.support.nil?
+          %a.bold.blue{href: "http://t.me/#{@bbot.support}"}= "@#{@bbot.support}"
+        - else
+          %b нет
+      %li
+        = icn('incoming_envelope')
+        6 коментов
+    = partial 'partials/escrow/buttons', locals: {img: @img}

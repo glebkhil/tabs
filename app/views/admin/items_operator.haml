@@ -1,0 +1,45 @@
+- if @items.nil?
+  %p Здесь пусто.
+- else
+  %h3 Мои клады
+  %table{width: '100%'}
+    %thead
+      %th.no-wrap{width: '30%'} Клад
+      %th Город
+      %th{width: '27%'} Зарплата
+      %th{width: '27%'} Статус
+    %tbody
+      - @items.each do |item|
+        - p = Product[item.product]
+        - t = Trade.find(item: item.id)
+        %tr.small{class: (item.status == 2 or item.status == 0) ? 'disputed' : ''}
+          %td.no-wrap
+            -#%span.gray= "##{item.id}"
+            - mule = Client[item.client]
+            - prrr = Price[item.prc]
+            - if hb_operator.is_admin?(hb_bot) or hb_operator = item.client
+              %a.bold{onclick: "$('#item_#{item.id}').toggle()"}
+                = p.russian.truncate(8, omission: '')
+                = prrr.qnt
+          %td.no-wrap
+            = District[item.district].russian.truncate(12, omission: '')
+          %td
+            - trans = Ledger.find(item: item.id)
+            - if !trans.nil?
+              = hb_bot.amo(trans.amount)
+          %td
+            - if !trans.nil?
+              - if trans.cleared?
+                = human_date_short(trans.created)
+              - else
+                %span.small не выплачено
+        -#%tr{id: "item_#{item.id}", style: 'display: none'}
+        -#  %td{colspan: 4}
+        -#    %a.blue.no-underline{href: url("/client/#{mule.id}")}= "@" + mule.username
+        -#    = human_date_short(item.created) + ", " + human_time(item.created)
+        -#    %a{href: item.photo} фотка
+  %p
+    = pagina @items
+    = @items.current_page
+    = "из"
+    = @items.page_count

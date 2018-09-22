@@ -1,0 +1,20 @@
+.button-group
+  - case task.status
+  - when Task::NEW
+    %div
+      %button.btn-small-gray{onclick: location("/task/#{task.id}/status/#{Task::MODERATION}")}
+        = t 'task.buttons.publish'
+  - when Task::ACTIVE
+    %div
+      %button.btn-small-gray{onclick: location("/task/#{task.id}/status/#{Task::PAUSED}")}
+        = t 'task.buttons.pause'
+  - when Task::BANNED
+    -#nothing to show
+  - when Task::PAUSED
+    %div
+      %button.btn-small-gray{onclick: location("/task/#{task.id}/status/#{Task::MODERATION}")}
+        = t 'task.buttons.resume'
+  - if !task.has_clicks?
+    %div
+      %button.btn-small-dark{onclick: location("/task/delete/#{task.id}")}
+        = t 'task.buttons.delete'

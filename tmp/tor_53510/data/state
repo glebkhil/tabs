@@ -1,0 +1,26 @@
+# Tor state file last generated on 2018-03-18 08:04:04 local time
+# Other times below are in UTC
+# You *do not* need to edit this file.
+
+Guard in=default rsa_id=E3C7E8A8DD573E149CDA3633015742CAE08FDFA0 nickname=LiskaGriffin sampled_on=2018-03-12T20:00:33 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=BFB5FAAB9BBCD4A3D6B537C356CE5DCA2736D9B7 nickname=Dirk sampled_on=2018-03-15T08:36:42 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-16T00:45:54 confirmed_idx=0 pb_circ_attempts=1.000000
+Guard in=default rsa_id=AE018A1249E023699B9F16BCAECE2ECC17F00843 nickname=Unnamed sampled_on=2018-03-15T15:35:33 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-10T23:14:23 confirmed_idx=2
+Guard in=default rsa_id=38DE4DC38FDDBE2D25F4007A99866C204A91D4D6 nickname=Fission7 sampled_on=2018-03-07T02:56:31 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-09T12:25:02 confirmed_idx=1
+Guard in=default rsa_id=1C90D3AEADFF3BCD079810632C8B85637924A58E nickname=Multivac sampled_on=2018-03-15T05:42:12 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=744B753C7F5E0C6BDD240EE5D879A36C650D2B00 nickname=bgsv2 sampled_on=2018-03-10T08:55:25 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=BCEF908195805E03E92CCFE669C48738E556B9C5 nickname=EldritchReaper sampled_on=2018-03-14T00:13:12 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=3BD3DD829C41A40122E72D78E26146A080F36DB0 nickname=jolly sampled_on=2018-03-08T10:54:41 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=2067C8190A34529361CEA74FC2C92C7DBCCB074F nickname=bruins sampled_on=2018-03-07T14:42:43 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=C66F6BA1877D12F5EE4BCCABF3FC0BC1499C4248 nickname=Geoff2 sampled_on=2018-03-08T05:40:17 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=EAB114DAF0488F1223FF30778468E272E00EDC32 nickname=trnyc3 sampled_on=2018-03-17T00:35:36 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=95B72CDE38569F3C43DA3977AD8161C0F4B26E93 nickname=AaronSwartzDay sampled_on=2018-03-14T15:57:01 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-14T11:09:22 confirmed_idx=3
+Guard in=default rsa_id=C7FDF95CE03E8387780F75C9CD22B9A88C956BC9 nickname=TheDarkLord sampled_on=2018-03-16T05:20:42 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=B8F00A87140DDA05E19C6839D133428E2669254A nickname=cf3 sampled_on=2018-03-11T12:27:57 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=7C0D0863BA484D16A9E5E3CB8DA81AF8108E2E29 nickname=Karlstad0 sampled_on=2018-03-09T04:44:01 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=4181B97ECDB6556E18D7A3961F1F8DC8F1D8C146 nickname=DC225Relay2 sampled_on=2018-03-16T07:34:19 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=5AEEC5F24DE394FAA33CC45C86E140248F7065C4 nickname=servbr8 sampled_on=2018-03-15T19:33:42 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=CD43574ADF4B706DEB72F820DEA6784979AA213A nickname=torkerull sampled_on=2018-03-10T07:56:01 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=82FF3716476F2E8A07DC0543D095C613C714C437 nickname=Unit13 sampled_on=2018-03-17T18:02:03 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=DA4B488C2826DFBBD04D635DA1E71A2BA5B20747 nickname=zwiebelringXX sampled_on=2018-03-18T03:54:57 sampled_by=0.3.1.9 listed=1
+TorVersion Tor 0.3.1.9 (git-727d3f1b5e6eeda7)
+LastWritten 2018-03-18 06:04:04

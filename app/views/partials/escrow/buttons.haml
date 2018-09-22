@@ -1,0 +1,13 @@
+-#- if hb_operator
+-#  - if item.client == hb_operator.id
+-#    %ul.normal
+-#      - if img.status == Item::ESCROW_ACTIVE
+-#        %li
+-#          %a.blue{href: url("/delete_offer/#{@item.id}"), onclick: 'if (confirm("Действительно удалить?") === false) {return false;}'} Удалить
+-#        %li
+-#          %a.normal.blue{href: url("/pin_offer/#{@item.id}"), onclick: 'if (confirm("Действительно хотите закрепить? Услуга платная. ") === false) {return false;}'} Закрепить
+-#      - else
+-#        %li
+-#          %a.blue{href: url("/publish_offer/#{@item.id}"), onclick: 'if (confirm("Действительно удалить?") === false) {return false;}'} Опубликовать
+-#      %li
+-#        %a.blue{href: url("/edit_offer/#{@item.id}")} Редактировать

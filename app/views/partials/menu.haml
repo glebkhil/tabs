@@ -1,0 +1,16 @@
+-#%li
+-#  %select#prod{name: 'b22_product', onchange: "update_prices()", required: true}
+-#    %option{value: "", disabled: true, selected: true} Выберите продукт
+-#    - Product.available.each do |pss|
+-#      %option{value: pss.id}
+-#        = pss.russian
+-#        = icon(pss.icon)
+  -#%select{:name => 'b22_escrow', id: 'b22_e', required: true, autocomplete: 'off'}
+  -#  %option{value: '', disabled: true, selected: true} Выберите период
+  -#  %option{name: 'escrow_period', value: '2', selected: true} Страховка 2 дня
+  -#  %option{name: 'escrow_period', value: '5'} Страховка  5 дней
+  -#  %option{name: 'escrow_period', value: '10'} Страховка 10 дней
+  -#%select{:name => 'b22_escrow', id: 'b22_e', required: true, autocomplete: 'off'}
+  -#  %option{name: 'shipment', type: 'radio', value: 1, required: true} Почтой
+  -#  %option{name: 'shipment', type: 'radio', value: 2, required: true} Кладом
+  -#  %option{name: 'shipment', type: 'radio', value: 3, required: true, selected: true} Почтой или кладом

@@ -1,0 +1,14 @@
+= partial 'partials/escrow/metadata'
+.announcement
+  %ul.vert
+    %li
+      Сделка завершена в пользу продавца автоматически.
+    %li
+      Сумма сделки
+      %b= usd(@escrow.amount)
+      зачислена продавцу.
+    %li
+      Подробнее прочитать о системе страхования сделок можно
+      %a{href: url('/help')} тут
+%pre= @item.full
+= partial 'partials/escrow/chat', locals: {no_input: true}

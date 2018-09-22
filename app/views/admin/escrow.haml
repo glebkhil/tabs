@@ -1,0 +1,11 @@
+- case @escrow.status
+  - when Escrow::PENDING
+    = partial 'partials/escrow/pending'
+  - when Escrow::TRADING
+    = partial 'partials/escrow/trading'
+  - when Escrow::FINALIZED
+    = partial 'partials/escrow/finalized'
+  - when Escrow::DISPUTED
+    = partial 'partials/escrow/disputed'
+  - when Escrow::REJECTED
+    = partial 'partials/escrow/rejected'

@@ -1,0 +1,14 @@
+- if item.prc.nil?
+  %td{colspan: 4}
+    - pr = Price.find(product: item.product, qnt: item.qnt, bot: hb_bot.id)
+    - if pr.nil?
+      %a{href: url("/prices/#{product.id}")} Установить цену
+    - else
+      %a{href: url("/update_prices/product/#{item.product}/price/#{pr.id}/qnt/#{item.qnt}")}
+        Установить для всех
+        = hb_bot.amo(pr.price)
+- else
+  %td
+    = (pp = Price[item.prc]).qnt
+  %td
+    = hb_bot.amo(item.discount_price)

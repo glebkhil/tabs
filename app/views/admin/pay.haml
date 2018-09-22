@@ -1,0 +1,17 @@
+%h3
+  Текущий долг
+%p
+  Оплата задолженности производится только криптовалютой.
+-#%p
+-#  %span.blue.big.bold.no-underline
+-#    - debt = hb_bot.amo_pure(hb_bot.not_paid)
+-#    = "#{debt.to_f.round(2)}грн / #{WEX_RATE} = $#{(debt.to_f / WEX_RATE.to_f).round(2) }"
+-#%p
+-#  = icn(hb_bot.icon_warning)
+-#  %b Обратите внимание,
+-#  что Вы должны погасить задолженность не позднее чем пятница текущей недели. В случае,
+-#  если Вы не погасите задолженность, бот будет деактивирован, пока задолженность не будет погашена.
+-#%form{action: url('/pay_wex'), method: 'post'}
+-#  %input{type: 'text', name: 'wex_usd', size: '50', placeholder: 'WEX USD код'}
+-#  %button{onclick: "location.href = '#{url('/check_payment')}'"}
+-#    Оплатить

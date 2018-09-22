@@ -1,0 +1,44 @@
+%h2 Застрахованные сделки
+%p Здесь все Ваши застрахованные покупки и продажи. Следите за сделками, чтобы вовремя реагировать на события.
+%table{width: '100%'}
+  %thead
+    %tr
+      %th{width: '15%'} Сделка / Продукт
+      %th{width: '10%'} Застраховано
+      %th{width: '10%'} Контрагент
+      %th{width: '10%'} Сумма / Страховка
+      %th{width: '15%'} Статус
+  %tbody
+    - if !@buying.nil?
+      - @buying.each do |e|
+        - c = Client[e.seller]
+        - bu = Client[e.buyer]
+        - i = Item[e.item]
+        - product = Product[i.product]
+        - b = Bot[i.bot]
+        - if e.status == Escrow::FINALIZED
+          - cl = 'disputed-es'
+        - if e.status == Escrow::REJECTED
+          - cl = 'disputed-es'
+        %tr{class: cl}
+          %td{nowrap: true}
+            %a.bold.blue{href: url("/escrow/#{e.id}")}= "##{e.id}"
+            %a.blue{href: url("/escrow/#{e.id}")}
+              = icn("#{product.icon}")
+              = product.russian
+          %td
+            = "на #{dney(i.escrow)}, до #{human_date_short(e.expires)}"
+          %td
+            - if e.buyer == hb_operator.id
+              покупаю у
+              %a.blue{href: url("/shop/#{e.seller}")}= b.title
+            - if e.seller == hb_bot.beneficiary.id && !bu.nil?
+              продаю
+              %a.blue{href: url("/shop/#{e.id}")}= bu.username
+          %td
+            = usd_color(e.amount)
+            = icn('lock')
+            = usd_color(e.commission)
+          %td
+            %span.green >
+            = e.readable_status(hb_operator)

@@ -1,0 +1,9 @@
+%form{action: url('/settings'), method: 'post'}
+%h3
+  Сотрудники
+  = hb_bot.tele
+  - @staff.each do |cl|
+  %input{type: 'submit', value: 'Сохранить все настройки'}
+  %select{name: 'status'}
+    %option{value: Bot::ACTIVE, selected: @overview_bot.status == Bot::ACTIVE} Активный
+    %option{value: Bot::INACTIVE, selected: @overview_bot.status == Bot::INACTIVE} Неактивный

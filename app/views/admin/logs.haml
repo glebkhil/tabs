@@ -1,0 +1,3 @@
+- recs = Rec.where(bot: hb_bot.id).order(Sequel.desc(:logged)).limit(200)
+= partial 'partials/logs', locals: {recs: recs}
+

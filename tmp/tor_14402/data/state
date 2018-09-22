@@ -1,0 +1,36 @@
+# Tor state file last generated on 2018-03-18 08:07:35 local time
+# Other times below are in UTC
+# You *do not* need to edit this file.
+
+Guard in=default rsa_id=3834A35F6D87DE7C725D47331732B3264A3DFF7A nickname=TheStatesMan sampled_on=2018-03-18T00:59:29 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-06T21:56:24 confirmed_idx=2
+Guard in=default rsa_id=66CA5474346F35E375C4D4514C51A540545347EE nickname=ToolspireRelay sampled_on=2018-03-17T13:38:39 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=38DEFAB54549991C41489E2EEBD7C29C338EC11D nickname=relay sampled_on=2018-03-07T08:49:28 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=92412EA1B9AA887D462B51D816777002F4D58907 nickname=Aerodynamik05 sampled_on=2018-03-16T14:06:17 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=CBCED581D684EE7F4514063FBFFC2ED56DFB248E nickname=cmdrdata sampled_on=2018-03-15T03:28:55 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=2806D9396FEEF3A2D055B341F9D0D7465104639C nickname=NuernbergTor01 sampled_on=2018-03-17T18:02:15 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=D5B8C38539C509380767D4DE20DE84CF84EE8299 nickname=NeelTorRelay2 sampled_on=2018-03-14T02:53:13 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=378C8A880DF2F751F735A8994435565401010B6D nickname=Zeus sampled_on=2018-03-11T10:02:53 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=E4848ED3349097B720DD78397A6B3EE7C973D440 nickname=theia5 sampled_on=2018-03-08T12:11:54 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-17T22:45:18 confirmed_idx=3
+Guard in=default rsa_id=5F276A6F7AA74AFB2AF100EADA28C7A6F48BA50F nickname=ripChesterB sampled_on=2018-03-10T11:14:11 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=763C9556602BD6207771A7A3D958091D44C43228 nickname=torpidsDEdomainf2 sampled_on=2018-03-13T12:36:23 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=A6133C61C630022DC8984906F8775EE346369287 nickname=outbreak sampled_on=2018-03-12T02:41:00 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=86D0AF4C2A6F73DFE46AC61465BD0E3AF2AFAB85 nickname=TheWestIsTheBest sampled_on=2018-03-13T16:55:54 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=9844B981A80B3E4B50897098E2D65167E6AEF127 nickname=0x3d004 sampled_on=2018-03-15T10:57:27 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-08T05:02:42 confirmed_idx=1
+Guard in=default rsa_id=6FAAD7CC7EBB008AEF2E5AE1BB9082CD8BD60648 nickname=isthistherealworld sampled_on=2018-03-14T03:39:38 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=4FF8ED7C072B5F8EC296458151E6BABBD6BC3211 nickname=TykRelay08 sampled_on=2018-03-14T03:34:33 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=BD6FFF1AD5A88A8D43870D43EC4450081B4B2BBA nickname=bonjour2 sampled_on=2018-03-11T22:44:09 sampled_by=0.3.1.9 listed=1 confirmed_on=2018-03-08T05:13:55 confirmed_idx=0 pb_use_attempts=9.000000 pb_use_successes=9.000000 pb_circ_attempts=22.000000 pb_circ_successes=22.000000 pb_successful_circuits_closed=22.000000
+Guard in=default rsa_id=3D765C586CCA8B437B7697EA2CE6A51312530AB1 nickname=VERITAS sampled_on=2018-03-17T19:28:24 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=CD43574ADF4B706DEB72F820DEA6784979AA213A nickname=torkerull sampled_on=2018-03-09T14:49:39 sampled_by=0.3.1.9 listed=1
+Guard in=default rsa_id=12CF84D3D2E30BB9799BFC0E1DDDFDA8D35AF007 nickname=Unnamed sampled_on=2018-03-06T06:50:21 sampled_by=0.3.1.9 listed=1
+TorVersion Tor 0.3.1.9 (git-727d3f1b5e6eeda7)
+LastWritten 2018-03-18 06:07:35
+TotalBuildTimes 17
+CircuitBuildTimeBin 225 1
+CircuitBuildTimeBin 275 4
+CircuitBuildTimeBin 325 1
+CircuitBuildTimeBin 425 3
+CircuitBuildTimeBin 475 1
+CircuitBuildTimeBin 525 1
+CircuitBuildTimeBin 575 3
+CircuitBuildTimeBin 975 2
+CircuitBuildTimeBin 1175 1

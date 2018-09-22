@@ -1,0 +1,33 @@
+%table{width: '100%'}
+  %thead
+    %tr
+      %th Сделка
+      %th Покупатель
+      %th Продавец
+      %th Сумма
+      %th Комиссия
+      %th Срок
+      %th Холд
+      %th Статус
+  - @trades.each do |t|
+    - buyer = Client[t.buyer]
+    - seller = Client[t.seller]
+    %tr{class: t.finalized? ? 'disputed' : ''}
+      %td{width: '15%'}
+        = "##{t.id}"
+      %td
+        = icn('id')
+        = buyer.id
+      %td
+        = icn('id')
+        = seller.id
+      %td
+        = usd(t.amount)
+      %td
+        = usd(t.commission)
+      %td
+        = dney(t.escrow)
+      %td
+        = dney(t.escrow)
+      %td
+        = readable_status(t.status)
