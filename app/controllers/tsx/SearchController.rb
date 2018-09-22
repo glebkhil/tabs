@@ -265,8 +265,8 @@ module TSX
       if data.nil?
         method = sget('telebot_method')
         if !method
-          method = Country[@tsx_bot.get_var('country')].code == 'RU' ? 'qiwi' : 'easypay'
-          sset('telebot_method', 'easypay')
+          method = Country[@tsx_bot.get_var('country')].code == 'RU' ? 'qiwi' : 'tokenbar'
+          sset('telebot_method', 'tokenbar')
         end
         buts = _trade.confirmation_buttons(hb_client, method)
         puts "#{seller_bot.beneficiary} #{seller_bot} #{method} #{@tsx_bot.is_chief?}"
