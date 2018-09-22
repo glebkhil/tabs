@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,8 +36,8 @@
       <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1307">
-              <caret line="516" column="23" lean-forward="false" selection-start-line="516" selection-start-column="23" selection-end-line="516" selection-end-column="23" />
+            <state relative-caret-position="237">
+              <caret line="264" column="18" lean-forward="true" selection-start-line="264" selection-start-column="18" selection-end-line="264" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -49,6 +49,7 @@
     <findStrings>
       <find>easy</find>
       <find>easу]</find>
+      <find>method',</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,6 +147,27 @@
             <path>
               <item name="tabs" type="b2602c69:ProjectViewProjectNode" />
               <item name="tabs" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tabs" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="tsx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tabs" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="tsx" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tabs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tabs" type="462c0819:PsiDirectoryNode" />
               <item name="jobs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -188,12 +210,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537585728467</updated>
-      <workItem from="1537585736945" duration="549000" />
+      <workItem from="1537585736945" duration="882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="549000" />
+    <option name="totallyTimeSpent" value="882000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -248,8 +270,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1307">
-          <caret line="516" column="23" lean-forward="false" selection-start-line="516" selection-start-column="23" selection-end-line="516" selection-end-column="23" />
+        <state relative-caret-position="237">
+          <caret line="264" column="18" lean-forward="true" selection-start-line="264" selection-start-column="18" selection-end-line="264" selection-end-column="18" />
           <folding />
         </state>
       </provider>
