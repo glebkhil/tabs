@@ -33,7 +33,7 @@ module TSX
           end
           reply_simple 'welcome/welcome', links: false, sh: hb_client.shop?
           if !hb_client.voted?
-            vote
+            # vote
           else
             sdel('telebot_trading')
             sdel('telebot_buying')
