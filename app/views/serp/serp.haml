@@ -1,5 +1,5 @@
 %h2
-  = "#{icn(hb_bot.icon_geo)} #{filter.russian.capitalize}"
+  = "#{icn(bot.icon_geo)} #{filter.russian.capitalize}"
 %p
   = "#{icn('warning')}"
   %b Внимание друзья,
@@ -8,8 +8,8 @@
   WEX USD спрашивайте у оператороа.
 - btns.each do |v|
   - if !v.empty?
-    %button.bot-btn{onclick: location(url("/s/#{next_filter.downcase}/#{v.values[1]}"))}
-      = v.values[0].truncate(11)
+    %button.bot-btn{onclick: location(url("/s/#{gsess('ds_bot').tele.downcase}/#{next_filter.downcase}/#{v.values[2]}"))}
+      = v.values[0].truncate(17)
       = "&#160;"
 - if !btns.empty?
   %button.bot-btn{onclick: location(url("/s/#{prev.class.name.downcase}/#{prev.id}"))}= "#{icn('back')} Назад"

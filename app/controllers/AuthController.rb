@@ -12,9 +12,10 @@ module TSX
       haml :'public/help', layout: hb_layout
     end
 
-    get'/s/*/*' do
+    get'/s/*/*/*' do
       # create filter class instance like Country, City, District, etc.
-      filter = params['splat'].first.capitalize.constantize[params['splat'].last]
+      puts params['splat'].inspect.colorize(:red)
+      filter = params['splat'][1].capitalize.constantize.find(russian: params['splat'].last)
       ssess('ds_filter', filter)
       ssess("ds_#{filter.class.name.downcase}", filter.class.name.capitalize[params['splat'].last])
       prev = gsess('ds_filter_previous')
@@ -32,22 +33,24 @@ module TSX
             Product[filter.id]
         )
       else
-        items = Client::search_by_filters_product(params['splat'].first.capitalize.constantize[params['splat'].last], Bot.search_bots_web, gsess('ds_city'))
+        items = Client::search_by_filters_product(filter, Bot.search_bots_web, gsess('ds_city'))
       end
       bttons ||= []
-      ic = hb_bot.icon
+      bot = Bot.find(tele: params['splat'][0])
+      ssess('ds_bot', bot)
+      ic = bot.icon
       items.each do |rec|
         puts rec.inspect
         if rec.instance_of?(Product)
           ic = icon(rec[:entity_icon])
           bttons << button("#{ic} #{rec[:entity_russian]}", rec[:entity_id])
         else
-          ic = icon(hb_bot.icon_geo)
+          ic = icon(bot.icon_geo)
           bttons << button("#{ic} #{rec[:entity_russian]}", rec[:entity_id])
         end
       end
       puts bttons.inspect.blue
-      haml :'serp/serp', layout: hb_layout, locals: {btns: bttons, criteria: items.first.class.name.downcase, icon: ic, filter: filter, next_filter: next_filter, prev: gsess('ds_filter_previous')}
+      haml :'serp/serp', layout: hb_layout, locals: {bot: bot, btns: bttons, criteria: items.first.class.name.downcase, icon: ic, filter: filter, next_filter: next_filter, prev: gsess('ds_filter_previous')}
     end
 
     get '/start_escrow/:item' do
