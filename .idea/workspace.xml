@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AuthController.rb" afterPath="$PROJECT_DIR$/app/controllers/AuthController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/WallController.rb" afterPath="$PROJECT_DIR$/app/controllers/WallController.rb" />
       <change beforePath="$PROJECT_DIR$/app/lib/view_helpers.rb" afterPath="$PROJECT_DIR$/app/lib/view_helpers.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/serp/serp.haml" afterPath="$PROJECT_DIR$/app/views/serp/serp.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/welcome/bots.rb" afterPath="$PROJECT_DIR$/app/views/tsx/welcome/bots.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,17 +43,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_helpers.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view_helpers.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="475" column="6" lean-forward="false" selection-start-line="475" selection-start-column="6" selection-end-line="475" selection-end-column="6" />
+            <state relative-caret-position="591">
+              <caret line="473" column="6" lean-forward="false" selection-start-line="473" selection-start-column="6" selection-end-line="473" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bots.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bots.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/tsx/welcome/bots.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -142,8 +137,8 @@
         <option value="$PROJECT_DIR$/app/controllers/WallController.rb" />
         <option value="$PROJECT_DIR$/app/controllers/AuthController.rb" />
         <option value="$PROJECT_DIR$/app/views/serp/serp.haml" />
-        <option value="$PROJECT_DIR$/app/lib/view_helpers.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/bots.rb" />
+        <option value="$PROJECT_DIR$/app/lib/view_helpers.rb" />
       </list>
     </option>
   </component>
@@ -349,12 +344,12 @@
       <workItem from="1537628331426" duration="103000" />
       <workItem from="1537630249574" duration="19000" />
       <workItem from="1537630300392" duration="3361000" />
-      <workItem from="1537683579315" duration="453000" />
+      <workItem from="1537683579315" duration="650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5091000" />
+    <option name="totallyTimeSpent" value="5288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -656,18 +651,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="475" column="6" lean-forward="false" selection-start-line="475" selection-start-column="6" selection-end-line="475" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tsx/welcome/bots.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="473" column="6" lean-forward="false" selection-start-line="473" selection-start-column="6" selection-end-line="473" selection-end-column="6" />
           <folding />
         </state>
       </provider>

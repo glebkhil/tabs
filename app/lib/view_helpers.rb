@@ -471,7 +471,7 @@ module TSX
 
     def bots_welcome_risk
       bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(risky: 1).order(Sequel.desc(:vars__today_sales))
-      lines = "*Магазины на проверке покупки*\nВ этом списке новые магазины. Сюда попадают магазины, у которых нет веток на форумах. В течение нескольких дней мы проверим их клады и примем решение о статусе этих магазинов.\n\n"
+      lines = "*Магазины на проверке*\nВ этом списке новые магазины. Мы ничего не можем сказать о них. В течение нескольких дней мы проверим их клады и примем решение.\n\n"
       bots.each do |b|
         lines  << ("#{icon('small_orange_diamond')} #{b.nickname_md} #{b.awards} #{b.cities}\n") if b.cities
       end
