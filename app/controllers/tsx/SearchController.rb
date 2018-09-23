@@ -32,14 +32,18 @@ module TSX
             @support_line = "[@no_nickname](t.me/no_nickname), "
           end
           reply_simple 'welcome/welcome', links: false, sh: hb_client.shop?
-          if !hb_client.voted?
-            # vote
-          else
-            sdel('telebot_trading')
-            sdel('telebot_buying')
-            unfilter
-            serp
-          end
+          sdel('telebot_trading')
+          sdel('telebot_buying')
+          unfilter
+          serp
+          # if !hb_client.voted?
+          #   # vote
+          # else
+          #   sdel('telebot_trading')
+          #   sdel('telebot_buying')
+          #   unfilter
+          #   serp
+          # end
         end
       end
 
