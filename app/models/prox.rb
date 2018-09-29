@@ -15,4 +15,8 @@ class Prox < Sequel::Model(:prox)
     self.save
   end
 
+  def self.flush
+    Prox.select_all.update('status = random() * 1')
+  end
+
 end

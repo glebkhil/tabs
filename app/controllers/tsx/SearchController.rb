@@ -594,15 +594,18 @@ module TSX
             botrec("Неверный пароль в Изипей", data)
             update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(2)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию."
             handle('trade_overview')
+            Prox::flush
           rescue TSX::Exceptions::Ex
             code1.delete
             code2.delete
             update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(3)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию."
             handle('trade_overview')
+            Prox::flush
           rescue TSX::Exceptions::NoPendingTrade
             reply_message "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала."
             start
           rescue => e
+            Prox::flush
             puts "--------------------"
             puts "Ошибка соединения:  #{e.message}"
             puts e.backtrace.join("\t\n")
