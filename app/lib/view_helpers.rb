@@ -209,7 +209,7 @@ module TSX
           metho = Meth.find(title: method)
           discount = item.discount_price_by_method(metho)
           percent = item.method_discount_rate(metho)
-          if discount && discount > 0
+          if percent > 0
             meth_discount = item.discount_method_amount(percent)
             view_body = "К оплате *#{@tsx_bot.uah(discount)}*\n" <<
                 "#{method_details(method)}\n" <<

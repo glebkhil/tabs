@@ -66,7 +66,9 @@ class Item < Sequel::Model(:item)
   end
 
   def method_discount_rate(method)
-    Bot[self.bot].payment_option('discount', method)
+    ra = Bot[self.bot].payment_option('discount', method)
+    return 0 if !ra
+    return ra
   end
 
   def discount_price_by_method(method)
