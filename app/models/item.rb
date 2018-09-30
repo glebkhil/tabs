@@ -73,12 +73,12 @@ class Item < Sequel::Model(:item)
     p = Price[self.prc]
     bot = Bot[self.bot]
     discount = bot.payment_option('discount', method)
-    if discount && discount.to_i > 0
+    return false if !discount
+    if discount.to_i > 0
       p = p.price - (p.price.to_f * discount.to_f / 100).round.to_i
       puts "PRICE WITH METH DISCOUNT: #{p}"
       return p
-    end
-    if self.old?
+    elsif self.old?
       return p.price - (p.price.to_f * bot.discount.to_f / 100).round.to_i
     else
       return p.price
