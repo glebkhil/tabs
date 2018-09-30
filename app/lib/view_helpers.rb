@@ -206,12 +206,24 @@ module TSX
           puts "NEEDED UAH AMOUNT: #{@tsx_bot.uah(item.discount_price)}"
           rats = BestchangeRates.new.rates('Exmo USD' => 'Visa/MasterCard UAH').first[:get].to_f.round(2)
           puts "Today EXMO exchange rate: #{rats}"
-          view_body = "К оплате *#{@tsx_bot.uah(item.discount_price)}*\n" <<
-              "#{method_details(method)}\n" <<
-              "Курс EXMO *#{rats}*\n"
-          if item.old?
+          metho = Meth.find(title: method)
+          discount = item.discount_price_by_method(metho)
+          percent = item.method_discount_rate(metho)
+          if discount && discount > 0
+            meth_discount = item.discount_method_amount(percent)
+            view_body = "К оплате *#{@tsx_bot.uah(discount)}*\n" <<
+                "#{method_details(method)}\n" <<
+                "Курс EXMO *#{rats}*\n"
             view_body <<
-                "Скидка *#{@tsx_bot.uah(item.discount_amount)}* (`-#{@tsx_bot.discount}%`)\n"
+                "Скидка *#{@tsx_bot.uah(meth_discount)}* (`#{percent}%`)\n"
+          else
+            view_body = "К оплате *#{@tsx_bot.uah(item.discount_price)}*\n" <<
+                "#{method_details(method)}\n" <<
+                "Курс EXMO *#{rats}*\n"
+            if item.old?
+              view_body <<
+                  "Скидка *#{@tsx_bot.uah(item.discount_amount)}* / `-#{@tsx_bot.discount}%`\n"
+            end
           end
         when 'easypay'
           view_body =

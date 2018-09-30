@@ -65,6 +65,27 @@ class Item < Sequel::Model(:item)
     end
   end
 
+  def method_discount_rate(method)
+    Bot[self.bot].payment_option('discount', method)
+  end
+
+  def discount_price_by_method(method)
+    p = Price[self.prc]
+    bot = Bot[self.bot]
+    discount = bot.payment_option('discount', method)
+    if discount && discount.to_i > 0
+      p = p.price - (p.price.to_f * discount.to_f / 100).round.to_i
+      puts "PRICE WITH METH DISCOUNT: #{p}"
+      return p
+    end
+    if self.old?
+      return p.price - (p.price.to_f * bot.discount.to_f / 100).round.to_i
+    else
+      return p.price
+    end
+  end
+
+
   def discount_commission
     b = Bot[self.bot]
     p = Price[self.prc]
@@ -75,6 +96,11 @@ class Item < Sequel::Model(:item)
     p = Price[self.prc]
     bot = Bot[self.bot]
     p.price.to_f * bot.discount.to_f / 100.round.to_i
+  end
+
+  def discount_method_amount(percent)
+    p = Price[self.prc]
+    p.price.to_f * percent.to_i / 100.round.to_i
   end
 
   def my? client

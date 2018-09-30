@@ -359,7 +359,7 @@ module TSX
             begin
               # reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем *TokenBar* код.", balance_btn: balance_btn, take_free_btn: take_free_btn, links: true, method: data
               reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж *TokenBar*."
-              uah_price = _buy.discount_price
+              uah_price = _buy.discount_price_by_method(Meth::__tokenbar)
               raise TSX::Exceptions::WrongFormat.new if @tsx_bot.check_tokenbar_format(data).nil?
               payment_id = data.split(":").last
               phone = data.split(":").first
@@ -519,7 +519,7 @@ module TSX
             botrec("check 4", "")
             puts "checking 4".colorize(:yellow)
             handle('easypay')
-            uah_price = @tsx_bot.amo_pure(_buy.discount_price)
+            uah_price = @tsx_bot.amo_pure(_buy.discount_price_by_method(Meth::__easypay))
             # lg "ITEM PRICE in UAH: #{uah_price}грн.
             code1 = Invoice.create(code: possible_codes.first, client: hb_client.id)
             code2 = Invoice.create(code: possible_codes.last, client: hb_client.id)
@@ -559,6 +559,7 @@ module TSX
             handle('trade_overview')
             botrec("Ошибка соединения при покупке клада", _buy.id.to_s)
             handle('trade_overview')
+            return
           rescue TSX::Exceptions::PaymentNotFound
             code1.delete
             code2.delete
@@ -632,7 +633,7 @@ module TSX
         # reply_message 'платежи закрыты'
         balance = hb_client.available_cash
         price = Trade[_trade.id].amount + Trade[_trade.id].commission
-        if balance >= _buy.discount_price
+        if balance >= _buy.discount_price_by_method(Meth::__cash)
           botrec("Оплата клада #{_buy.id} с баланса")
           finalize_trade('с баланса', Meth::__easypay)
           reply_message "#{icon(@tsx_bot.icon_success)} Оплачено."
