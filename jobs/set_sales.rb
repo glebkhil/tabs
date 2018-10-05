@@ -13,8 +13,8 @@ bots.each do |c|
     cnt = c.sales
     logger.noise "Today_sales=#{today_cnt}, sales=#{cnt} for #{c.tele}"
     c.set_var('sales', c.sales)
-    c.set_var('sales', 300) if c.id == 598
     c.set_var('sales', 4000) if c.id == 574
+    c.set_var('sales', 3999) if c.id == 598
     c.set_var('sales', 6000) if c.id == 605
     c.set_var('sales', 500) if c.id == 600
     c.set_var('today_sales', today_cnt)
