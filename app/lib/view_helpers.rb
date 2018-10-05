@@ -454,7 +454,7 @@ module TSX
 
     def main_top
       lines = ""
-      bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(status: 1, listed: 1, risky: 0).order(Sequel.desc(:vars__today_sales)).limit(3)
+      bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(status: 1, listed: 1, risky: 0).order(Sequel.desc(:vars__today_sales)).limit(5)
       lines << "\n*Топ-5*\nЛучшие 5 магазинов нашей системы. Рейтинг обновляется несколько раз в день автоматически. В Топ5 находятся только качественные продавцы.\n\n"
       top = 1
       bots.each do |b|
