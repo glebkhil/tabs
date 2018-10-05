@@ -21,7 +21,7 @@ class Trade < Sequel::Model(:trade)
     it = Item[self.item]
     balance = client.available_cash
     price = self.amount + self.commission
-    if balance >= it.discount_price
+    if balance >= it.discount_price_by_method(Meth::find(title: method))
       balance_btn = true
     else
       balance_btn = false
