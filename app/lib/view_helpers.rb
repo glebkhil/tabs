@@ -460,11 +460,15 @@ module TSX
       bots.each do |b|
         case top
           when 1
-            lines << "#{icon('trophy')} #{b.nickname_md} #{b.cities}\n"
+            lines << "🥇 #{b.nickname_md} #{b.cities}\n"
           when 2
-            lines << "#{icon('trophy')} #{b.nickname_md} #{b.cities}\n"
+            lines << "🥈 #{b.nickname_md} #{b.cities}\n"
           when 3
-            lines << "#{icon('trophy')}  #{b.nickname_md} #{b.cities}\n"
+            lines << "🥉 #{b.nickname_md} #{b.cities}\n"
+          when 4
+            lines << "🏅 #{b.nickname_md} #{b.cities}\n"
+          when 5
+            lines << "🏅 #{b.nickname_md} #{b.cities}\n"
         end
         top += 1
       end
