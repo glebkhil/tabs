@@ -550,6 +550,7 @@ module TSX
               end
             end
           rescue TSX::Exceptions::ProxyError, Rack::Timeout::RequestExpiryError, Rack::Timeout::RequestTimeoutException => ex
+            Prox::flush
             update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения. Вводите свой код пополнения, пока оплата не пройдет. #{method_desc('easypay')} Помощь /payments."
             puts "TIMEOUT HAPPENED. More than 24 sec while checking easypay".colorize(:yellow)
             puts ex.message.red
