@@ -1,3 +1,48 @@
+- if @last.nil?
+  %p Здесь пусто.
+- else
+  %h3 Последние 10 продаж
+  %table{width: '100%'}
+    %thead
+      %th.no-wrap{width: '20%'} Клад
+      %th{width: '7%'} Кладман
+      %th Город
+      %th{width: '7%'} Вес
+      %th{width: '7%'} Цена
+      %th Покупатель
+      %th Дата
+      %th Код
+    %tbody
+      - @last.each do |item|
+        - p = Product[item.product]
+        - t = Trade.find(item: item.id)
+        %tr
+          %td
+            %span.gray= "##{item.id}"
+            - mule = Client[item.client]
+            = icn(p.icon)
+            - if hb_operator.is_admin?(hb_bot)
+              %a.bold{onclick: "$('#item_#{item.id}').toggle()"}= p.russian
+            - else
+              = p.russian
+          %td
+            %a.blue.no-underline{href: url("/client/#{mule.id}")}= "@" + mule.username
+          %td.no-wrap
+            = District[item.district].russian
+            %span.small.dark= City[item.city].russian
+          - if hb_bot.is_chief?
+            %td
+              = icn(hb_bot.icon)
+              = Bot[item.bot].title
+          - sale = Trade.find(item: item.id)
+          - if !sale.nil?
+            = partial 'partials/sale', locals: {sale: sale, item: item, trade: t, product: p}
+          - else
+            = partial 'partials/not_sold', locals: {sale: sale, item: item, trade: t, product: p}
+          %td
+            = short_date(item.sold)
+          %td
+            = (!sale.nil? and !sale.code.nil?) ? "<img width='20px' src=#{url('/images/payments/'+ (Meth[sale.meth].nil? ? 'cash' : Meth[sale.meth].title.downcase)+ '.png')}>#{sale.code.gsub(',', '').truncate(20)}" : ''
 - if @items.nil?
   %p Здесь пусто.
 - else
