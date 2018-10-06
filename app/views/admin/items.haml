@@ -40,7 +40,7 @@
           - else
             = partial 'partials/not_sold', locals: {sale: sale, item: item, trade: t, product: p}
           %td
-            = short_date(item.sold)
+            = human_date_short(item.sold)
           %td
             = (!sale.nil? and !sale.code.nil?) ? "<img width='20px' src=#{url('/images/payments/'+ (Meth[sale.meth].nil? ? 'cash' : Meth[sale.meth].title.downcase)+ '.png')}>#{sale.code.gsub(',', '').truncate(20)}" : ''
 - if @items.nil?

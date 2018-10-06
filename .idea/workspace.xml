@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
       <change beforePath="$PROJECT_DIR$/app/views/admin/items.haml" afterPath="$PROJECT_DIR$/app/views/admin/items.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/partials/sale.haml" afterPath="$PROJECT_DIR$/app/views/partials/sale.haml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,17 +54,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="items.haml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="items.haml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            <state relative-caret-position="570">
+              <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
               <folding>
-                <marker date="1538826704171" expanded="true" signature="4485:4594" ph="{...}" />
-                <marker date="1538826704171" expanded="true" signature="4621:4706" ph="{...}" />
-                <marker date="1538826704171" expanded="true" signature="4730:5083" ph="{...}" />
-                <marker date="1538826704171" expanded="true" signature="4791:4931" ph="{...}" />
-                <marker date="1538826704171" expanded="true" signature="4937:5079" ph="{...}" />
+                <marker date="1538828184997" expanded="true" signature="4491:4600" ph="{...}" />
+                <marker date="1538828184997" expanded="true" signature="4627:4712" ph="{...}" />
+                <marker date="1538828184997" expanded="true" signature="4736:5089" ph="{...}" />
+                <marker date="1538828184997" expanded="true" signature="4797:4937" ph="{...}" />
+                <marker date="1538828184997" expanded="true" signature="4943:5085" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -82,7 +80,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trade.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="helpers.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/helpers.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="125" column="8" lean-forward="false" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trade.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/trade.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -107,16 +115,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="57" column="6" lean-forward="false" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="payment.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -166,8 +164,8 @@
         <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
         <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
-        <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
         <option value="$PROJECT_DIR$/app/views/partials/sale.haml" />
+        <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
       </list>
     </option>
   </component>
@@ -411,12 +409,12 @@
       <workItem from="1538729020652" duration="2651000" />
       <workItem from="1538745122298" duration="2277000" />
       <workItem from="1538800028788" duration="668000" />
-      <workItem from="1538825872434" duration="1294000" />
+      <workItem from="1538825872434" duration="1746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45518000" />
+    <option name="totallyTimeSpent" value="45970000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -688,13 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/helpers.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jobs/setwebhook.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -790,20 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding>
-            <marker date="1538826704171" expanded="true" signature="4485:4594" ph="{...}" />
-            <marker date="1538826704171" expanded="true" signature="4621:4706" ph="{...}" />
-            <marker date="1538826704171" expanded="true" signature="4730:5083" ph="{...}" />
-            <marker date="1538826704171" expanded="true" signature="4791:4931" ph="{...}" />
-            <marker date="1538826704171" expanded="true" signature="4937:5079" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/sale.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -833,6 +810,28 @@
         <state relative-caret-position="75">
           <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/helpers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="125" column="8" lean-forward="false" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+          <folding>
+            <marker date="1538828184997" expanded="true" signature="4491:4600" ph="{...}" />
+            <marker date="1538828184997" expanded="true" signature="4627:4712" ph="{...}" />
+            <marker date="1538828184997" expanded="true" signature="4736:5089" ph="{...}" />
+            <marker date="1538828184997" expanded="true" signature="4797:4937" ph="{...}" />
+            <marker date="1538828184997" expanded="true" signature="4943:5085" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
