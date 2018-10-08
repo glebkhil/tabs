@@ -36,14 +36,14 @@ module TSX
           sdel('telebot_buying')
           unfilter
           serp
-          # if !hb_client.voted?
-          #   # vote
-          # else
-          #   sdel('telebot_trading')
-          #   sdel('telebot_buying')
-          #   unfilter
-          #   serp
-          # end
+          if !hb_client.voted?
+            # vote
+          else
+            sdel('telebot_trading')
+            sdel('telebot_buying')
+            unfilter
+            serp
+          end
         end
       end
 
