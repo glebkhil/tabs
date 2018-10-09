@@ -240,7 +240,7 @@ module TSX
     def method_desc(method)
       case method
         when 'tokenbar'
-          "Пример `3800971234567:00000000`"
+          "Пример `380971234567:00000000`"
         when 'easypay'
           "Пример `12:1399899`"
       end
