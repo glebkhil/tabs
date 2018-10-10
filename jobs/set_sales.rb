@@ -17,7 +17,7 @@ bots.each do |c|
     c.set_var('sales', 4300) if c.id == 598
     c.set_var('sales', 4200) if c.id == 542
     c.set_var('sales', 6000) if c.id == 605
-    c.set_var('sales', 2000) if c.id == 600
+    c.set_var('sales', 2200) if c.id == 600
     c.set_var('today_sales', today_cnt)
     c.set_var('EXMO_UAH', rats.to_s)
   rescue => ex
