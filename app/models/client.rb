@@ -55,6 +55,10 @@ class Client < Sequel::Model(:client)
     end
   end
 
+  def game_played?(game)
+    !Bet.find(client: self.id, game: game.id).nil?
+  end
+
   def escrow_buyer?(escrow)
     self.id == escrow.buyer
   end

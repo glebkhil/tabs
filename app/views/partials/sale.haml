@@ -1,6 +1,8 @@
 - buyer = Client[sale.buyer]
 - if sale.finished? or sale.finalized? or sale.pending?
   %td
+    - if item.old?
+      %spam.normal= icn(hb_bot.icon_old)
     - prrr = Price[item.prc]
     - if !prrr.nil?
       = prrr.qnt

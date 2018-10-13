@@ -1,15 +1,22 @@
-class Vote < Sequel::Model(:vote)
+class Gameplay < Sequel::Model(:game)
+  ACTIVE = 1
+  INACTIVE = 0
 
-  def self.voted_this_month
-    Vote.where(created: Date.today.beginning_of_month .. Date.today.end_of_month).count(:id)
+  def available_numbers
+    rng = eval("#{self.conf('range')}")
+    nums = []
+    b = Bot[self.bot]
+    Bet.where(game: self.id).each do |num|
+      nums.push(num.number)
+    end
+    puts rng.inspect
+    puts nums.inspect
+    rng - nums
   end
 
-  def self.best_this_month
-    bot = Vote.
-      select(Sequel.as(:vote__bot, :bot), Sequel.as(Sequel.function('sum', :vote__id), :cnt)).
-      where(created: Date.today.beginning_of_month .. Date.today.end_of_month).
-      group(:bot).order(Sequel.desc(:cnt)).limit(1).first[:bot]
-    Bot[bot]
+  def conf(key)
+    params = JSON.parse(self.config)
+    params[key] || 'unknown'
   end
 
 end

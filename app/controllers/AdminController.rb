@@ -759,6 +759,12 @@ module TSX
       haml :"admin/#{table.pluralize}", layout: hb_layout
     end
 
+    get '/games' do
+      @games = Gameplay.where(bot: hb_bot.id)
+      redirect to('/not_permitted') if hb_operator.is_support?(hb_bot)
+      haml :'admin/games', layout: hb_layout
+    end
+
     get '/items' do
       redirect to('/not_permitted') if hb_operator.is_support?(hb_bot)
       if hb_operator.is_admin?(hb_bot)

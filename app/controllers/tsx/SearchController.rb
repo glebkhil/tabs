@@ -36,7 +36,11 @@ module TSX
           sdel('telebot_buying')
           unfilter
           serp
-          if !hb_client.voted?
+          if @tsx_bot.has_active_game?
+            if !hb_client.game_played?(@tsx_bot.active_game)
+              lottery
+            end
+          elsif !hb_client.voted?
             vote
           else
             sdel('telebot_trading')
@@ -286,7 +290,9 @@ module TSX
         else
           sset('telebot_method', data)
           botrec('Выбран метод оплаты', data)
+          buts = _trade.confirmation_buttons(hb_client, data)
           reply_update 'search/trade', ben: seller_bot.beneficiary, seller_bot: seller_bot, seller: seller, method: data, ch: @tsx_bot.is_chief?
+          reply_message '', buts: buts
           answer_callback "Метод оплаты изменен."
         end
       end
@@ -630,11 +636,26 @@ module TSX
         end
       end
 
+      def lottery(data = nil)
+        if callback_query?
+          Bet.create(
+              number: data.to_s,
+              client: hb_client.id,
+              game: @tsx_bot.active_game.id
+          )
+          update_message "#{icon(@tsx_bot.icon_success)} Вы выбрали число *#{data}*. Когда лоттерея закончится, победитель получит *#{@tsx_bot.active_game.conf('prize')}*."
+          serp
+        else
+          handle('lottery')
+          reply_inline 'welcome/lottery'
+        end
+      end
+
       def pay_by_balance
         # reply_message 'платежи закрыты'
         balance = hb_client.available_cash
         price = Trade[_trade.id].amount + Trade[_trade.id].commission
-        if balance >= _buy.discount_price_by_method(Meth::__cash)
+        if balance >= _buy.discount_price
           botrec("Оплата клада #{_buy.id} с баланса")
           finalize_trade('с баланса', Meth::__easypay)
           reply_message "#{icon(@tsx_bot.icon_success)} Оплачено."

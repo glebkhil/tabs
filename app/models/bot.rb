@@ -476,6 +476,18 @@ class Bot < Sequel::Model(:bot)
     pcc & prices
   end
 
+  def has_active_game?
+    !Gameplay.find(bot: self.id, status: Gameplay::ACTIVE).nil?
+  end
+
+  def active_game
+    if self.has_active_game?
+      Gameplay.find(bot: self.id, status: Gameplay::ACTIVE)
+    else
+      nil
+    end
+  end
+
   def sales_amount_by_product_and_date_and_qnt(city, dat, pric)
     as = Trade.
         select(
