@@ -1,6 +1,7 @@
 class Gameplay < Sequel::Model(:game)
   ACTIVE = 1
   INACTIVE = 0
+  GAMEOVER = 3
 
   def readable_status
     case self.status
@@ -8,6 +9,8 @@ class Gameplay < Sequel::Model(:game)
         "активен"
       when Gameplay::INACTIVE
         "неактивен"
+      when Gameplay::GAMEOVER
+        "завершена"
     end
   end
 

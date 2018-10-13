@@ -645,11 +645,13 @@ module TSX
             rec = Bet.where(game: gam.id).limit(1).order(Sequel.lit('RANDOM()')).all
             winner = Client[rec.first.client]
             winner_num = Bet[rec.first.id].number
+            gam.winner = winner.id
+            gam.save
             @tsx_bot.say(winner.tele, "🚨🚨🚨 *Поздравляем!* Выбранный Вами номер *#{winner_num}* выиграл в рулетку! Вы получили *#{@tsx_bot.active_game.conf('prize')}*. Ждем в Аптеке всегда!")
             winner.cashin(@tsx_bot.active_game.conf('amount'), Client::__cash, Meth::__cash, @tsx_bot.beneficiary, "Выигрыш в рулетку. Победа числа *#{winner_num}*.")
             Spam.create(bot: @tsx_bot.id, kind: Spam::BOT_CLIENTS, label: 'Победа числа в лотерею', text: "🚨🚨🚨 Дорогие друзья! Победило число *#{winner_num}*. Клиенту с ником @#{winner.username} пополнен баланс на #{@tsx_bot.active_game.conf('amount')}", status: Spam::NEW)
             puts "DEACTIVATING GAME".colorize(:white_on_red)
-            Gameplay.find(status: Gameplay::ACTIVE, bot: @tsx_bot.id).update(status: Gameplay::INACTIVE)
+            Gameplay.find(status: Gameplay::ACTIVE, bot: @tsx_bot.id).update(status: Gameplay::GAMEOVER)
           end
           serp
         else
