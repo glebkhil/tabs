@@ -7,8 +7,10 @@ puts "Today WEX exchange rate: #{rats}"
 
 logger.noise "Setting sales ... "
 
-max_sales = Vars.where('today_sales is not null and today_sales > 0').order(Sequel.desc(:today_sales)).first
-apteka = max_sales.today_sales.to_i - rand(7)
+sls = Vars.where('today_sales is not null and today_sales > 0').order(Sequel.desc(:today_sales))
+max_sales = sls.first
+min_sales = sls.last
+apteka = rand(min_sales.today_sales.to_i..max_sales.today_sales.to_i)
 logger._say "Max sales today ... "
 logger.answer "#{max_sales.today_sales}", :green
 logger._say'APTEKA TODAY SALES: '
