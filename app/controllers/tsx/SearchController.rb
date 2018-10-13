@@ -37,7 +37,7 @@ module TSX
           unfilter
           serp
           if !hb_client.voted?
-            # vote
+            vote
           else
             sdel('telebot_trading')
             sdel('telebot_buying')
