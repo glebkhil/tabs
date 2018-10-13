@@ -656,7 +656,7 @@ module TSX
           serp
         else
           handle('lottery')
-          reply_inline 'welcome/lottery'
+          reply_inline 'welcome/lottery', gam: @gam
         end
       end
 
