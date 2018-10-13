@@ -639,14 +639,14 @@ module TSX
               game: @tsx_bot.active_game.id
           )
           update_message "#{icon(@tsx_bot.icon_success)} Вы выбрали число *#{data}*. Когда рулетка закончится, победитель получит *#{@tsx_bot.active_game.conf('prize')}*."
-          gam = @tsx_bot.active_game
+          @gam = @tsx_bot.active_game
           puts "NUMBERS COUNT: #{gam.available_numbers.count}".colorize(:red)
-          if gam.available_numbers.count < 1
-            rec = Bet.where(game: gam.id).limit(1).order(Sequel.lit('RANDOM()')).all
+          if @gam.available_numbers.count < 1
+            rec = Bet.where(game: @gam.id).limit(1).order(Sequel.lit('RANDOM()')).all
             winner = Client[rec.first.client]
             winner_num = Bet[rec.first.id].number
-            gam.winner = winner.id
-            gam.save
+            @gam.winner = winner.id
+            @gam.save
             @tsx_bot.say(winner.tele, "🚨🚨🚨 *Поздравляем!* Выбранный Вами номер *#{winner_num}* выиграл в рулетку! Вы получили *#{@tsx_bot.active_game.conf('prize')}*. Ждем в Аптеке всегда!")
             winner.cashin(@tsx_bot.active_game.conf('amount'), Client::__cash, Meth::__cash, @tsx_bot.beneficiary, "Выигрыш в рулетку. Победа числа *#{winner_num}*.")
             Spam.create(bot: @tsx_bot.id, kind: Spam::BOT_CLIENTS, label: 'Победа числа в лотерею', text: "🚨🚨🚨 Дорогие друзья! Победило число *#{winner_num}*. Клиенту с ником @#{winner.username} пополнен баланс на #{@tsx_bot.active_game.conf('amount')}", status: Spam::NEW)
