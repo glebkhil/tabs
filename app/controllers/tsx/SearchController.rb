@@ -655,6 +655,7 @@ module TSX
           end
           serp
         else
+          @gam = @tsx_bot.active_game
           handle('lottery')
           reply_inline 'welcome/lottery', gam: @gam
         end
