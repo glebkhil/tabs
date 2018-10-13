@@ -2,6 +2,15 @@ class Gameplay < Sequel::Model(:game)
   ACTIVE = 1
   INACTIVE = 0
 
+  def readable_status
+    case self.status
+      when Gameplay::ACTIVE
+        "активен"
+      when Gameplay::INACTIVE
+        "неактивен"
+    end
+  end
+
   def available_numbers
     rng = eval("#{self.conf('range')}")
     nums = []

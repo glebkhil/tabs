@@ -20,7 +20,10 @@ class Trade < Sequel::Model(:trade)
   def confirmation_buttons(client, method)
     it = Item[self.item]
     balance = client.available_cash
-    if balance >= it.discount_price_by_method(Meth::find(title: method))
+    dis = it.discount_price_by_method(Meth::find(title: method))
+    puts "BALANCE: #{balance}"
+    puts "DISOUNTED PRICE: #{dis}"
+    if balance >= dis
       balance_btn = true
     else
       balance_btn = false

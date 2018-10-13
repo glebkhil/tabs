@@ -3,9 +3,9 @@
 %table{width: '100%'}
   %thead
     %tr
-      %th{width: '5%'}
+      %th{width: '2%'}
       %th{width: '10%'} Название
-      %th{width: '10%'} Настройки
+      %th{width: '40%'} Настройки
       %th{width: '10%'} Статус
       %th{width: '15%'}
   %tbody
@@ -16,10 +16,24 @@
         %td{nowrap: true}
           = "#{e.title}"
         %td{nowrap: true}
-          %code= "#{e.config}"
+          - JSON.parse(e.config).to_hash.each do |key, value|
+            %span.no-wrap
+              🔹
+              %span.small.dark= key
+              %b.dlighted.normal= value.truncate(30)
         %td{nowrap: true}
-          = "#{e.status}"
+          = e.readable_status.downcase
         %td
-          %button.btn-small Удалить
+          %button.btn-small Повторить
+          %button.btn-small.red-btn Удалить
+%h2 Добавить плагин
+%p Сохраните конфигрурацию плагина
 %form{:method=>'post', :action=>'/add_game', autocomplete: 'on', enctype: 'multipart/form-data'}
-  %textarea{value: "", disabled: true, selected: true} Выберите город
+  %input{type: 'text', size: 40, name: 'title', placeholder: 'Название плагина', required: true}
+  %br
+  - param_str = ''
+  - JSON.parse(File.read("#{ROOT}/config/game_config_example.yml")).each do |key, value|
+    - param_str << "#{key}: '#{value}'\n"
+    - puts param_str
+  %textarea{rows: 10, cols: 60, name: 'config', placeholder: 'Конфигурация плагина', required: true, style: ''}= param_str
+  %input{type: 'submit', value: 'Добавить'}
