@@ -486,7 +486,7 @@ module TSX
     def bots_welcome
       lines = ""
       lines << "*Основной топ*\nРейтинг розничных продавцов и ботов нашей системы. Рейтинг обновляется каждый день на основание данных за прошедший день.\n\n"
-      bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(status: 1, listed: 1, risky: 0).order(Sequel.desc(:today__sales))
+      bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(status: 1, listed: 1, risky: 0).order(Sequel.desc(:vars__today_sales))
       bots.each do |b|
         lines  << ("#{icon('small_orange_diamond')} #{b.nickname_md} #{b.awards} #{b.cities}\n") if b.cities
       end
