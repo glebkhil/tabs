@@ -3,14 +3,13 @@ module TSX
 
     def call_handler
       dd = parse_method
-      puts dd.inspect.colorize(:red)
       @cmd = dd.first
       @var = dd.last
       !@var.nil? ? send(@cmd.to_sym, @var) : send(@cmd.to_sym)
     end
 
     def method_missing(meth)
-      reply_message "*#{@btn.title}*\n#{@btn.body}"
+      reply_message "method missing: #{meth}"
     end
 
     def call_chat_handler
@@ -220,10 +219,7 @@ module TSX
           # tem "cmd: #{handler?}, var: #{clear_data}"
           return [handler?, clear_data]
         end
-        puts "FILEEEE EEEEE 1----------------"
         if file?
-          puts "FILEEEE EEEEE----------------"
-          puts file?
           return [handler?, file?]
         end
       end

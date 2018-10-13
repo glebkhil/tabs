@@ -640,7 +640,7 @@ module TSX
           )
           update_message "#{icon(@tsx_bot.icon_success)} Вы выбрали число *#{data}*. Когда рулетка закончится, победитель получит *#{@tsx_bot.active_game.conf('prize')}*."
           @gam = @tsx_bot.active_game
-          puts "NUMBERS COUNT: #{gam.available_numbers.count}".colorize(:red)
+          puts "NUMBERS COUNT: #{@gam.available_numbers.count}".colorize(:red)
           if @gam.available_numbers.count < 1
             rec = Bet.where(game: @gam.id).limit(1).order(Sequel.lit('RANDOM()')).all
             winner = Client[rec.first.client]
