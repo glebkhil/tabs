@@ -3,9 +3,10 @@
 %table{width: '100%'}
   %thead
     %tr
-      %th{width: '2%'}
-      %th{width: '10%'} Название
+      %th{width: '3%'}
+      %th{width: '15%'} Название
       %th{width: '40%'} Настройки
+      %th{width: '15%'} Прогресс
       %th{width: '10%'} Статус
       %th{width: '15%'}
   %tbody
@@ -18,9 +19,12 @@
         %td{nowrap: true}
           - JSON.parse(e.config).to_hash.each do |key, value|
             %span.no-wrap
-              🔹
               %span.small.dark= key
               %b.dlighted.normal= value.truncate(30)
+        %td{nowrap: true}
+          = Bet.where(game: e.id).count
+          из
+          = eval(e.conf('range')).count
         %td{nowrap: true}
           = e.readable_status.downcase
         %td
