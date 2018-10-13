@@ -21,3 +21,5 @@
           = "#{e.status}"
         %td
           %button.btn-small Удалить
+%form{:method=>'post', :action=>'/add_game', autocomplete: 'on', enctype: 'multipart/form-data'}
+  %textarea{value: "", disabled: true, selected: true} Выберите город
