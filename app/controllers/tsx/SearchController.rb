@@ -639,6 +639,14 @@ module TSX
               game: @tsx_bot.active_game.id
           )
           update_message "#{icon(@tsx_bot.icon_success)} Вы выбрали число *#{data}*. Когда лоттерея закончится, победитель получит *#{@tsx_bot.active_game.conf('prize')}*."
+          if @tsx_bot.active_game.available_numbers.empty?
+            rng = eval(@tsx_bot.active_game.conf('range'))
+            winner = Bet.where(game: 1).order('RANDOM()').limit(1)
+            winner_bet = Bet.find(client: winner.id, game: @tsx_bot.active_game.id)
+            @tsx_bot.say(winner.tele, "🚨 🚨 🚨 Ваш номер *#{winner_bet.number}* выиграл в рулетку! Вы получили *#{@tsx_bot.active_game.conf('prize')}*")
+            winner.cashin(Client::__cash, Meth::__cash, @tsx_bot.beneficiary, "Выигрыш в рулетку. Победа числа *#{winner_bet.number}*.")
+            @tsx_bot.active_game.game_over!
+          end
           serp
         else
           handle('lottery')
