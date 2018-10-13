@@ -229,8 +229,8 @@ module TSX
         go_back
       rescue => ex
         reply_message "#{icon(@tsx_bot.icon_info)} Невозможно создать заказ. Попробуйте еще раз."
-        puts ex.message
-        puts ex.backtrace.join("\n\t")
+        # puts ex.message
+        # puts ex.backtrace.join("\n\t")
         go_back
       end
     end
