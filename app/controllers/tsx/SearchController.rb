@@ -31,21 +31,17 @@ module TSX
           else
             @support_line = "[@no_nickname](t.me/no_nickname), "
           end
-          reply_simple 'welcome/welcome', links: false, sh: hb_client.shop?
           sdel('telebot_trading')
           sdel('telebot_buying')
           unfilter
+          reply_simple 'welcome/welcome', links: false, sh: hb_client.shop?
+          serp
           if @tsx_bot.has_active_game?
             if !hb_client.game_played?(@tsx_bot.active_game)
               lottery
             end
           elsif !hb_client.voted?
             vote
-          else
-            sdel('telebot_trading')
-            sdel('telebot_buying')
-            unfilter
-            serp
           end
         end
       end
