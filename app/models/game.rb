@@ -14,6 +14,11 @@ class Gameplay < Sequel::Model(:game)
     rng - nums
   end
 
+  def over!
+    self.status = self::INACTIVE
+    self.save
+  end
+
   def conf(key)
     params = JSON.parse(self.config)
     params[key] || 'unknown'
