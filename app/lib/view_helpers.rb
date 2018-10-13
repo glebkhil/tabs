@@ -487,8 +487,11 @@ module TSX
       lines = ""
       lines << "*Основной топ*\nРейтинг розничных продавцов и ботов нашей системы. Рейтинг обновляется каждый день на основание данных за прошедший день.\n\n"
       bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(status: 1, listed: 1, risky: 0).order(Sequel.desc(:vars__today_sales))
+      top = 1
       bots.each do |b|
         lines  << ("#{icon('small_orange_diamond')} #{b.nickname_md} #{b.awards} #{b.cities}\n") if b.cities
+        top += 1
+        next if top <= 5
       end
       lines
     end
