@@ -18,8 +18,8 @@ class Gameplay < Sequel::Model(:game)
     Bet.where(game: self.id).each do |num|
       nums.push(num.number)
     end
-    puts rng.inspect
-    puts nums.inspect
+    puts "NUMBERS LEFT".colorize(:yellow)
+    puts (rng - nums).inspect
     rng - nums
   end
 
