@@ -35,7 +35,6 @@ module TSX
           sdel('telebot_trading')
           sdel('telebot_buying')
           unfilter
-          serp
           if @tsx_bot.has_active_game?
             if !hb_client.game_played?(@tsx_bot.active_game)
               lottery
