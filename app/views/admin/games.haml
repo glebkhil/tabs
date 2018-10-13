@@ -5,8 +5,9 @@
     %tr
       %th{width: '3%'}
       %th{width: '15%'} Название
-      %th{width: '40%'} Настройки
-      %th{width: '15%'} Прогресс
+      %th{width: '35%'} Настройки
+      %th{width: '10%'} Прогресс
+      %th{width: '15%'} Победитель
       %th{width: '10%'} Статус
       %th{width: '15%'}
   %tbody
@@ -25,6 +26,12 @@
           = Bet.where(game: e.id).count
           из
           = eval(e.conf('range')).count
+        %td{nowrap: true}
+          - rec = Bet.where(game: e.id).limit(1).order(Sequel.lit('RANDOM()')).all
+          - winner = Client[rec.first.client]
+          = icn('id')
+          %b= winner.id
+          = "@#{winner.username}"
         %td{nowrap: true}
           = e.readable_status.downcase
         %td
