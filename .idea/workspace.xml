@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/jobs/set_sales.rb" afterPath="$PROJECT_DIR$/jobs/set_sales.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,6 +23,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="set_sales.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="game.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/game.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -33,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="607">
@@ -68,16 +78,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="251">
               <caret line="479" column="45" lean-forward="false" selection-start-line="479" selection-start-column="41" selection-end-line="479" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bene_menu.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/bene_menu.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="77" column="32" lean-forward="false" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -163,7 +163,6 @@
         <option value="$PROJECT_DIR$/jobs/update_proxies.rb" />
         <option value="$PROJECT_DIR$/jobs/ukrjobs.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
-        <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
         <option value="$PROJECT_DIR$/app/models/bet.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
         <option value="$PROJECT_DIR$/app/models/client.rb" />
@@ -177,6 +176,7 @@
         <option value="$PROJECT_DIR$/app/views/admin/games.haml" />
         <option value="$PROJECT_DIR$/app/models/trade.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+        <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
       </list>
     </option>
   </component>
@@ -426,12 +426,12 @@
       <workItem from="1538825872434" duration="1833000" />
       <workItem from="1538993024682" duration="578000" />
       <workItem from="1539076775605" duration="1718000" />
-      <workItem from="1539157374533" duration="13471000" />
+      <workItem from="1539157374533" duration="13607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61824000" />
+    <option name="totallyTimeSpent" value="61960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -659,14 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="60" lean-forward="false" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tsx/welcome/vote.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -877,6 +869,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="607">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
           <folding />
         </state>
       </provider>
