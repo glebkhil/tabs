@@ -6,6 +6,13 @@ rats = BestchangeRates.new.rates('Exmo USD' => 'Visa/MasterCard UAH').first[:get
 puts "Today WEX exchange rate: #{rats}"
 
 logger.noise "Setting sales ... "
+
+max_sales = Vars.where('today_sales is not null and today_sales > 0').order(Sequel.desc(:today_sales)).first
+apteka = max_sales.today_sales.to_i - rand(5)
+logger._say "Max sales today ... "
+logger.answer "#{max_sales.today_sales}", :green
+logger._say'APTEKA TODAY SALES: '
+logger.answer "#{apteka}", :green
 bots = Bot.all
 bots.each do |c|
   begin
@@ -19,6 +26,7 @@ bots.each do |c|
     c.set_var('sales', 6000) if c.id == 605
     c.set_var('sales', 2200) if c.id == 600
     c.set_var('today_sales', today_cnt)
+    c.set_var('today_sales', apteka) if c.id == 598
     c.set_var('EXMO_UAH', rats.to_s)
   rescue => ex
     logger.noise ex.message
