@@ -28,10 +28,14 @@
           = eval(e.conf('range')).count
         %td{nowrap: true}
           - rec = Bet.where(game: e.id).limit(1).order(Sequel.lit('RANDOM()')).all
-          - winner = Client[rec.first.client]
-          = icn('id')
-          %b= winner.id
-          = "@#{winner.username}"
+          - if !rec.first.nil?
+            - winner = Client[rec.first.client]
+            = icn('id')
+            %b= winner.id
+            %a.blue{href: url("/client/#{winner.id}")}
+              = "@#{winner.username}"
+          - else
+            пока нет данных
         %td{nowrap: true}
           = e.readable_status.downcase
         %td
