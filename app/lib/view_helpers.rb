@@ -32,6 +32,10 @@ module TSX
       end
     end
 
+    def btn_cancel
+      icon('no_entry_sign', "Отмена")
+    end
+
     def help_buttons
       but_list ||= []
       but_list <<
@@ -149,6 +153,10 @@ module TSX
 
     def btn_bots_welcome
       icon('bow', 'Рекомендуем')
+    end
+
+    def btn_abuse
+      icon('oncoming_police_car', 'Пожаловаться')
     end
 
     def btn_bots_welcome_web

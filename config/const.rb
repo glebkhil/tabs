@@ -11,7 +11,6 @@ HAMDLERS = {
       "Район": 'district',
       "О системе": 'welcome',
       "Заказы": 'my_trades',
-      "Отмена": 'my_cancel',
       "Заказ": 'pending_trade',
       "Назад": 'go_back',
       "Правила": 'rules',
@@ -56,7 +55,9 @@ HAMDLERS = {
       "Выключить Рекламу": 'remove_darkside',
       "Пополнение": 'admin_add_cash',
       "Продажи": 'admin_sales',
-      "Официально": 'info'
+      "Официально": 'info',
+      "Пожаловаться": 'abuse',
+      "Отмена": 'cancel'
 }
 
 CHAT_HAMDLERS = {

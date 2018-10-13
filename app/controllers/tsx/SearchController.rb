@@ -638,7 +638,7 @@ module TSX
               client: hb_client.id,
               game: @tsx_bot.active_game.id
           )
-          update_message "#{icon(@tsx_bot.icon_success)} Вы выбрали число *#{data}*. Когда лоттерея закончится, победитель получит *#{@tsx_bot.active_game.conf('prize')}*."
+          update_message "#{icon(@tsx_bot.icon_success)} Вы выбрали число *#{data}*. Когда рулетка закончится, победитель получит *#{@tsx_bot.active_game.conf('prize')}*."
           if @tsx_bot.active_game.available_numbers.empty?
             gam = @tsx_bot.active_game
             rec = Bet.where(game: gam.id).limit(1).order(Sequel.lit('RANDOM()')).all
@@ -706,6 +706,22 @@ module TSX
               finalize_trade(data, Meth::__wex)
             end
           end
+        end
+      end
+
+      def cancel
+        reply_message "#{icon('no_entry_sign')} Отменено успешно."
+        serp
+      end
+
+      def abuse(data = nil)
+        if !data
+          handle('abuse')
+          reply_message "#{icon('oncoming_police_car')} *Написать жалобу*\nНапишите жалобу в свободной форме. Обязательно укажите, на какой конкретно бот жалоба и коротко суть.", btn_cancel
+        else
+          Bot::chief.say(Client[29407].tele, "Новая жалоба: #{@payload.text}")
+          reply_message "#{icon(@tsx_bot.icon_success)} Мы получили Вашу жалобу и обязательно примем меры. Спасибо за отзыв!"
+          serp
         end
       end
 
