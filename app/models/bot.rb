@@ -493,7 +493,7 @@ class Bot < Sequel::Model(:bot)
         select(
             Sequel.as(:price__id, :prc_id),
             Sequel.as(:price__qnt, :qnt),
-            Sequel.as(Sequel.function("sum", :price__price), :prcc),
+            Sequel.as(Sequel.function("sum", :trade__amount), :prcc),
             Sequel.as(Sequel.function("count", :price__id), :sales)
         ).
         join(:item, :item__id => :trade__item).

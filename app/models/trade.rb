@@ -75,14 +75,19 @@ class Trade < Sequel::Model(:trade)
   end
 
   def finalize(b, code, meth, client)
+    it = Item[b.id]
+    bot = Bot[b.bot]
     codes = (self.code || '') << ", " << code
+    am = it.discount_price_by_method(meth)
+
     self.status = Trade::FINALIZED
     self.code = codes
     self.meth = meth.id
     self.closed = Time.now
+    self.amount = am
+    self.commission = calc_commission(am, bot.commission)
     self.save
-    it = Item[b.id]
-    am = it.discount_price
+
     pri = Price.find(id: it.prc)
     it.status = Item::SOLD
     it.sold = Time.now

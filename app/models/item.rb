@@ -87,7 +87,6 @@ class Item < Sequel::Model(:item)
     end
   end
 
-
   def discount_commission
     b = Bot[self.bot]
     p = Price[self.prc]
