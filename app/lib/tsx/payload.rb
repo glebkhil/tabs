@@ -9,7 +9,8 @@ module TSX
     end
 
     def method_missing(meth)
-      reply_message "method missing: #{meth}"
+      reply_message "*#{@btn.title}*\n#{@btn.body}"
+      # reply_message "method missing: #{meth}"
     end
 
     def call_chat_handler
@@ -195,8 +196,8 @@ module TSX
       # hardcoded handler
       # ust call it without params
       mess = hardcoded_handler?
-      # tem "#{mess} command in hardcoded list."
-      # tem "skipping other conditions."
+      tem "#{mess} command in hardcoded list."
+      tem "skipping other conditions."
       return [mess, nil] if mess != false
 
       # not in hardcoded handlers list

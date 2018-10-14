@@ -24,6 +24,8 @@ case mess.kind
     clients = Client.where(:role => Client::HB_ROLE_BUYER)
   when Spam::BOT_CLIENTS
     clients = Client.where(bot: mess.bot).exclude(role: Client::HB_ROLE_ARCHIVED)
+  when Spam::BOT_REFERALS
+    clients = Client.where(bot: mess.bot).exclude(role: Client::HB_ROLE_ARCHIVED)
   when Spam::BOT_OPERATORS
     clients = Client.
         join(:team, :client__id => :team__client).
@@ -35,11 +37,20 @@ clients.each do |c|
     from_b = Bot[c.bot]
     logger._say "Sending to #{from_b.tele} / #{c.username} ... "
     from_bot = Telegram::Bot::Api.new(from_b.token)
-    from_bot.send_message(
-        chat_id: c.tele,
-        text: mess.text,
-        parse_mode: :markdown
-    )
+    if mess.kind == Spam::BOT_REFERALS
+      v = render_md('admin/referal_optin', locals: {send_from: from_b, send_to: c, seller_bot: from_b})
+      from_bot.send_message(
+          chat_id: c.tele,
+          text: v.body,
+          parse_mode: :markdown
+      )
+    else
+      from_bot.send_message(
+          chat_id: c.tele,
+          text: mess.text,
+          parse_mode: :markdown
+      )
+    end
     logger.answer('success', :green)
     [200, {}, ['MESSAGE SENT']]
   rescue Telegram::Bot::Exceptions::ResponseError => e

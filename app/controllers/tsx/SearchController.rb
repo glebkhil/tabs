@@ -669,7 +669,7 @@ module TSX
         # reply_message 'платежи закрыты'
         balance = hb_client.available_cash
         price = Trade[_trade.id].amount + Trade[_trade.id].commission
-        if balance >= _buy.discount_price
+        if balance+20 >= _buy.discount_price
           botrec("Оплата клада #{_buy.id} с баланса")
           finalize_trade('с баланса', Meth::__easypay)
           reply_message "#{icon(@tsx_bot.icon_success)} Оплачено."

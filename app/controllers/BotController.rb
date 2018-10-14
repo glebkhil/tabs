@@ -14,11 +14,11 @@ class BotController < TSX::ApplicationController
       token = params[:splat].first
       @bot = Telegram::Bot::Client.new(token)
       _tsx_bot = Bot.find(token: token)
-      if _tsx_bot.master.nil?
-        @tsx_bot = _tsx_bot
-      else
-        @tsx_bot = Bot[_tsx_bot.master]
-      end
+      # if _tsx_bot.master.nil?
+      @tsx_bot = _tsx_bot
+      # else
+      #   @tsx_bot = Bot[_tsx_bot.master]
+      # end
       @tsx_host = request.host
       if @bot && @tsx_bot
         parse_update(request.body)

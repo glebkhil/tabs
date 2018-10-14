@@ -39,6 +39,12 @@ module TSX
       redirect back
     end
 
+    post '/save_ref_spam' do
+      redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot) and !hb_operator.is_operator?(hb_bot)
+      Spam.create(bot: hb_bot.id, kind: Spam::BOT_REFERALS, label: params[:label] || "название", text: File.read("#{ROOT}/config/referal_optin.md"), status: Spam::NEW)
+      redirect back
+    end
+
     post '/add_game' do
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot) and !hb_operator.is_operator?(hb_bot)
       Gameplay.create(bot: hb_bot.id, title: params[:title] || "название", config: JSON.dump(YAML.load(params[:config])), status: Gameplay::ACTIVE)

@@ -417,6 +417,10 @@ module TSX
       end
     end
 
+    get '/send_ref_link' do
+      Spam.create(bot: hb_bot.id, kind: Spam::BOT_REFERALS, label: "Оповещение о рферальной программе", status: Spam::NEW)
+    end
+
     get '/warnings' do
       warni = Warn.find(bot: hb_bot.id, status: Warn::ACTIVE)
       haml :'admin/warnings', layout: hb_layout, locals: {warni: warni}

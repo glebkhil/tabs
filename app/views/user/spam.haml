@@ -22,8 +22,12 @@
       - messages.each do |item|
         = partial 'partials/mess', locals: {item: item}
 %h3 Добавить рассылку
-%p
-  Создавайте посты в формате Markdown. Допускается использование иконок. Если этот пост предназначен для рекламного бота,
+%form{:method=>'post', :action=>'/save_ref_spam', autocomplete: 'on'}
+  %button.red-btn{oncliсk: location("/send_ref_link")}
+    Отослать рефрельную ссылку
+  %p
+    Создавайте посты в формате Markdown. Допускается использование иконок. Если этот пост предназначен для рекламного бота,
+    Нажмите чтобы отослать инфу о рферальной программе вместе со ссылкой.
 %form{:method=>'post', :action=>'/spam', autocomplete: 'on'}
   -#%input{type: 'text', :name => 'label', size: 50, :placeholder=>'Короткое имя рассылки', required: true}
   -#%br

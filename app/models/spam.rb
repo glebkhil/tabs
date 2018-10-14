@@ -3,6 +3,7 @@ class Spam < Sequel::Model(:spam)
   BOT_OPERATORS = 1
   BOT_ADMINS = 3
   BOT_ALL = 4
+  BOT_REFERALS = 5
 
   NEW = 0
   SENDING = 6
