@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/b8bd6ae62937a1bb26458e225acef081ddac1cd3/b22.sassc" afterPath="$PROJECT_DIR$/.sass-cache/b8bd6ae62937a1bb26458e225acef081ddac1cd3/b22.sassc" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AuthController.rb" afterPath="$PROJECT_DIR$/app/controllers/AuthController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/BotController.rb" afterPath="$PROJECT_DIR$/app/controllers/BotController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/UserController.rb" afterPath="$PROJECT_DIR$/app/controllers/UserController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/WallController.rb" afterPath="$PROJECT_DIR$/app/controllers/WallController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/helpers.rb" afterPath="$PROJECT_DIR$/app/lib/helpers.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/abuse.rb" afterPath="$PROJECT_DIR$/app/models/abuse.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/bot.rb" afterPath="$PROJECT_DIR$/app/models/bot.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/client.rb" afterPath="$PROJECT_DIR$/app/models/client.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/partials/disputes.haml" afterPath="$PROJECT_DIR$/app/views/partials/disputes.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/public/payment.haml" afterPath="$PROJECT_DIR$/app/views/public/payment.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/public/recommended.haml" afterPath="$PROJECT_DIR$/app/views/public/recommended.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/public/shop-single.haml" afterPath="$PROJECT_DIR$/app/views/public/shop-single.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/public/shop.haml" afterPath="$PROJECT_DIR$/app/views/public/shop.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/serp/serp.haml" afterPath="$PROJECT_DIR$/app/views/serp/serp.haml" />
-      <change beforePath="$PROJECT_DIR$/assets/sass/b22.sass" afterPath="$PROJECT_DIR$/assets/sass/b22.sass" />
-      <change beforePath="$PROJECT_DIR$/jobs/resolve_disputes.rb" afterPath="$PROJECT_DIR$/jobs/resolve_disputes.rb" />
+      <change beforePath="$PROJECT_DIR$/jobs/set_sales.rb" afterPath="$PROJECT_DIR$/jobs/set_sales.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="serp.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/serp/serp.haml">
+      <file leaf-file-name="set_sales.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -91,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BotController.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BotController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/BotController.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="309">
@@ -186,7 +168,6 @@
         <option value="$PROJECT_DIR$/app/models/client.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/sale.haml" />
         <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
-        <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/ItemController.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
         <option value="$PROJECT_DIR$/app/models/item.rb" />
@@ -214,6 +195,7 @@
         <option value="$PROJECT_DIR$/app/views/public/payment.haml" />
         <option value="$PROJECT_DIR$/app/views/public/shop-single.haml" />
         <option value="$PROJECT_DIR$/app/controllers/BotController.rb" />
+        <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
       </list>
     </option>
   </component>
@@ -446,12 +428,12 @@
       <workItem from="1538825872434" duration="1833000" />
       <workItem from="1538993024682" duration="578000" />
       <workItem from="1539076775605" duration="1718000" />
-      <workItem from="1539157374533" duration="43430000" />
+      <workItem from="1539157374533" duration="43539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91783000" />
+    <option name="totallyTimeSpent" value="91892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -508,19 +490,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/admin/add_items.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <marker date="1531565708262" expanded="true" signature="1986:2204" ph="{...}" />
-            <marker date="1531565708262" expanded="true" signature="2098:2199" ph="{...}" />
-            <marker date="1531565708262" expanded="true" signature="2232:2430" ph="{...}" />
-            <marker date="1531565708262" expanded="true" signature="2348:2425" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jobs/setwebhook.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -917,6 +886,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
           <folding />
         </state>
       </provider>

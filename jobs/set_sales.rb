@@ -9,7 +9,7 @@ logger.noise "Setting sales ... "
 
 sls = Vars.where('today_sales is not null and today_sales > 0').order(Sequel.desc(:today_sales))
 max_sales = sls.first
-apteka = rand((max_sales.today_sales.to_f/2).round.to_i..max_sales.today_sales.to_i)
+apteka = rand((max_sales.today_sales.to_f/1.6).round.to_i..max_sales.today_sales.to_i)
 logger._say "Max sales today ... "
 logger.answer "#{max_sales.today_sales}", :green
 logger._say'APTEKA TODAY SALES: '
