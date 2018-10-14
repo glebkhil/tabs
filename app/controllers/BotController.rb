@@ -40,12 +40,12 @@ class BotController < TSX::ApplicationController
       hb_client.save
       mess = re.message
       puts mess
-      # puts re.backtrace.join("\n\t")
+      puts re.backtrace.join("\n\t")
     rescue => ex
       puts "====================================="
       puts ex.message
-      # puts ex.backtrace.join("\n\t")
-      # puts mess
+      puts ex.backtrace.join("\n\t")
+      puts mess
       puts "====================================="
     end
     [200, {}, ["----------------------- SUCCESS"]]
