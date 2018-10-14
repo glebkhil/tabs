@@ -113,7 +113,7 @@ module TSX
       bot = Bot.find(tele: params[:shop])
       session['hb_dealing_bot'] = bot.id
       @its = Client::cities_by_country(Country.UKRAINE, bot.id)
-      haml :'public/shop-single', layout: hb_layout, locals: {bot:bot, its: @its}
+      haml :'public/shop-single', layout: hb_layout, locals: {bot: bot, its: @its}
     end
 
     get '/choose_payment/:item' do

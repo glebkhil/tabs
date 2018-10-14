@@ -1,6 +1,6 @@
 .bot-single
   .log.right
-    = partial 'public/shop', bot: bot
+    = partial 'public/shop', locals: {bot: bot}
   .details-padding
     %a.black.large.bold.no-wrap.no-underline{href: url("/s/#{bot.tele}")}
       = bot.title.truncate(14, ommission: '')

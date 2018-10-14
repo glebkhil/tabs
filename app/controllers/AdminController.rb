@@ -418,8 +418,8 @@ module TSX
     end
 
     get '/warnings' do
-
-      haml :'admin/warnings', layout: hb_layout
+      @warni = Warn.find(bot: hb_bot.id, status: Warn::ACTIVE)
+      haml :'admin/warnings', layout: hb_layout, warni: @warni
     end
 
     get '/stop_payment/:payment' do

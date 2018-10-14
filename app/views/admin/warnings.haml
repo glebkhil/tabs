@@ -1,6 +1,7 @@
-%h2 Активное объявление
-%h4= warni.title
-%pre= warni.body
+- if !warni.nil?
+  %h2 Активное объявление
+  %h4= warni.title
+  %pre= warni.body
 %h2 Объявление
 %p Только одно аквтинное объявление может быть помещено на главной бота.
 %form{:method=>'post', :action=>'/add_warning', autocomplete: 'on', enctype: 'multipart/form-data'}
