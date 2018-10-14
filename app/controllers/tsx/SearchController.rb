@@ -36,7 +36,9 @@ module TSX
           unfilter
           reply_simple 'welcome/welcome', links: false, sh: hb_client.shop?
           active = Warn.find(bot: @tsx_bot.id, status: Warn::ACTIVE)
-          reply_message "🆕 *#{active.title}*\n#{active.body}"
+          if !active.nil?
+            reply_message "🆕 *#{active.title}*\n#{active.body}"
+          end
           serp
           if @tsx_bot.has_active_game?
             if !hb_client.game_played?(@tsx_bot.active_game)
