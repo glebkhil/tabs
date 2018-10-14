@@ -417,6 +417,11 @@ module TSX
       end
     end
 
+    get '/warnings' do
+
+      haml :'admin/warnings', layout: hb_layout
+    end
+
     get '/stop_payment/:payment' do
       p = Payment[params[:payment]]
       p.status = Payment::INACTIVE

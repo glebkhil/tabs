@@ -46,6 +46,13 @@ module TSX
       redirect back
     end
 
+    post '/add_warning' do
+      redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot) and !hb_operator.is_operator?(hb_bot)
+      Warning.create(bot: hb_bot.id, title: params[:title] || "название", body: params[:body] || "название", status: Warn::ACTIVE)
+      flash['info'] = 'Объявление размешено на главной бота.'
+      redirect back
+    end
+
     post '/ads' do
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot) and !hb_operator.is_operator?(hb_bot)
       Spam.create(bot: hb_bot.id, label: params[:label], text: params[:text], status: Spam::AD)

@@ -1,53 +1,12 @@
-%h2 Игры и плагины
-%p Здесь все Ваши застрахованные игры.
-%table{width: '100%'}
-  %thead
-    %tr
-      %th{width: '3%'}
-      %th{width: '15%'} Название
-      %th{width: '35%'} Настройки
-      %th{width: '10%'} Прогресс
-      %th{width: '15%'} Победитель
-      %th{width: '10%'} Статус
-      %th{width: '15%'}
-  %tbody
-    - @games.each do |e|
-      %tr
-        %td{nowrap: true}
-          = "##{e.id}"
-        %td{nowrap: true}
-          = "#{e.title}"
-        %td{nowrap: true}
-          - JSON.parse(e.config).to_hash.each do |key, value|
-            %span.no-wrap
-              %span.small.dark= key
-              %b.dlighted.normal= value.truncate(30)
-        %td{nowrap: true}
-          = Bet.where(game: e.id).count
-          из
-          = eval(e.conf('range')).count
-        %td{nowrap: true}
-          - if !e.winner.nil?
-            - winner = Client[e.winner]
-            = icn('id')
-            %b= winner.id
-            %a.blue{href: url("/client/#{winner.id}")}
-              = "@#{winner.username}"
-          - else
-            пока нет данных
-        %td{nowrap: true}
-          = e.readable_status.downcase
-        %td
-          %button.btn-small Повторить
-          %button.btn-small.red-btn Удалить
-%h2 Добавить плагин
-%p Сохраните конфигрурацию плагина
-%form{:method=>'post', :action=>'/add_game', autocomplete: 'on', enctype: 'multipart/form-data'}
-  %input{type: 'text', size: 40, name: 'title', placeholder: 'Название плагина', required: true}
+%h2 Активное объявление
+%h4= warni.title
+%pre= warni.body
+%h2 Объявление
+%p Только одно аквтинное объявление может быть помещено на главной бота.
+%form{:method=>'post', :action=>'/add_warning', autocomplete: 'on', enctype: 'multipart/form-data'}
+  %input{type: 'text', size: 40, name: 'title', placeholder: 'Название объявы', required: true}
   %br
-  - param_str = ''
-  - JSON.parse(File.read("#{ROOT}/config/game_config_example.yml")).each do |key, value|
-    - param_str << "#{key}: '#{value}'\n"
-    - puts param_str
-  %textarea{rows: 10, cols: 60, name: 'config', placeholder: 'Конфигурация плагина', required: true, style: ''}= param_str
-  %input{type: 'submit', value: 'Добавить'}
+  %textarea{rows: 10, cols: 60, name: 'config', placeholder: 'Текст объявы в формате Markdown', required: true}
+    = Warn.find(bot: hb_bot.id, status: Warn::ACTIVE).body
+  %br
+  %input{type: 'submit', value: 'Запостить'}
