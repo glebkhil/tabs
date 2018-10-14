@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/trade.rb" afterPath="$PROJECT_DIR$/app/models/trade.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +16,8 @@
       <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="673" column="21" lean-forward="false" selection-start-line="673" selection-start-column="21" selection-end-line="673" selection-end-column="21" />
+            <state relative-caret-position="476">
+              <caret line="292" column="55" lean-forward="false" selection-start-line="292" selection-start-column="55" selection-end-line="292" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -119,7 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>warning</find>
       <find>dlighted</find>
       <find>bot_stat</find>
       <find>all_it</find>
@@ -149,6 +146,7 @@
       <find>abuse</find>
       <find>pay</find>
       <find>pay_by</find>
+      <find>conf</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -466,12 +464,12 @@
       <workItem from="1538825872434" duration="1833000" />
       <workItem from="1538993024682" duration="578000" />
       <workItem from="1539076775605" duration="1718000" />
-      <workItem from="1539157374533" duration="57590000" />
+      <workItem from="1539157374533" duration="57817000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105943000" />
+    <option name="totallyTimeSpent" value="106170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -933,8 +931,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="673" column="21" lean-forward="false" selection-start-line="673" selection-start-column="21" selection-end-line="673" selection-end-column="21" />
+        <state relative-caret-position="476">
+          <caret line="292" column="55" lean-forward="false" selection-start-line="292" selection-start-column="55" selection-end-line="292" selection-end-column="55" />
           <folding />
         </state>
       </provider>
