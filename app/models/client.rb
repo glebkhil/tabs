@@ -340,7 +340,7 @@ class Client < Sequel::Model(:client)
         debit: self.id,
         credit: ben.id,
         trade: trade.id,
-        amount: it.am,
+        amount: it.price,
         meth: meth.nil? ? nil : meth.id,
         details: "Клад ##{it.id} оплачен. Заказ ##{trade.id}.",
         status: Ledger::ACTIVE,
