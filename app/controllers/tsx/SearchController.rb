@@ -671,13 +671,13 @@ module TSX
         disc = _buy.discount_price_by_method(Meth.find(title: sget('telebot_method')))
         puts "BALANCE: #{balance}"
         puts "DISCOUNT: #{disc}"
-        if balance+5 >= disc
-          botrec("Оплата клада #{_buy.id} с баланса")
-          finalize_trade('с баланса', Meth::__easypay)
-          reply_message "#{icon(@tsx_bot.icon_success)} Оплачено."
-        else
-          reply_message "#{icon(@tsx_bot.icon_success)} Вы не можете купить с баланса. У Вас мало денег."
-        end
+        # if balance >= disc
+        #   botrec("Оплата клада #{_buy.id} с баланса")
+        #   finalize_trade('с баланса', Meth::__easypay)
+        #   reply_message "#{icon(@tsx_bot.icon_success)} Оплачено."
+        # else
+        #   reply_message "#{icon(@tsx_bot.icon_success)} Вы не можете купить с баланса. У Вас мало денег."
+        # end
       end
 
       def wex(data)
