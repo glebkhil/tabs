@@ -669,11 +669,12 @@ module TSX
         # reply_message 'платежи закрыты'
         balance = hb_client.available_cash
         disc = _buy.discount_price_by_method(Meth::__easypay)
+        meth = Meth.find(title: sset('telebot_method'))
         puts "BALANCE: #{balance}"
         puts "DISCOUNT: #{disc}"
         if balance+10 >= disc
           botrec("Оплата клада #{_buy.id} с баланса")
-          finalize_trade('с баланса', Meth::__easypay)
+          finalize_trade('с баланса', meth)
           reply_message "#{icon(@tsx_bot.icon_success)} Оплачено."
         else
           reply_message "#{icon(@tsx_bot.icon_success)} Вы не можете купить с баланса. У Вас мало денег."
