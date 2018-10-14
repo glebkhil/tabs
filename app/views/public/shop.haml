@@ -1,10 +1,8 @@
-%img.ava{src: bot.avatar, width: '150px', height: '150px'}
-%a.big.no-wrap.blue{href: url("/s/#{bot.tele}")}
+%img.ava{src: bot.avatar}
+%a.big{href: url("/s/#{bot.tele}")}
   = bot.title.truncate(14)
-- if hb_prev_filter.class.name.downcase != 'country'
-  = icn('back')
 - if !bot.awards.nil?
-  %span.normal= bot.awards
+  %span.large= bot.awards
 %br
 = icn('+1')
 %b= Rank::positive(bot.beneficiary)

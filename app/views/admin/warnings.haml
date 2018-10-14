@@ -1,13 +1,13 @@
 - if !warni.nil?
   %h2 Активное объявление
-  %h4= warni.title
-  %pre= warni.body
+  %span.dlighted
+    %span.bold= warni.title
+    = warni.body
 %h2 Объявление
 %p Только одно аквтинное объявление может быть помещено на главной бота.
 %form{:method=>'post', :action=>'/add_warning', autocomplete: 'on', enctype: 'multipart/form-data'}
   %input{type: 'text', size: 40, name: 'title', placeholder: 'Название объявы', required: true}
   %br
-  %textarea{rows: 10, cols: 60, name: 'config', placeholder: 'Текст объявы в формате Markdown', required: true}
-    = Warn.find(bot: hb_bot.id, status: Warn::ACTIVE).body
+  %textarea{rows: 10, cols: 60, name: 'body', placeholder: 'Текст объявы в формате Markdown', required: true}
   %br
   %input{type: 'submit', value: 'Запостить'}

@@ -1,26 +1,23 @@
-.bot-single
-  .log.right
-    = partial 'public/shop', locals: {bot: bot}
-  .details-padding
-    %a.black.large.bold.no-wrap.no-underline{href: url("/s/#{bot.tele}")}
-      = bot.title.truncate(14, ommission: '')
-    %pre
-      = bot.description
+%p
+  = partial 'public/shop', locals: {bot: bot, its: @its}
+%pre
+  = bot.description
+%p
+  - if !its.nil?
     %p
-      - if !its.nil?
-        %p
-          - if its.first.instance_of?(Item)
-            - its.each do |it|
-              - klad = Item[it[:id]]
-              - pr = Product[klad.product]
-              %button.bot-btn{onclick: location("/payment/#{klad.id}")}
-                = klad.price_string('UAH', 'грн.')
-          - else
-            - its.each do |it|
-              %button.bot-btn{onclick: location("/s/#{bot.tele}/#{it.class.name.downcase}/#{it[:entity_russian]}")}
-                - if it[:entity_icon].nil?
-                  = icn(bot.icon_geo)
-                - else
-                  = icn(it[:entity_icon])
-                = it[:entity_russian]
+      - if its.first.instance_of?(Item)
+        - its.each do |it|
+          - klad = Item[it[:id]]
+          - pr = Product[klad.product]
+          %button.bot-btn{onclick: location("/payment/#{klad.id}")}
+            = klad.price_string('UAH', 'грн.')
+      - else
+        - its.each do |it|
+          %button.bot-btn{onclick: location("/s/#{bot.tele}/#{it.class.name.downcase}/#{it[:entity_russian]}")}
+            - if it[:entity_icon].nil?
+              = icn(bot.icon_geo)
+              = it[:entity_russian]
+            - else
+              = icn(it[:entity_icon])
+              = it[:entity_russian]
 

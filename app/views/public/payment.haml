@@ -1,48 +1,6 @@
-.bot-single
-  .log
-    %img.ava-list{src: bot.avatar, width: '200px', style: 'margin-bottom: .5em'}
-  .details-padding
-    %a.black.large.no-wrap.no-underline{href: url("/s/#{bot.id}")}= bot.title.truncate(14)
-    %p
-      Оценки
-      = icn('+1')
-      %b= Rank::positive(bot.beneficiary)
-      = icn('-1')
-      %b= Rank::negative(bot.beneficiary)
-      %br
-      Бот автопродаж
-      %b= bot.nickname
-      Поддержка
-      %b= bot.support_line
-      %br
-      Ветка на
-      %a.blue{href: bot.link}= get_domain_from_url(bot.link)
-      Оптовые
-      %a.blue{href: url("/offers/#{bot.id}")} предложенеия
-      %p
-        = bot.description
-      %p
-        -#Вы покупаете
-        -#= item.product_string('UAH', 'грн.')
-        -#= (pr = Price[item.prc]).qnt
-        -#%br
-      -#  Цена
-      -#  %b= bot.amo(pr.price)
-      -#  %br
-      -#  Номер клада
-      -#  %b= item.id
-      -#  %br
-      -#  Ваш баланс
-      -#  = bot.amo(hb_operator.available_cash)
-      -#  %br
-      -#  Город
-      -#  %b= "#{hb_buying.city_string}, #{hb_buying.district_string}"
-      -#  %br
-      -#  = method_details_web(@meth)
-      -#%p
-      -#  %form{action: url('/b'), method: 'post'}
-      -#    %input{type: 'text', name: 'code', size: '30', placeholder: 'Код пополнения', required: true}
-      -#    %input{type: 'hidden', name: 'method', value: @meth.russian}
-      -#    %br
-      -#    %button
-      -#      Подтвердить
+%p
+  = partial 'public/shop', locals: {bot: bot}
+%pre
+  = bot.description
+%p
+  soon

@@ -48,7 +48,12 @@ module TSX
 
     post '/add_warning' do
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot) and !hb_operator.is_operator?(hb_bot)
-      Warning.create(bot: hb_bot.id, title: params[:title] || "название", body: params[:body] || "название", status: Warn::ACTIVE)
+      active = Warn.find(bot: hb_bot.id, status: Warn::ACTIVE)
+      if !active.nil?
+        active.update(title: params[:title] || "название", body: params[:body] || "название", status: Warn::ACTIVE)
+      else
+        Warn.create(bot: hb_bot.id, title: params[:title] || "название", body: params[:body] || "название", status: Warn::ACTIVE)
+      end
       flash['info'] = 'Объявление размешено на главной бота.'
       redirect back
     end

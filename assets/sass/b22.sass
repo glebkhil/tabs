@@ -508,7 +508,8 @@ form.inline
   border-radius: 50%
   background-color: #f3f3f3
   margin-bottom: .2em
-  width: 70%
+  width: 36px
+  vertical-align: middle
 
 .ava-list
   border-radius: 50%
@@ -528,13 +529,24 @@ form.inline
   width: 100%
 
 .bot
-  text-align: left
   float: left
-  width: 20%
   height: 400px
+  width: 20%
   padding: 1.5em
   transition: all .7s ease
   margin-bottom: 1em
+  position: relative
+
+  .awards
+    font-size: 3em
+    position: absolute
+    top: 30
+    right: 10
+
+  .ava
+    display: block
+    width: 150px
+    height: 150px
 
   &:hover
     cursor: pointer
@@ -556,20 +568,16 @@ form.inline
     position: relative
     text-align: left
     float: left
-    width: 20%
-    min-height: 300px
+    width: 30%
     padding: 0
     transition: all .7s ease
     margin-bottom: 1em
-
-    img
-      width: 100%
 
   .details-padding
     position: relative
     text-align: left
     float: left
-    width: 80%
+    width: 70%
     min-height: 300px
     padding: 0
     transition: all .7s ease
