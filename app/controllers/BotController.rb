@@ -44,7 +44,7 @@ class BotController < TSX::ApplicationController
     rescue => ex
       puts "====================================="
       puts ex.message
-      puts ex.backtrace.join("\n\t")
+      # puts ex.backtrace.join("\n\t")
       # puts mess
       puts "====================================="
     end

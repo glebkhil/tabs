@@ -18,7 +18,7 @@ module TSX
     end
 
     def kladov(cnt)
-      "#{cnt_bold(cnt)} #{Russian.p(cnt, "клад", "клада", "кладов")}"
+      "<span class='bold dlighted'>#{cnt_bold(cnt)}</span> #{Russian.p(cnt, "клад", "клада", "кладов")}"
     end
 
     def ludey(cnt)

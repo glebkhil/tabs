@@ -35,6 +35,10 @@ class Bot < Sequel::Model(:bot)
     end
   end
 
+  def abuses
+    Abuse.where(bot: self.id)
+  end
+
   def create_wallet(client)
     # begin
     #   result = Faraday.get("https://block.io/api/v2/get_new_address/?api_key=#{BLOCKIO_KEY}").body
@@ -172,7 +176,7 @@ class Bot < Sequel::Model(:bot)
         )
     if !cities.empty?
       cities.each do |c|
-        ccts << "🔹 #{c[:rus]} "
+        ccts << "<a href='/s/#{self.tele}/city/#{c[:rus]}'>#{c[:rus]}</a> "
       end
       ccts.chomp(", ")
     else
@@ -218,7 +222,7 @@ class Bot < Sequel::Model(:bot)
   end
 
   def has_dispute?
-    disp = Dispute.
+    disp = Abuse.
         select(:dispute__id, :dispute__status, :dispute__trade).
         join(:client, client__id: :dispute__client).
         where(client__bot: self.id)
@@ -262,12 +266,12 @@ class Bot < Sequel::Model(:bot)
   end
 
   def disputed
-    Dispute.select(:dispute__id, :dispute__status, :dispute__trade).join(:trade, trade__id: :dispute__trade).where(bot: self.id)
+    Abuse.select(:dispute__id, :dispute__status, :dispute__trade).join(:trade, trade__id: :dispute__trade).where(bot: self.id)
   end
 
   def new_disputes
-    Dispute.
-        join(:client, client__id: :dispute__client).where(client__bot: self.id, dispute__status: Dispute::NEW).count(:dispute__id)
+    Abuse.
+        join(:client, client__id: :dispute__client).where(client__bot: self.id, dispute__status: Abuse::NEW).count(:dispute__id)
   end
 
   def beneficiary

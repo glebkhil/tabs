@@ -1,45 +1,20 @@
 .bot-single
-  .log
-    %img.ava-list{src: bot.avatar, width: '200px', style: 'margin-bottom: .5em'}
+  .log.right
+    = partial 'public/shop', bot: bot
   .details-padding
-    %a.black.large.no-wrap.no-underline{href: url("/s/#{bot.id}")}
-      = bot.title.truncate(14, ommission: '').capitalize
-      %b= Country.UKRAINE.russian
-    %p
-      Оценки
-      = icn('+1')
-      %b= Rank::positive(bot.beneficiary)
-      = icn('-1')
-      %b= Rank::negative(bot.beneficiary)
-      - if !bot.awards.nil?
-        Награды
-        = bot.awards
-      Отзывы
-      = icon('speech_balloon')
-      %a.bold.no-underline{href: url("/offers/#{bot.id}")} 13
-      %br
-      Автоматические продажи
-      %b= bot.nickname
-      Поддержка
-      %b= bot.support_line
-      %br
-      Оптовые
-      %a.blue{href: url("/offers/#{bot.id}")} предложения
-      Ветка на
-      %a.blue{href: bot.link}= get_domain_from_url(bot.link)
-    %p.dark
+    %a.black.large.bold.no-wrap.no-underline{href: url("/s/#{bot.tele}")}
+      = bot.title.truncate(14, ommission: '')
+    %pre
       = bot.description
-    %p
-      %span.green >
-      %b= hb_filter.russian if hb_filter
     %p
       - if !its.nil?
         %p
           - if its.first.instance_of?(Item)
             - its.each do |it|
               - klad = Item[it[:id]]
-              %button.bot-btn{onclick: location("/payment/#{@method.russian}")}
-                = bot.item_price(klad)
+              - pr = Product[klad.product]
+              %button.bot-btn{onclick: location("/payment/#{klad.id}")}
+                = klad.price_string('UAH', 'грн.')
           - else
             - its.each do |it|
               %button.bot-btn{onclick: location("/s/#{bot.tele}/#{it.class.name.downcase}/#{it[:entity_russian]}")}
@@ -48,9 +23,4 @@
                 - else
                   = icn(it[:entity_icon])
                 = it[:entity_russian]
-            - if hb_prev_filter
-              %br
-              %button.bot-btn{onclick: location("/s/#{bot.tele}/#{hb_prev_filter.class.name.downcase}/#{hb_prev_filter.russian}")}
-                = icn('back')
-                Шаг назад
 

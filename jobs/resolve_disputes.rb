@@ -2,7 +2,7 @@ require_relative './requires'
 logger = CronLogger.new
 
 logger.noise "Solving disputes ... "
-disputes = Dispute.where(:status => [Dispute::APPROVED, Dispute::REJECTED, Dispute::NO_ITEM])
+disputes = Abuse.where(:status => [Abuse::APPROVED, Abuse::REJECTED, Abuse::NO_ITEM])
 if disputes.nil?
   logger.say "Nothing to send"
   exit
@@ -15,7 +15,7 @@ disputes.each do |c|
   from_bot = Telegram::Bot::Api.new(b.token)
   begin
     logger._say "Sending to #{buyer.username} ... "
-    if c.status == Dispute::NO_ITEM
+    if c.status == Abuse::NO_ITEM
       logger._say "geting item ... "
       found = c.approve
       if found.first == false
@@ -26,7 +26,7 @@ disputes.each do |c|
         break
       end
     end
-    if c.status == Dispute::APPROVED
+    if c.status == Abuse::APPROVED
       logger._say "approved dispute ... "
       txt = "#{icon(b.icon_success)} Ваш запрос был удовлетворен. *#{i.product_string} #{i.make('qnt', 'вес')}* #{i.city_string}, #{i.district_string} #{i.full} [Фото клада](#{i.photo.chomp("\n")})"
       from_bot.send_message(
@@ -36,10 +36,10 @@ disputes.each do |c|
       )
       t.status = Trade::FINALIZED
       t.status
-      c.status = Dispute::ARCHIVED
+      c.status = Abuse::ARCHIVED
       c.save
       logger.answer('success', :green)
-    elsif c.status == Dispute::REJECTED
+    elsif c.status == Abuse::REJECTED
       logger._say "rejected dispute ... "
       txt = "#{icon(b.icon_warning)} Ваш запрос на перезаклад не был удовлетворен. В перезакладе отказано.\n\nПодробней о политике ненаходов можно прочитать здесь /abuse"
       from_bot.send_message(
@@ -49,7 +49,7 @@ disputes.each do |c|
       )
       t.status = Trade::FINALIZED
       t.status
-      c.status = Dispute::ARCHIVED
+      c.status = Abuse::ARCHIVED
       c.save
       logger.answer('success', :green)
     end

@@ -472,7 +472,7 @@ module TSX
 
     get '/dispute/close/:d' do
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot)
-      Dispute[params[:d]].delete
+      Abuse[params[:d]].delete
       redirect back
     end
 
@@ -863,17 +863,17 @@ module TSX
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot)
       cli = Client.select(:client__id, Sequel.as(:dispute__id, :disp)).
           join(:dispute, dispute__client: :client__id).
-          where(client__bot: hb_bot.id, dispute__status: Dispute::NEW).first
+          where(client__bot: hb_bot.id, dispute__status: Abuse::NEW).first
       if !cli.nil?
-        d = Dispute[cli[:disp]]
+        d = Abuse[cli[:disp]]
         if d.answer.nil?
           @vc = Client[cli[:id]]
           redirect to('/not_permitted') if @vc.bot != hb_bot.id
-          Dispute[]
+          Abuse[]
           @trans = @vc.statement.paginate(@p.to_i, 10)
           haml :'admin/client', layout: hb_layout
         else
-          d.status = Dispute::SOLVED
+          d.status = Abuse::SOLVED
           d.save
           redirect url('/help')
         end

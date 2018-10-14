@@ -42,7 +42,6 @@ module TSX
     post '/add_game' do
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot) and !hb_operator.is_operator?(hb_bot)
       Gameplay.create(bot: hb_bot.id, title: params[:title] || "название", config: JSON.dump(YAML.load(params[:config])), status: Gameplay::ACTIVE)
-
       flash['info'] = 'Плагин добавлен.'
       redirect back
     end

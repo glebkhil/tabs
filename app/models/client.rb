@@ -67,12 +67,12 @@ class Client < Sequel::Model(:client)
     self.status == Client::CLIENT_BANNED
   end
 
-  def disputes(st = Dispute::APPROVED)
-    Dispute.join(:trade, trade__id: :dispute__trade).where(trade__buyer: self.id, dispute__status: st)
+  def disputes(st = Abuse::APPROVED)
+    Abuse.join(:trade, trade__id: :dispute__trade).where(trade__buyer: self.id, dispute__status: st)
   end
 
   def has_dispute?
-    has = Dispute.find(client: self.id, status: Dispute::NEW)
+    has = Abuse.find(client: self.id, status: Abuse::NEW)
     !has.nil?
   end
 

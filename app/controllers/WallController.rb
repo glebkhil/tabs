@@ -207,7 +207,11 @@ module TSX
         )
       end
       # @its = Client::search_by_filters_product(d, bot.id, hb_filter_city)
-      haml :'public/shop-single', layout: hb_layout, locals: {bot:bot, its: @its}
+      haml :'public/shop-single', layout: hb_layout, locals: {bot: bot, its: @its}
+    end
+
+    get '/payment/:klad' do
+      haml :'public/payment', layout: hb_layout, locals: {bot: bot, item: Item[params[:klad]]}
     end
 
     # get '/shop/:shop/city/:city' do

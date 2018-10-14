@@ -22,27 +22,27 @@
       %p
         = bot.description
       %p
-        Вы покупаете
-        = hb_buying.product_string
-        = (pr = Price[hb_buying.prc]).qnt
-        %br
-        Цена
-        %b= bot.amo(pr.price)
-        %br
-        Номер клада
-        %b= hb_buying.id
-        %br
-        Ваш баланс
-        = bot.amo(hb_operator.available_cash)
-        %br
-        Город
-        %b= "#{hb_buying.city_string}, #{hb_buying.district_string}"
-        %br
-        = method_details_web(@meth)
-      %p
-        %form{action: url('/b'), method: 'post'}
-          %input{type: 'text', name: 'code', size: '30', placeholder: 'Код пополнения', required: true}
-          %input{type: 'hidden', name: 'method', value: @meth.russian}
-          %br
-          %button
-            Подтвердить
+        -#Вы покупаете
+        -#= item.product_string('UAH', 'грн.')
+        -#= (pr = Price[item.prc]).qnt
+        -#%br
+      -#  Цена
+      -#  %b= bot.amo(pr.price)
+      -#  %br
+      -#  Номер клада
+      -#  %b= item.id
+      -#  %br
+      -#  Ваш баланс
+      -#  = bot.amo(hb_operator.available_cash)
+      -#  %br
+      -#  Город
+      -#  %b= "#{hb_buying.city_string}, #{hb_buying.district_string}"
+      -#  %br
+      -#  = method_details_web(@meth)
+      -#%p
+      -#  %form{action: url('/b'), method: 'post'}
+      -#    %input{type: 'text', name: 'code', size: '30', placeholder: 'Код пополнения', required: true}
+      -#    %input{type: 'hidden', name: 'method', value: @meth.russian}
+      -#    %br
+      -#    %button
+      -#      Подтвердить

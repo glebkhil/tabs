@@ -1,24 +1,29 @@
-%h2
-  = "#{icn(bot.icon_geo)} #{filter.russian.capitalize}"
-%p
-  = "#{icn('warning')}"
-  %b Внимание друзья,
-  с оплатой Изипеем перебои. Оплата WEX кодами проходит всегда с первого раза.
-  При оплате WEX USD кодами, скидка на все. Как легко купить
-  WEX USD спрашивайте у оператороа.
-- btns.each do |v|
-  - if !v.empty?
-    %button.bot-btn{onclick: location(url("/s/#{gsess('ds_bot').tele.downcase}/#{next_filter.downcase}/#{v.values[2]}"))}
-      = v.values[0].truncate(17)
-      = "&#160;"
-- if !btns.empty?
-  %button.bot-btn{onclick: location(url("/s/#{prev.class.name.downcase}/#{prev.id}"))}= "#{icn('back')} Назад"
-  %button.bot-btn{onclick: location(url("/s/country/2"))}= "#{icn('construction_worker')} Главная"
-%p
-  %ul.vert
-    %li
-      %a.blue{href: url('')} Где взять WEX USD код?
-    %li
-      %a.blue{href: url('')} Трудоустройство
-    %l
-      %a.blue{href: url('')} Реферальная программа
+.bot-single
+  .log.right
+    %img.ava-list{src: bot.avatar, width: '200px', style: 'margin-bottom: .5em'}
+    %p.right
+      = bot.description
+  .details-padding
+    %a.bold.blue{href: url("/s/#{gsess('ds_bot').tele}/#{prev.class.name.downcase}/#{prev.russian}")}
+    %a.bold.blue{href: url("/s/country/2")}}= "#{icn('construction_worker')}
+    %h2
+      = "#{icn(bot.icon_geo)} #{filter.russian.capitalize}"
+    -#%p
+    -#  = "#{icn('warning')}"
+      -#%b Внимание друзья,
+      -#с оплатой Изипеем перебои. Оплата WEX кодами проходит всегда с первого раза.
+      -#При оплате WEX USD кодами, скидка на все. Как легко купить
+      -#WEX USD спрашивайте у оператороа.
+    - btns.each do |v|
+      - if !v.empty?
+        %button.bot-btn{onclick: location(url("/s/#{gsess('ds_bot').tele}/#{next_filter.downcase}/#{next_filter.capitalize.constantize[v.values[1]].russian}"))}
+          = v.values[0].truncate(17)
+          = "&#160;"
+    %p
+      %ul.vert
+        %li
+          %a.blue{href: url('')} Где взять WEX USD код?
+        %li
+          %a.blue{href: url('')} Трудоустройство
+        %l
+          %a.blue{href: url('')} Реферальная программа
