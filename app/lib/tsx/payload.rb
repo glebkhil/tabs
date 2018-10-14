@@ -113,7 +113,7 @@ module TSX
       rescue
         return false if callback_query?
         return false if file?
-        @btn = Button.where(bot: @tsx_bot.id).where(Sequel.like(:title, '%' + clear_text + '%')).limit(1).first
+        @btn = Button.where(bot: @tsx_bot.id).where(Sequel.like(:title, "%#{clear_text}%")).limit(1).first
         if !@btn.nil?
           res = @btn.title
         else

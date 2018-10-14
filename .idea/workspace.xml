@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/lib/tsx/payload.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/payload.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="600">
@@ -42,6 +43,16 @@
                 <marker date="1539503654270" expanded="true" signature="141:34264" ph=" ... end" />
                 <marker date="1539503654270" expanded="true" signature="150:1440" ph="if ... end" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="payload.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/lib/tsx/payload.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="115" column="87" lean-forward="false" selection-start-line="115" selection-start-column="87" selection-end-line="115" selection-end-column="87" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,16 +72,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
               <caret line="212" column="26" lean-forward="true" selection-start-line="212" selection-start-column="26" selection-end-line="212" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recommended.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/public/recommended.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -178,7 +179,6 @@
         <option value="$PROJECT_DIR$/app/views/admin/games.haml" />
         <option value="$PROJECT_DIR$/app/models/game.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/lottery.rb" />
-        <option value="$PROJECT_DIR$/app/lib/tsx/payload.rb" />
         <option value="$PROJECT_DIR$/app/models/abuse.rb" />
         <option value="$PROJECT_DIR$/app/models/bot.rb" />
         <option value="$PROJECT_DIR$/app/controllers/AuthController.rb" />
@@ -202,6 +202,7 @@
         <option value="$PROJECT_DIR$/app/models/trade.rb" />
         <option value="$PROJECT_DIR$/app/controllers/BotController.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+        <option value="$PROJECT_DIR$/app/lib/tsx/payload.rb" />
       </list>
     </option>
   </component>
@@ -442,12 +443,12 @@
       <workItem from="1538825872434" duration="1833000" />
       <workItem from="1538993024682" duration="578000" />
       <workItem from="1539076775605" duration="1718000" />
-      <workItem from="1539157374533" duration="49722000" />
+      <workItem from="1539157374533" duration="49962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98075000" />
+    <option name="totallyTimeSpent" value="98315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -652,14 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/tsx/payload.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-331">
-          <caret line="183" column="8" lean-forward="false" selection-start-line="183" selection-start-column="8" selection-end-line="183" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -912,6 +905,14 @@
             <marker date="1539503654270" expanded="true" signature="141:34264" ph=" ... end" />
             <marker date="1539503654270" expanded="true" signature="150:1440" ph="if ... end" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/tsx/payload.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="115" column="87" lean-forward="false" selection-start-line="115" selection-start-column="87" selection-end-line="115" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>
