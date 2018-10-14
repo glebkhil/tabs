@@ -352,7 +352,7 @@ class Client < Sequel::Model(:client)
         debit: ben.id,
         credit: Client::__commission.id,
         trade: trade.id,
-        amount: calc_commission(it.am, b.commission),
+        amount: calc_commission(it.price, b.commission),
         details: "Комиссионные платформы. Заказ ##{it.id},  клад ##{it.id}.",
         status: Ledger::ACTIVE,
         created: Time.now,
