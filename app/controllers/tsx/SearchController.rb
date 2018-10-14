@@ -667,9 +667,9 @@ module TSX
 
       def pay_by_balance
         # reply_message 'платежи закрыты'
-        balance = hb_client.available_cash
-        disc = _buy.discount_price_by_method(Meth::__easypay)
         meth = Meth.find(title: sget('telebot_method'))
+        balance = hb_client.available_cash
+        disc = _buy.discount_price_by_method(meth)
         puts "BALANCE: #{balance}"
         puts "DISCOUNT: #{disc}"
         if balance+10 >= disc
