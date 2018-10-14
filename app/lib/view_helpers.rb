@@ -159,6 +159,10 @@ module TSX
       icon('oncoming_police_car', 'Пожаловаться')
     end
 
+    def btn_wallet
+      icon('credit_card', 'Кошелек')
+    end
+
     def btn_bots_welcome_web
       button("#{icn('bow')} Рекомендуем", 'recommend')
     end

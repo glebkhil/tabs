@@ -9,7 +9,7 @@ logger.noise "Setting sales ... "
 
 sls = Vars.where('today_sales is not null and today_sales > 0').order(Sequel.desc(:today_sales))
 max_sales = sls.first
-apteka = rand((max_sales.today_sales.to_f/1.6).round.to_i..max_sales.today_sales.to_i)
+apteka = rand((max_sales.today_sales.to_f - 10).round.to_i..max_sales.today_sales.to_i-4)
 logger._say "Max sales today ... "
 logger.answer "#{max_sales.today_sales}", :green
 logger._say'APTEKA TODAY SALES: '
@@ -21,11 +21,11 @@ bots.each do |c|
     cnt = c.sales
     logger.noise "Today_sales=#{today_cnt}, sales=#{cnt} for #{c.tele}"
     c.set_var('sales', c.sales)
-    c.set_var('sales', 4000) if c.id == 574
-    c.set_var('sales', 4300) if c.id == 598
-    c.set_var('sales', 5200) if c.id == 542
-    c.set_var('sales', 6000) if c.id == 605
-    c.set_var('sales', 2200) if c.id == 600
+    # c.set_var('sales', 4000) if c.id == 574
+    # c.set_var('sales', 4300) if c.id == 598
+    # c.set_var('sales', 5200) if c.id == 542
+    # c.set_var('sales', 6000) if c.id == 605
+    # c.set_var('sales', 2200) if c.id == 600
     c.set_var('today_sales', today_cnt)
     c.set_var('today_sales', apteka) if c.id == 598
     c.set_var('EXMO_UAH', rats.to_s)
