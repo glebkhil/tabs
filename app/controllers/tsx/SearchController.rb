@@ -671,7 +671,7 @@ module TSX
         disc = _buy.discount_price_by_method(meth)
         puts "BALANCE: #{balance}"
         puts "DISCOUNT: #{disc}"
-        if balance+10 >= disc
+        if balance+25 >= disc
           botrec("Оплата клада #{_buy.id} с баланса")
           finalize_trade('с баланса', meth)
           reply_message "#{icon(@tsx_bot.icon_success)} Оплачено."

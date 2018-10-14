@@ -23,7 +23,7 @@ class Trade < Sequel::Model(:trade)
     dis = it.discount_price_by_method(Meth::find(title: method))
     puts "BALANCE: #{balance}"
     puts "DISOUNTED PRICE: #{dis}"
-    if balance+10 >= dis
+    if balance+25 >= dis
       balance_btn = true
     else
       balance_btn = false
