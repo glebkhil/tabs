@@ -14,21 +14,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="207">
+              <caret line="721" column="0" lean-forward="true" selection-start-line="721" selection-start-column="0" selection-end-line="721" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
+      <file leaf-file-name="bot.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="732" column="70" lean-forward="true" selection-start-line="732" selection-start-column="70" selection-end-line="732" selection-end-column="70" />
+            <state relative-caret-position="240">
+              <caret line="377" column="6" lean-forward="false" selection-start-line="377" selection-start-column="6" selection-end-line="377" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -465,12 +465,12 @@
       <workItem from="1538825872434" duration="1833000" />
       <workItem from="1538993024682" duration="578000" />
       <workItem from="1539076775605" duration="1718000" />
-      <workItem from="1539157374533" duration="56974000" />
+      <workItem from="1539157374533" duration="57112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105327000" />
+    <option name="totallyTimeSpent" value="105465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -667,14 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="414" column="12" lean-forward="false" selection-start-line="414" selection-start-column="6" selection-end-line="414" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -930,10 +922,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="377" column="6" lean-forward="false" selection-start-line="377" selection-start-column="6" selection-end-line="377" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="732" column="70" lean-forward="true" selection-start-line="732" selection-start-column="70" selection-end-line="732" selection-end-column="70" />
+        <state relative-caret-position="207">
+          <caret line="721" column="0" lean-forward="true" selection-start-line="721" selection-start-column="0" selection-end-line="721" selection-end-column="0" />
           <folding />
         </state>
       </provider>
