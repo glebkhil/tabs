@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/welcome/bots.rb" afterPath="$PROJECT_DIR$/app/views/tsx/welcome/bots.rb" />
+      <change beforePath="$PROJECT_DIR$/app/lib/view_helpers.rb" afterPath="$PROJECT_DIR$/app/lib/view_helpers.rb" />
+      <change beforePath="$PROJECT_DIR$/app/models/bot.rb" afterPath="$PROJECT_DIR$/app/models/bot.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,8 +48,8 @@
       <file leaf-file-name="bot.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5655">
-              <caret line="377" column="6" lean-forward="false" selection-start-line="377" selection-start-column="6" selection-end-line="377" selection-end-column="6" />
+            <state relative-caret-position="564">
+              <caret line="198" column="29" lean-forward="false" selection-start-line="198" selection-start-column="29" selection-end-line="198" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -77,8 +78,8 @@
       <file leaf-file-name="view_helpers.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="460" column="13" lean-forward="false" selection-start-line="460" selection-start-column="13" selection-end-line="460" selection-end-column="13" />
+            <state relative-caret-position="311">
+              <caret line="462" column="211" lean-forward="false" selection-start-line="462" selection-start-column="211" selection-end-line="462" selection-end-column="211" />
               <folding />
             </state>
           </provider>
@@ -174,7 +175,6 @@
         <option value="$PROJECT_DIR$/app/models/game.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/lottery.rb" />
         <option value="$PROJECT_DIR$/app/models/abuse.rb" />
-        <option value="$PROJECT_DIR$/app/models/bot.rb" />
         <option value="$PROJECT_DIR$/app/controllers/AuthController.rb" />
         <option value="$PROJECT_DIR$/app/views/serp/serp.haml" />
         <option value="$PROJECT_DIR$/app/views/partials/bene_menu.haml" />
@@ -190,7 +190,6 @@
         <option value="$PROJECT_DIR$/app/views/admin/warnings.haml" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/search/serp.rb" />
-        <option value="$PROJECT_DIR$/app/lib/view_helpers.rb" />
         <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
         <option value="$PROJECT_DIR$/app/controllers/BotController.rb" />
         <option value="$PROJECT_DIR$/app/models/spam.rb" />
@@ -206,6 +205,8 @@
         <option value="$PROJECT_DIR$/app/models/trade.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/bots.rb" />
+        <option value="$PROJECT_DIR$/app/models/bot.rb" />
+        <option value="$PROJECT_DIR$/app/lib/view_helpers.rb" />
       </list>
     </option>
   </component>
@@ -466,12 +467,12 @@
       <workItem from="1538993024682" duration="578000" />
       <workItem from="1539076775605" duration="1718000" />
       <workItem from="1539157374533" duration="58022000" />
-      <workItem from="1539797344798" duration="35000" />
+      <workItem from="1539797344798" duration="306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106410000" />
+    <option name="totallyTimeSpent" value="106681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -858,14 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5655">
-          <caret line="377" column="6" lean-forward="false" selection-start-line="377" selection-start-column="6" selection-end-line="377" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/BotController.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -898,10 +891,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="198" column="29" lean-forward="false" selection-start-line="198" selection-start-column="29" selection-end-line="198" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="460" column="13" lean-forward="false" selection-start-line="460" selection-start-column="13" selection-end-line="460" selection-end-column="13" />
+        <state relative-caret-position="311">
+          <caret line="462" column="211" lean-forward="false" selection-start-line="462" selection-start-column="211" selection-end-line="462" selection-end-column="211" />
           <folding />
         </state>
       </provider>

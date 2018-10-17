@@ -460,7 +460,7 @@ module TSX
       lines = ""
       b = Vote::best_this_month
       lines << "*Авторитет*\nЛучший шоп по мнению самих пользователей.\n\n"
-      lines << "#{b.nickname_md} 🎖️🎖️🎖️\nОтзывы #{icon('+1')} #{Rank::positive(b.beneficiary)} #{icon('-1')} #{Rank::negative(b.beneficiary)}\nВ наличии *#{kladov(b.active_items)}*\nГорода *#{b.cities_full}*\n#{b.description}"
+      lines << "#{b.nickname_md} 🎖️🎖️🎖️\nОтзывы #{icon('+1')} #{Rank::positive(b.beneficiary)} #{icon('-1')} #{Rank::negative(b.beneficiary)}\nВ наличии *#{kladov(b.active_items)}*\nГорода *#{b.cities_full_clear}*\n#{b.description}"
       lines
     end
 

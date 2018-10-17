@@ -184,6 +184,26 @@ class Bot < Sequel::Model(:bot)
     end
   end
 
+  def cities_full_clear
+    ccts = ''
+    cities = City.
+        distinct(:city).
+        select(Sequel.as(:city__id, :cid), Sequel.as(:city__russian, :rus), Sequel.as(:item__bot, :bot_id)).
+        join(:item, item__city: :city__id).
+        where(
+            :item__bot => self.id,
+            item__status: Item::ACTIVE
+        )
+    if !cities.empty?
+      cities.each do |c|
+        ccts << "#{c[:rus]}, "
+      end
+      ccts.chomp(", ")
+    else
+      false
+    end
+  end
+
   def payment_balance(meth)
     ben = self.beneficiary
     Ledger.
