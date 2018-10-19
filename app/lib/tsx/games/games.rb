@@ -1,9 +1,13 @@
 module TSX
   module Games
 
+      def self.included(receiver, mod)
+        receiver.send :include, mod
+      end
+
       module Voting
 
-        def game_allowed?
+        def approved?
           hb_client.has_vote?
         end
 
@@ -28,7 +32,7 @@ module TSX
           rng - nums
         end
 
-        def game_allowed?(bot, client)
+        def approved?
           b = Gameplay[self.id]
           v = !Bet.find(client: client.id, game: b.id).nil?
           puts "Result: #{v}".colorize(:white_on_red)
@@ -61,6 +65,10 @@ module TSX
           ""
         end
 
+        def approved?
+
+        end
+
       end
 
       module Referals
@@ -73,7 +81,10 @@ module TSX
           "нет данных"
         end
 
-      end
+        def approved?
+        end
+
+        end
 
   end
 end
