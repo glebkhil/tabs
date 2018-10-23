@@ -18,7 +18,6 @@ module TSX
             game: @tsx_bot.active_game.id
         )
         update_message "#{icon(@tsx_bot.icon_success)} Вы выбрали число *#{data}*. Когда рулетка закончится, победитель получит *#{@tsx_bot.amo(@tsx_bot.active_game.conf('amount'))}*"
-        save_lottery(@tsx_bot.active_game)
       end
 
       def save_question
