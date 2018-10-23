@@ -13,7 +13,7 @@ module TSX
 
       def save_lottery(data)
         Bet.create(
-            number: data.to_s,
+            number: data.to_i,
             client: hb_client.id,
             game: @tsx_bot.active_game.id
         )
