@@ -48,21 +48,24 @@ module TSX
       def play_game
         cur_game = @tsx_bot.active_game
         cur_game.update(last_run: Time.now)
+        sset("tsx_game", cur_game)
         if cur_game.nil?
+          puts "GAME IS NIL".blue
           serp
           return
-        end
-        handle("save_game_res")
-        sset("tsx_game", cur_game)
-        raise 'Not game instance' if cur_game.nil?
-        raise 'Cannot post now' if !cur_game.can_post?(hb_client)
-        reply_inline "welcome/#{cur_game.title}", gam: cur_game
-        if !cur_game.conf('question')
-          unhandle
+        elsif !cur_game.can_post?(hb_client)
+          puts "CANNOT POST NOW".blue
           serp
+          return
+        else
+          reply_inline "welcome/#{cur_game.title}", gam: cur_game
+          if cur_game.conf('question') == 'false'
+            unhandle
+            serp
+          else
+            handle("save_game_res")
+          end
         end
-      rescue
-        serp
       end
 
       def save_game_res(data)
@@ -71,9 +74,10 @@ module TSX
           gam.inc
           gam.update(last_run: Time.now)
           puts "save_#{gam.title}".colorize(:green)
-          if gam.conf('question').to_s == 'true '
-            send(:"save_#{gam.title}", data)
+          if gam.conf('question')
+            public_send("save_#{gam.title}".to_sym, data)
           end
+          unhandle
           serp
         end
       end
