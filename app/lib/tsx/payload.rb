@@ -9,6 +9,7 @@ module TSX
     end
 
     def method_missing(meth)
+      puts "METHOD MISSING #{meth}".colorize(:yellow)
       reply_message "*#{@btn.title}*\n#{@btn.body}"
     end
 
