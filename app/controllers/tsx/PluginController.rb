@@ -60,7 +60,6 @@ module TSX
           unhandle
         end
       rescue
-        reply_inline "welcome/#{cur_game.title}", gam: cur_game
         serp
       end
 
