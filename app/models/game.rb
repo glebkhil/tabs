@@ -23,11 +23,17 @@ class Gameplay < Sequel::Model(:game)
   def can_post?(client)
     case self.title
       when 'lottery'
-        return true if Bet.find(client: client.id, game: self.id).nil?
-        return true if self.available_numbers.count <= 1
+        if Bet.find(client: client.id, game: self.id).nil?
+          return true
+        end
+        if  self.available_numbers.count == 0
+          return true
+        end
         return false
       when 'voting'
-        Vote.find(username: client.tele, bot: self.bot).nil?
+        if Vote.find(username: client.username, bot: self.bot).nil?
+          return true
+        end
       when 'referals'
         return true
       when 'announcement'
