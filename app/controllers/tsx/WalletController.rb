@@ -58,7 +58,7 @@ module TSX
         reply_inline "welcome/#{cur_game.title}", gam: cur_game
         serp if cur_game.conf('question').to_s != 'true'
       rescue
-        reply_inline "welcome/welcome"
+        serp
       end
 
       def save_game_res(data = nil)
