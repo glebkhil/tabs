@@ -8,6 +8,10 @@ module TSX
       !@var.nil? ? send(@cmd.to_sym, @var) : send(@cmd.to_sym)
     end
 
+    def method_missing(meth)
+      reply_message "*#{meth}*\n#{@btn.body}"
+    end
+
     def parse_update(body)
       bdy = json_load(body)
       @update = Telegram::Bot::Types::Update.new(bdy)
@@ -97,7 +101,7 @@ module TSX
     def hardcoded_handler?
       res = false
       begin
-        # tem "asuming variable is not empty"
+        tem "asuming variable is not empty"
         res = HAMDLERS.fetch(clear_text.to_sym)
       rescue
         return false if callback_query?
@@ -147,8 +151,8 @@ module TSX
       # hardcoded handler
       # ust call it without params
       mess = hardcoded_handler?
-      # tem "#{mess} command in hardcoded list."
-      # tem "skipping other conditions."
+      tem "#{mess} command in hardcoded list."
+      tem "skipping other conditions."
       return [mess, nil] if mess != false
 
       # not in hardcoded handlers list
