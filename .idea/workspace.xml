@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/lib/tsx/payload.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/payload.rb" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ApplicationController.rb" afterPath="$PROJECT_DIR$/app/controllers/ApplicationController.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="payload.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="payload.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/lib/tsx/payload.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="551">
@@ -77,46 +78,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stat.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/stat.haml">
+      <file leaf-file-name="config.ru" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.ru">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2768">
-              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-              <folding>
-                <marker date="1539994327812" expanded="true" signature="986:1854" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="1181:1322" ph="//..." />
-                <marker date="1539994327812" expanded="true" signature="1355:1587" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="1877:3401" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="2049:2203" ph="[...]" />
-                <marker date="1539994327812" expanded="true" signature="2362:2735" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="2760:3186" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="2787:3178" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="3257:3395" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="3303:3389" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="3425:5066" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="4179:5018" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="5087:6203" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="5264:5946" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="6230:7454" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="7481:8337" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="8368:9565" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="9591:10691" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="10128:10638" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="10717:12076" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="11687:11989" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="12104:13474" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="13495:15148" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="14132:15095" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="14336:15088" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="14558:14793" ph="{&quot;outerRadius&quot;: r...}" />
-                <marker date="1539994327812" expanded="true" signature="15176:16377" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="15427:15656" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="15581:15647" ph="{&quot;innerRadius&quot;: r0b...}" />
-                <marker date="1539994327812" expanded="true" signature="15683:16192" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="15710:16186" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="15916:16177" ph="{...}" />
-                <marker date="1539994327812" expanded="true" signature="16220:16361" ph="{...}" />
-              </folding>
+            <state relative-caret-position="465">
+              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationController.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/ApplicationController.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="601">
+              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,16 +113,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trade.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/trade.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -213,7 +190,6 @@
         <option value="$PROJECT_DIR$/jobs/calc_charts.rb" />
         <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
         <option value="$PROJECT_DIR$/config/config.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/lib/tsx/games/referals.rb" />
         <option value="$PROJECT_DIR$/config/const.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/PublicController.rb" />
@@ -226,7 +202,6 @@
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/voting.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/lottery.rb" />
         <option value="$PROJECT_DIR$/app/models/client.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/ApplicationController.rb" />
         <option value="$PROJECT_DIR$/config.ru" />
         <option value="$PROJECT_DIR$/app/models/vote.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/welcome.rb" />
@@ -241,6 +216,8 @@
         <option value="$PROJECT_DIR$/app/controllers/tsx/WalletController.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
         <option value="$PROJECT_DIR$/app/lib/tsx/payload.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/ApplicationController.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -511,12 +488,12 @@
       <workItem from="1539157374533" duration="58022000" />
       <workItem from="1539797344798" duration="69367000" />
       <workItem from="1539992459224" duration="849000" />
-      <workItem from="1539993421848" duration="34772000" />
+      <workItem from="1539993421848" duration="34878000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211363000" />
+    <option name="totallyTimeSpent" value="211469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -633,14 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="64" column="20" lean-forward="false" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -785,22 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ApplicationController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="70" column="36" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.ru">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1014,6 +967,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="171" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.ru">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ApplicationController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
       </provider>
