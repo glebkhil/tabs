@@ -67,12 +67,12 @@ module TSX
 
       def save_game_res(data = nil)
         if callback_query?
-          unhandle
-          @tsx_bot.active_game.inc
-          sget('tsx_game').update(last_run: Time.now)
-          send("save_#{sget('tsx_game').title}", data)
+          gam = @tsx_bot.active_game
+          gam.inc
+          gam.update(last_run: Time.now)
+          send("save_#{gam.title}", data)
+          serp
         end
-        serp
       end
 
     end
