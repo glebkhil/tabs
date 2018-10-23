@@ -47,11 +47,11 @@ module TSX
 
       def play_game
         cur_game = @tsx_bot.active_game
+        cur_game.update(last_run: Time.now)
         if cur_game.nil?
           serp
           return
         end
-        cur_game.update(last_run: Time.now)
         handle("save_game_res")
         sset("tsx_game", cur_game)
         raise 'Not game instance' if cur_game.nil?
@@ -71,7 +71,9 @@ module TSX
           gam.inc
           gam.update(last_run: Time.now)
           puts "save_#{gam.title}".colorize(:green)
-          send(:"save_#{gam.title}", data)
+          if gam.conf('question').to_s == 'true '
+            send(:"save_#{gam.title}", data)
+          end
           serp
         end
       end
