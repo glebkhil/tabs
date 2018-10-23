@@ -8,28 +8,33 @@
       %th.left{width: '20%'} Прогресс
       %th{width: '15%'}
   %tbody
-    - @games.each do |e|
-      -#- pl = Plugin[e[:plugin__id]]
-      -#- ga = Gameplay[e[:game__id]]
+    - if @games.count == 0
       %tr
-        -#%td{nowrap: true}
-        -#  = "##{e.id}"
-        %td{nowrap: true}
-          %b.blue= "#{e.title}"
-        %td{nowrap: true}
-          - JSON.parse(e.config).to_hash.each do |key, value|
-            %span.no-wrap
-              %span.small.dark= key
-              %b.dlighted.normal= value.truncate(30)
-        %td
-          = "TSX::#{e.title.capitalize}".constantize::progress(e)
-        %td
-          - if e.status == Gameplay::ACTIVE
-            %button.btn-small.red-btn{onclick: location("/stop_plugin/#{e.id}")}
-              = "Выключить"
-          - else
-            %button.btn-small.green-btn{onclick: location("/stop_plugin/#{e.id}")}
-            = "Включить"
+        %td{colspan: '8'}
+          Нет плагинов
+    - else
+      - @games.each do |e|
+        -#- pl = Plugin[e[:plugin__id]]
+        -#- ga = Gameplay[e[:game__id]]
+        %tr
+          -#%td{nowrap: true}
+          -#  = "##{e.id}"
+          %td{nowrap: true}
+            %b.blue= "#{e.title}"
+          %td{nowrap: true}
+            - JSON.parse(e.config).to_hash.each do |key, value|
+              %span.no-wrap
+                %span.small.dark= key
+                %b.dlighted.normal= value
+          %td
+            = "TSX::#{e.title.capitalize}".constantize::progress(e)
+          %td
+            - if e.status == Gameplay::ACTIVE
+              %button.btn-small.red-btn{onclick: location("/stop_plugin/#{e.id}")}
+                = "Выключить"
+            - else
+              %button.btn-small.green-btn{onclick: location("/stop_plugin/#{e.id}")}
+              = "Включить"
 %p Выберите и включите любой из доступных плагинов.
 %form{:method=>'post', :action=>'/apply_plugin', autocomplete: 'on', enctype: 'multipart/form-data'}
   %select.text{id: 'plugin-choose', name: 'plugin',  onchange: 'update_plugin_config()'}

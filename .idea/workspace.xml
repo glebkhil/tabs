@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/WalletController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/WalletController.rb" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/plugins.haml" afterPath="$PROJECT_DIR$/app/views/admin/plugins.haml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,12 +24,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WalletController.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WalletController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/WalletController.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
-              <caret line="60" column="38" lean-forward="false" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+              <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugins.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/plugins.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+              <folding>
+                <marker date="1540314909614" expanded="true" signature="1986:2133" ph="{...}" />
+                <marker date="1540314909614" expanded="true" signature="2082:2128" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,7 +173,6 @@
         <option value="$PROJECT_DIR$/app/lib/tsx/games/games.rb" />
         <option value="$PROJECT_DIR$/app/lib/helpers.rb" />
         <option value="$PROJECT_DIR$/app/lib/tsx/games/announcement.rb" />
-        <option value="$PROJECT_DIR$/app/views/admin/plugins.haml" />
         <option value="$PROJECT_DIR$/app/lib/tsx/games/voting.rb" />
         <option value="$PROJECT_DIR$/assets/sass/b22.sass" />
         <option value="$PROJECT_DIR$/assets/js/chart.js" />
@@ -198,6 +210,7 @@
         <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/chart.haml" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/WalletController.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/plugins.haml" />
       </list>
     </option>
   </component>
@@ -468,12 +481,12 @@
       <workItem from="1539157374533" duration="58022000" />
       <workItem from="1539797344798" duration="69367000" />
       <workItem from="1539992459224" duration="849000" />
-      <workItem from="1539993421848" duration="34131000" />
+      <workItem from="1539993421848" duration="34353000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210722000" />
+    <option name="totallyTimeSpent" value="210944000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -607,17 +620,6 @@
         <state relative-caret-position="251">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/plugins.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding>
-            <marker date="1539974411002" expanded="true" signature="1858:2005" ph="{...}" />
-            <marker date="1539974411002" expanded="true" signature="1954:2000" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -970,8 +972,19 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/tsx/WalletController.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="60" column="38" lean-forward="false" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+          <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/plugins.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+          <folding>
+            <marker date="1540314909614" expanded="true" signature="1986:2133" ph="{...}" />
+            <marker date="1540314909614" expanded="true" signature="2082:2128" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
