@@ -7,7 +7,6 @@ module TSX
             bot: data.to_i,
             username: hb_client.tele
         )
-        @tsx_bot.active_game.inc
         update_message "#{icon(@tsx_bot.icon_success)} Спасибо! Ваш голос очень важен, так как он участвует в голосовании за *Лучший Бот Месяца*. Лучший бот будет особо отмечен на странице *Рекомендуем*. Всего в этом месяце проголосовало *#{ludey(Vote::voted_this_month)}*."
       end
 
@@ -27,7 +26,6 @@ module TSX
             game: @tsx_bot.active_game.id
         )
         update_message "#{icon(@tsx_bot.icon_success)} Вы поучаствовали в опросе клиентоа. Ваше мнение для нас важно!*."
-        save_lottery(@tsx_bot.active_game)
       end
 
       def prize_lottery(game)
@@ -69,6 +67,7 @@ module TSX
       def save_game_res(data = nil)
         if callback_query?
           unhandle
+          @tsx_bot.active_game.inc
           sget('tsx_game').update(last_run: Time.now)
           send("save_#{sget('tsx_game').title}", data)
         end
