@@ -26,7 +26,7 @@ class Gameplay < Sequel::Model(:game)
           true
         end
       when 'voting'
-        client.has_vote? ? true : false
+        client.has_vote? ? false : true
       when 'referals'
         return true
       when 'announcement'

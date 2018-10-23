@@ -47,23 +47,28 @@ module TSX
 
       def play_game
         cur_game = @tsx_bot.active_game
-        cur_game.update(last_run: Time.now)
-        sset("tsx_game", cur_game)
         if cur_game.nil?
           puts "GAME IS NIL".blue
-          serp
-          return
-        elsif !cur_game.can_post?(hb_client)
-          puts "CANNOT POST NOW".blue
+          unhandle
           serp
           return
         else
-          reply_inline "welcome/#{cur_game.title}", gam: cur_game
-          if cur_game.conf('question') == 'false'
+          cur_game.update(last_run: Time.now)
+          sset("tsx_game", cur_game)
+          if !cur_game.can_post?(hb_client)
+            puts "CANNOT POST NOW".blue
             unhandle
             serp
+            return
           else
-            handle("save_game_res")
+            reply_inline "welcome/#{cur_game.title}", gam: cur_game
+            if cur_game.conf('question').to_s == 'false'
+              puts "NOT A QUESTION".blue
+              unhandle
+              serp
+            else
+              handle("save_game_res")
+            end
           end
         end
       end
