@@ -59,6 +59,7 @@ module TSX
         reply_inline "welcome/#{cur_game.title}", gam: cur_game
         if !cur_game.conf('question')
           unhandle
+          serp
         end
       rescue
         serp
