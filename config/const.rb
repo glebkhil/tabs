@@ -56,7 +56,11 @@ HAMDLERS = {
       "Продажи": 'admin_sales',
       "Официально": 'info',
       "Пожаловаться": 'abuse',
-      "Отмена": 'cancel'
+      "Отмена": 'cancel',
+      "Кабинет": 'panel',
+      "вывод": 'cashout',
+      "Выписка": 'client_statement',
+      "Рефералы": 'client_referals'
 }
 
 CHAT_HAMDLERS = {

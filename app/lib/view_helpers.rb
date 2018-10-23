@@ -39,14 +39,10 @@ module TSX
     def help_buttons
       but_list ||= []
       but_list <<
-          icon(@tsx_bot.icon_abuse, 'Правила') <<
-          icon(@tsx_bot.icon_job, 'Работа') <<
-          icon(@tsx_bot.icon_payments, 'Платежи') <<
-          icon(@tsx_bot.icon_referals, 'Рефералы') <<
-          btn_main <<
-          btn_pending_trades <<
-          btn_finalized_trades
-
+          icon('outbox_tray', 'Заказать вывод') <<
+          icon('green_book', 'Выписка') <<
+          icon('art', 'Рефералы') <<
+          btn_main
       other_buts = keyboard(but_list - [nil], 2) do |b|
         b if !b.nil?
       end

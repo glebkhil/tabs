@@ -61,6 +61,7 @@ module TSX
     include Colorize
 
     include TSX::Controllers::Plugin
+    include TSX::Controllers::Wallet
     include TSX::Controllers::Public
     include TSX::Controllers::Search
     include TSX::Controllers::Meine
