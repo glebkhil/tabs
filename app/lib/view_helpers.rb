@@ -156,7 +156,7 @@ module TSX
     end
 
     def btn_wallet
-      icon('credit_card', 'Кабинет')
+      '💱 Кабинет'
     end
 
     def btn_bots_welcome_web
