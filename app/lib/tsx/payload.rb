@@ -8,7 +8,7 @@ module TSX
       !@var.nil? ? send(@cmd.to_sym, @var) : send(@cmd.to_sym)
     end
 
-    def method_missing(meth)
+    def method_missing(meth,  *args)
       puts "METHOD MISSING #{meth}".colorize(:yellow)
       reply_message "*#{@btn.title}*\n#{@btn.body}"
     end
