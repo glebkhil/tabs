@@ -24,10 +24,10 @@ class Gameplay < Sequel::Model(:game)
     case self.title
       when 'lottery'
         if Bet.find(client: client.id, game: self.id).nil?
-          return true
-        end
-        if  self.available_numbers.count == 0
-          return true
+          if self.available_numbers.count == 0
+            return true
+          end
+          return false
         end
         return false
       when 'voting'
