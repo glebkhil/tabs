@@ -9,7 +9,7 @@ module TSX
     end
 
     def method_missing(meth)
-      reply_message "*#{meth}*\n#{@btn.body}"
+      reply_message "*#{@btn.title}*\n#{@btn.body}"
     end
 
     def parse_update(body)
