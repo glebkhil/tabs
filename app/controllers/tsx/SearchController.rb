@@ -257,7 +257,7 @@ module TSX
             botrec('Выбран метод оплаты', data)
             buts = _trade.confirmation_buttons(hb_client, data)
             reply_update 'search/trade', ben: seller_bot.beneficiary, seller_bot: seller_bot, seller: seller, method: data, ch: @tsx_bot.is_chief?
-            answer_callback "Метод оплаты изменен.", buts
+            answer_callback "Метод оплаты изменен."
           end
         end
       end
