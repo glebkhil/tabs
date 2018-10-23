@@ -65,13 +65,13 @@ module TSX
         serp
       end
 
-      def save_game_res(data = nil)
+      def save_game_res(data)
         if callback_query?
           gam = @tsx_bot.active_game
           gam.inc
           gam.update(last_run: Time.now)
           puts "save_#{gam.title}".colorize(:green)
-          send("save_#{gam.title}", data)
+          send(:"save_#{gam.title}", data)
           serp
         end
       end
