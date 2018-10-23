@@ -36,7 +36,7 @@ module TSX
       end
 
       def easypaysample
-        reply_picture 'easy_sample.jpg'
+        reply_picture 'easy_sample.jpg', 'Easypay sample'
       end
 
       def rules
