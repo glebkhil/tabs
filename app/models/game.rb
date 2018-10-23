@@ -15,6 +15,11 @@ class Gameplay < Sequel::Model(:game)
     self.title
   end
 
+  def question?
+    return false if self.conf('question').to_s == "false"
+    return true
+  end
+
   def can_post?(client)
     case self.title
       when 'lottery'

@@ -49,18 +49,16 @@ module TSX
         cur_game = @tsx_bot.active_game
         if cur_game.nil?
           puts "GAME IS NIL".blue
-          unhandle
           serp
-          return
+          unhandle
         else
-          cur_game.update(last_run: Time.now)
-          sset("tsx_game", cur_game)
           if !cur_game.can_post?(hb_client)
             puts "CANNOT POST NOW".blue
             unhandle
             serp
-            return
           else
+            cur_game.update(last_run: Time.now)
+            sset("tsx_game", cur_game)
             reply_inline "welcome/#{cur_game.title}", gam: cur_game
             if cur_game.conf('question').to_s == 'false'
               puts "NOT A QUESTION".blue
@@ -75,15 +73,13 @@ module TSX
 
       def save_game_res(data)
         if callback_query?
-          gam = @tsx_bot.active_game
-          gam.inc
-          gam.update(last_run: Time.now)
+          gam = sget('tsx_game')
           puts "save_#{gam.title}".colorize(:green)
-          if gam.conf('question')
-            public_send("save_#{gam.title}".to_sym, data)
+          if gam.is_question?
+            public_send("save_#{gam.title}".to_sym, data.to_s)
+          else
+            serp
           end
-          unhandle
-          serp
         end
       end
 
