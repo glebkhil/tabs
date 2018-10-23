@@ -73,11 +73,11 @@ class Client < Sequel::Model(:client)
   end
 
   def has_vote?
-    !Vote.find(username: self.tele).nil?
+    !Vote.find(username: self.tele, bot: self.bot).nil?
   end
 
   def has_bet?(game)
-    Bet.find(client: self.id, game: game.id).nil?
+    !Bet.find(client: self.id, game: game.id).nil?
   end
 
   def reitem_possible?(trade)
