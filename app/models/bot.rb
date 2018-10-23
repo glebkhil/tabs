@@ -532,7 +532,7 @@ class Bot < Sequel::Model(:bot)
   end
 
   def active_game
-    Gameplay.where(bot: self.id, status: Gameplay::ACTIVE).order(Sequel.asc(:last_run)).limit(1).first
+    Gameplay.where(bot: self.id, status: Gameplay::ACTIVE).order(Sequel.asc(:last_run)).first
   end
 
   def active_games

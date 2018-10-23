@@ -31,7 +31,7 @@ class Gameplay < Sequel::Model(:game)
         end
         return false
       when 'voting'
-        if Vote.find(username: client.username, bot: self.bot).nil?
+        if Vote.find(username: client.username).nil?
           return true
         end
       when 'referals'

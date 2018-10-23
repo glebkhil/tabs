@@ -5,7 +5,7 @@ module TSX
       def save_voting(data)
         Vote.create(
             bot: data.to_i,
-            username: hb_client.tele
+            username: hb_client.username
         )
         update_message "#{icon(@tsx_bot.icon_success)} Спасибо! Ваш голос очень важен, так как он участвует в голосовании за *Лучший Бот Месяца*. Лучший бот будет особо отмечен на странице *Рекомендуем*. Всего в этом месяце проголосовало *#{ludey(Vote::voted_this_month)}*."
       end
@@ -51,37 +51,33 @@ module TSX
         if cur_game.nil?
           puts "GAME IS NIL".blue
           serp
+        elsif !cur_game.can_post?(hb_client)
+          puts "CANNOT POST NOW".blue
+          serp
         else
-          if !cur_game.can_post?(hb_client)
-            puts "CANNOT POST NOW".blue
+          puts "CANPOST. UPDATING GAME LAST RUN".blue
+          cur_game.update(last_run: Time.now)
+          sset("tsx_game", cur_game)
+          reply_inline "welcome/#{cur_game.title}", gam: cur_game
+          if !cur_game.question?
+            puts "NOT A QUESTION".blue
             serp
           else
-            puts "UPDATING GAME LAST RUN".blue
-            cur_game.update(last_run: Time.now)
-            sset("tsx_game", cur_game)
-            reply_inline "welcome/#{cur_game.title}", gam: cur_game
-            if !cur_game.question?
-              puts "NOT A QUESTION".blue
-              serp
-            else
-              handle("save_game_res")
-            end
+            handle("save_game_res")
           end
         end
       end
 
       def save_game_res(data = nil)
-        if callback_query?
-          gam = sget('tsx_game')
-          if gam.question?
-            puts "calling save_#{gam.title} method".blue
-            public_send("save_#{gam.title}".to_sym, data.to_s)
-          else
-            puts "skippin. just show SERP".blue
-            sdel('tsx_game')
-            unhandle
-            serp
-          end
+        gam = sget('tsx_game')
+        if gam.question?
+          puts "calling save_#{gam.title} method".blue
+          public_send("save_#{gam.title}".to_sym, data.to_s)
+        else
+          puts "skippin. just show SERP".blue
+          sdel('tsx_game')
+          unhandle
+          serp
         end
       end
 
