@@ -152,8 +152,8 @@ module TSX
       # hardcoded handler
       # ust call it without params
       mess = hardcoded_handler?
-      tem "#{mess} command in hardcoded list."
-      tem "skipping other conditions."
+      # tem "#{mess} command in hardcoded list."
+      # tem "skipping other conditions."
       return [mess, nil] if mess != false
 
       # not in hardcoded handlers list
