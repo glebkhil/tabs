@@ -2,53 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/tabs.iml" afterPath="$PROJECT_DIR$/.idea/tabs.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/b8bd6ae62937a1bb26458e225acef081ddac1cd3/b22.sassc" afterPath="$PROJECT_DIR$/.sass-cache/b8bd6ae62937a1bb26458e225acef081ddac1cd3/b22.sassc" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ApplicationController.rb" afterPath="$PROJECT_DIR$/app/controllers/ApplicationController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/BotController.rb" afterPath="$PROJECT_DIR$/app/controllers/BotController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/UserController.rb" afterPath="$PROJECT_DIR$/app/controllers/UserController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/PluginController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/PluginController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/PublicController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/PublicController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
       <change beforePath="$PROJECT_DIR$/app/controllers/tsx/WalletController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/WalletController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/helpers.rb" afterPath="$PROJECT_DIR$/app/lib/helpers.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/tsx/context.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/context.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/tsx/games/announcement.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/games/announcement.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/tsx/games/lottery.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/games/lottery.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/tsx/games/referals.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/games/referals.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/tsx/games/voting.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/games/voting.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/tsx/payload.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/payload.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/view_helpers.rb" afterPath="$PROJECT_DIR$/app/lib/view_helpers.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/bot.rb" afterPath="$PROJECT_DIR$/app/models/bot.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/client.rb" afterPath="$PROJECT_DIR$/app/models/client.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/game.rb" afterPath="$PROJECT_DIR$/app/models/game.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/plugin.rb" afterPath="$PROJECT_DIR$/app/models/plugin.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/vote.rb" afterPath="$PROJECT_DIR$/app/models/vote.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/chart.haml" afterPath="$PROJECT_DIR$/app/views/admin/chart.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/games.haml" afterPath="$PROJECT_DIR$/app/views/admin/games.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/plugins.haml" afterPath="$PROJECT_DIR$/app/views/admin/plugins.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/settings.haml" afterPath="$PROJECT_DIR$/app/views/admin/settings.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/stat.haml" afterPath="$PROJECT_DIR$/app/views/admin/stat.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/partials/bene_menu.haml" afterPath="$PROJECT_DIR$/app/views/partials/bene_menu.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/partials/head.haml" afterPath="$PROJECT_DIR$/app/views/partials/head.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/search/items_products.rb" afterPath="$PROJECT_DIR$/app/views/tsx/search/items_products.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/search/serp.rb" afterPath="$PROJECT_DIR$/app/views/tsx/search/serp.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/welcome/lottery.rb" afterPath="$PROJECT_DIR$/app/views/tsx/welcome/lottery.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/welcome/referals.rb" afterPath="$PROJECT_DIR$/app/views/tsx/welcome/referals.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/welcome/welcome.rb" afterPath="$PROJECT_DIR$/app/views/tsx/welcome/welcome.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/user/spam.haml" afterPath="$PROJECT_DIR$/app/views/user/spam.haml" />
-      <change beforePath="$PROJECT_DIR$/assets/js/chart.js" afterPath="$PROJECT_DIR$/assets/js/chart.js" />
-      <change beforePath="$PROJECT_DIR$/assets/sass/b22.sass" afterPath="$PROJECT_DIR$/assets/sass/b22.sass" />
-      <change beforePath="$PROJECT_DIR$/config.ru" afterPath="$PROJECT_DIR$/config.ru" />
-      <change beforePath="$PROJECT_DIR$/config/config.rb" afterPath="$PROJECT_DIR$/config/config.rb" />
-      <change beforePath="$PROJECT_DIR$/config/const.rb" afterPath="$PROJECT_DIR$/config/const.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/calc_charts.rb" afterPath="$PROJECT_DIR$/jobs/calc_charts.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/setwebhook.rb" afterPath="$PROJECT_DIR$/jobs/setwebhook.rb" />
-      <change beforePath="$PROJECT_DIR$/public/images/payments/WebMoney Merchant_files/jquery.cookie.js" afterPath="$PROJECT_DIR$/public/images/payments/WebMoney Merchant_files/jquery.cookie.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,9 +27,53 @@
       <file leaf-file-name="WalletController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/WalletController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="384">
+              <caret line="60" column="38" lean-forward="false" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stat.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/stat.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2768">
+              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+              <folding>
+                <marker date="1539994327812" expanded="true" signature="986:1854" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="1181:1322" ph="//..." />
+                <marker date="1539994327812" expanded="true" signature="1355:1587" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="1877:3401" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="2049:2203" ph="[...]" />
+                <marker date="1539994327812" expanded="true" signature="2362:2735" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="2760:3186" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="2787:3178" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="3257:3395" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="3303:3389" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="3425:5066" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="4179:5018" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="5087:6203" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="5264:5946" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="6230:7454" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="7481:8337" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="8368:9565" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="9591:10691" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="10128:10638" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="10717:12076" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="11687:11989" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="12104:13474" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="13495:15148" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="14132:15095" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="14336:15088" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="14558:14793" ph="{&quot;outerRadius&quot;: r...}" />
+                <marker date="1539994327812" expanded="true" signature="15176:16377" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="15427:15656" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="15581:15647" ph="{&quot;innerRadius&quot;: r0b...}" />
+                <marker date="1539994327812" expanded="true" signature="15683:16192" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="15710:16186" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="15916:16177" ph="{...}" />
+                <marker date="1539994327812" expanded="true" signature="16220:16361" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,36 +93,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bot.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="563" column="6" lean-forward="false" selection-start-line="563" selection-start-column="6" selection-end-line="563" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="client.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/client.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="418" column="18" lean-forward="false" selection-start-line="418" selection-start-column="18" selection-end-line="418" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PluginController.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/tsx/PluginController.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -499,12 +468,12 @@
       <workItem from="1539157374533" duration="58022000" />
       <workItem from="1539797344798" duration="69367000" />
       <workItem from="1539992459224" duration="849000" />
-      <workItem from="1539993421848" duration="33581000" />
+      <workItem from="1539993421848" duration="34131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210172000" />
+    <option name="totallyTimeSpent" value="210722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -561,22 +530,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.3/gems/actionview-5.2.0/lib/action_view/helpers/asset_tag_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="81" column="10" lean-forward="false" selection-start-line="81" selection-start-column="10" selection-end-line="81" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/head.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/base/2-10-2018.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -876,22 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/PluginController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="418" column="18" lean-forward="false" selection-start-line="418" selection-start-column="18" selection-end-line="418" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tsx/search/serp.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -932,10 +869,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="877" column="0" lean-forward="false" selection-start-line="877" selection-start-column="0" selection-end-line="877" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/stat.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2768">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <marker date="1539994327812" expanded="true" signature="986:1854" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="1181:1322" ph="//..." />
+            <marker date="1539994327812" expanded="true" signature="1355:1587" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="1877:3401" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="2049:2203" ph="[...]" />
+            <marker date="1539994327812" expanded="true" signature="2362:2735" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="2760:3186" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="2787:3178" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="3257:3395" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="3303:3389" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="3425:5066" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="4179:5018" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="5087:6203" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="5264:5946" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="6230:7454" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="7481:8337" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="8368:9565" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="9591:10691" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="10128:10638" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="10717:12076" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="11687:11989" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="12104:13474" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="13495:15148" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="14132:15095" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="14336:15088" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="14558:14793" ph="{&quot;outerRadius&quot;: r...}" />
+            <marker date="1539994327812" expanded="true" signature="15176:16377" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="15427:15656" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="15581:15647" ph="{&quot;innerRadius&quot;: r0b...}" />
+            <marker date="1539994327812" expanded="true" signature="15683:16192" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="15710:16186" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="15916:16177" ph="{...}" />
+            <marker date="1539994327812" expanded="true" signature="16220:16361" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="418" column="18" lean-forward="false" selection-start-line="418" selection-start-column="18" selection-end-line="418" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="563" column="6" lean-forward="false" selection-start-line="563" selection-start-column="6" selection-end-line="563" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/PluginController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/statement.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -956,18 +967,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="877" column="0" lean-forward="false" selection-start-line="877" selection-start-column="0" selection-end-line="877" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tsx/WalletController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="384">
+          <caret line="60" column="38" lean-forward="false" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
           <folding />
         </state>
       </provider>
