@@ -255,7 +255,7 @@ li
   font-size: $base
   margin: 0 $controls-padding $controls-padding 0
   outline: none
-  padding: $controls-padding * 2 $controls-padding
+  padding: $controls-padding * 2 $controls-padding !important
   position: relative
   white-space: nowrap
 
@@ -332,9 +332,9 @@ input[type='submit']
   background-color: #f0f0f0
 
 .btn-small
-  padding: 3px 6px
+  padding: 3px 6px !important
   margin: 0 !important
-  font-size: $small
+  font-size: $small !important
 
 .avatar
   border-radius: $radius
@@ -646,3 +646,15 @@ span[contenteditable]
 
 .pull-right
   float: right
+
+code
+  font-family: Monaco
+  font-size: .8em
+
+.line
+  fill: none
+  stroke: #000
+  stroke-width: 2px
+
+svg
+  font-family: "Helvetica Neue", Helvetica

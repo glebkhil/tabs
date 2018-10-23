@@ -1,3 +1,6 @@
+require 'chartkick'
+require 'groupdate'
+require 'csv'
 module TSX
   class AdminController < ApplicationController
 
@@ -774,6 +777,13 @@ module TSX
       haml :'admin/games', layout: hb_layout
     end
 
+    get '/plugins' do
+      redirect to('/not_permitted') if hb_operator.is_support?(hb_bot)
+      @plugins = Plugin.select(:plugin__id, :plugin__title, :plugin__config, :plugin__desc).uniq
+      @games = Gameplay.select(:game__id, :plugin__title, :plugin__desc, :game__config, :game__status).join(:plugin, :plugin__id => :game__plugin).where(:game__status => Gameplay::ACTIVE, :game__bot => hb_bot.id)
+      haml :'admin/plugins', layout: hb_layout
+    end
+
     get '/items' do
       redirect to('/not_permitted') if hb_operator.is_support?(hb_bot)
       if hb_operator.is_admin?(hb_bot)
@@ -862,6 +872,10 @@ module TSX
 
     get '/add_items' do
       haml :'admin/add_items', layout: hb_layout
+    end
+
+    get '/chart' do
+      haml :'admin/chart', layout: hb_layout, locals: {bot: hb_bot}
     end
 
     get '/add_escrow' do

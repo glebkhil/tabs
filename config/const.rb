@@ -23,7 +23,6 @@ HAMDLERS = {
       "баланса": 'pay_by_balance',
       "оценку": 'rate_trade',
       "позже": 'later',
-      "Рефералы": 'referals',
       "easypaysample": 'easypaysample',
       "Перезаклад!": 'reitem',
       "Выдать": 'approve_reitem',

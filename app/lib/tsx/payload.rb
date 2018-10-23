@@ -8,18 +8,6 @@ module TSX
       !@var.nil? ? send(@cmd.to_sym, @var) : send(@cmd.to_sym)
     end
 
-    def method_missing(meth)
-      reply_message "*#{@btn.title}*\n#{@btn.body}"
-      # reply_message "method missing: #{meth}"
-    end
-
-    def call_chat_handler
-      dd = parse_chat_method
-      @cmd = dd.first
-      @var = dd.last
-      !@var.nil? ? send(@cmd.to_sym, @var) : send(@cmd.to_sym)
-    end
-
     def parse_update(body)
       bdy = json_load(body)
       @update = Telegram::Bot::Types::Update.new(bdy)
@@ -124,16 +112,6 @@ module TSX
       res
     end
 
-    def hardcoded_chat_handler?
-      begin
-        # tem "asuming variable is not empty"
-        CHAT_HAMDLERS.fetch(clear_text.to_sym)
-      rescue
-        # tem "Command unknown."
-        false
-      end
-    end
-
     def has_referal?
       return false if (callback_query? || file? || location?)
       ref = clear_text
@@ -154,33 +132,6 @@ module TSX
         return false
       end
     end
-
-    def parse_chat_method
-      # hardcoded handler
-      # ust call it without params
-      mess = hardcoded_chat_handler?
-      # tem "#{mess} command in hardcoded list."
-      # tem "skipping other conditions."
-      return [mess, nil] if mess != false
-
-      # not in hardcoded handlers list
-      # and handler is NOT set
-      if !handler?
-        # tem "no message, no handler"
-        # tem "replying with error"
-        return ['no_command', nil]
-      else
-        # not in hardcoded handlers list
-        # and handler is set
-        # tem "handler is set."
-        if message?
-          # tem "processing message with variable"
-          # tem "cmd: #{handler?}, var: #{clear_text}"
-          return [handler?, clear_text]
-        end
-      end
-    end
-
 
     def parse_method
 
@@ -216,8 +167,8 @@ module TSX
           return [handler?, clear_text]
         end
         if callback_query?
-          # tem "processing callback_query with variable"
-          # tem "cmd: #{handler?}, var: #{clear_data}"
+          tem "processing callback_query with variable"
+          tem "cmd: #{handler?}, var: #{clear_data}"
           return [handler?, clear_data]
         end
         if file?

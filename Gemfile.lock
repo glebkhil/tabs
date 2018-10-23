@@ -9,13 +9,13 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.6)
-    actionview (5.2.0)
-      activesupport (= 5.2.0)
+    actionview (5.2.1)
+      activesupport (= 5.2.1)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    activesupport (5.2.0)
+    activesupport (5.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -25,7 +25,7 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
-    backports (3.11.3)
+    backports (3.11.4)
     bacon (1.2.0)
     base62-rb (0.3.1)
     block_io (1.2.0)
@@ -36,6 +36,7 @@ GEM
     btce (0.5.5)
       monkey-patch (~> 0.1.0)
     builder (3.2.3)
+    chartkick (3.0.1)
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
@@ -50,13 +51,14 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+    dry-inflector (0.1.2)
     ecdsa (1.2.0)
     equalizer (0.0.11)
     erubi (1.7.1)
     eventmachine (1.2.7)
     excon (0.62.0)
     ezcrypto (0.7.2)
-    faraday (0.15.2)
+    faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
@@ -111,10 +113,10 @@ GEM
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-brightbox (0.15.0)
-      fog-core (~> 1.22)
+    fog-brightbox (0.16.1)
+      dry-inflector
+      fog-core
       fog-json
-      inflecto (~> 0.0.2)
       mime-types
     fog-cloudatcost (0.1.2)
       fog-core (~> 1.36)
@@ -125,10 +127,10 @@ GEM
       builder
       excon (~> 0.58)
       formatador (~> 0.2)
-    fog-digitalocean (0.3.0)
-      fog-core (~> 1.42)
-      fog-json (>= 1.0)
-      fog-xml (>= 0.1)
+    fog-digitalocean (0.4.0)
+      fog-core
+      fog-json
+      fog-xml
       ipaddress (>= 0.5)
     fog-dnsimple (1.0.0)
       fog-core (~> 1.38)
@@ -154,13 +156,13 @@ GEM
     fog-json (1.2.0)
       fog-core
       multi_json (~> 1.10)
-    fog-local (0.5.0)
+    fog-local (0.6.0)
       fog-core (>= 1.27, < 3.0)
-    fog-openstack (0.1.27)
-      fog-core (~> 1.45.0)
+    fog-openstack (0.3.7)
+      fog-core (>= 1.45, <= 2.1.0)
       fog-json (>= 1.0)
       ipaddress (>= 0.8)
-    fog-ovirt (1.1.1)
+    fog-ovirt (1.1.2)
       fog-core
       fog-json
       fog-xml
@@ -173,7 +175,7 @@ GEM
     fog-profitbricks (4.1.1)
       fog-core (~> 1.42)
       fog-json (~> 1.0)
-    fog-rackspace (0.1.5)
+    fog-rackspace (0.1.6)
       fog-core (>= 1.35)
       fog-json (>= 1.0)
       fog-xml (>= 0.1)
@@ -210,18 +212,21 @@ GEM
     fog-vsphere (1.2.1)
       fog-core
       rbvmomi (~> 1.8.0)
-    fog-xenserver (0.3.0)
+    fog-xenserver (1.0.0)
       fog-core
       fog-xml
+      xmlrpc
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
     formatador (0.2.5)
-    geocoder (1.4.9)
-    get_process_mem (0.2.2)
+    geocoder (1.5.0)
+    get_process_mem (0.2.3)
     git-version-bump (0.15.1)
     google_currency (3.4.1)
       money (~> 6.7)
+    groupdate (4.0.2)
+      activesupport (>= 4.2)
     gruff (0.7.0)
       rmagick (~> 2.13, >= 2.13.4)
     haml (5.0.4)
@@ -231,20 +236,20 @@ GEM
       object_regex (~> 1.0.1)
       trollop (~> 1.16.2)
     hashids (1.0.4)
-    hashie (3.5.7)
+    hashie (3.6.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httparty (0.16.2)
       multi_xml (>= 0.5.2)
     httpclient (2.8.3)
-    i18n (1.0.1)
+    i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     inflecto (0.0.2)
     ipaddress (0.8.3)
     json (2.1.0)
     kgio (2.11.2)
-    kramdown (1.16.2)
+    kramdown (1.17.0)
     logger (1.2.8)
     loofah (2.2.2)
       crass (~> 1.0.2)
@@ -258,31 +263,32 @@ GEM
       nokogiri (~> 1.6)
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (>= 0.0.9, < 0.2)
-    mime-types (3.1)
+    memory_profiler (0.9.12)
+    mime-types (3.2.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mime-types-data (3.2018.0812)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    money (6.12.0)
-      i18n (>= 0.6.4, < 1.1)
+    money (6.13.0)
+      i18n (>= 0.6.4, <= 2)
     monkey-patch (0.1.0)
       activesupport
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
-    mustermann (1.0.2)
+    mustermann (1.0.3)
     net-http-digest_auth (1.4.1)
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
     netrc (0.11.0)
-    nokogiri (1.8.4)
+    nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     ntlm-http (0.1.1)
     object_regex (1.0.1)
-    oj (3.6.4)
+    oj (3.6.12)
     open_exchange_rates (0.5.1)
       yajl-ruby
-    ovirt-engine-sdk (4.2.4)
+    ovirt-engine-sdk (4.2.5)
       json (>= 1, < 3)
     pbkdf2-ruby (0.2.1)
     pg (0.21.0)
@@ -290,9 +296,9 @@ GEM
       builder
       hashie
       httparty
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     rack (2.0.5)
-    rack-protection (2.0.3)
+    rack-protection (2.0.4)
       rack
     rack-timeout (0.5.1)
     rails-dom-testing (2.0.3)
@@ -305,7 +311,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    rbovirt (0.1.6)
+    rbovirt (0.1.7)
       nokogiri
       rest-client (> 1.7.0)
     rbvmomi (1.8.2)
@@ -320,10 +326,10 @@ GEM
     rmagick (2.16.0)
     ruby-hidden-service (0.0.2)
       tor
-    rubyzip (1.2.1)
+    rubyzip (1.2.2)
     russian (0.6.0)
       i18n (>= 0.5.0)
-    sass (3.5.6)
+    sass (3.6.0)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -334,19 +340,19 @@ GEM
     sequel-pg-comment (2.0.1)
       git-version-bump (~> 0.10)
       sequel
-    sinatra (2.0.3)
+    sinatra (2.0.4)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.3)
+      rack-protection (= 2.0.4)
       tilt (~> 2.0)
     sinatra-captcha (0.1.0.0)
-    sinatra-contrib (2.0.3)
+    sinatra-contrib (2.0.4)
       activesupport (>= 4.0.0)
       backports (>= 2.8.2)
       multi_json
       mustermann (~> 1.0)
-      rack-protection (= 2.0.3)
-      sinatra (= 2.0.3)
+      rack-protection (= 2.0.4)
+      sinatra (= 2.0.4)
       tilt (>= 1.3, < 3)
     sinatra-flash (0.3.0)
       sinatra (>= 1.0.0)
@@ -360,6 +366,7 @@ GEM
     sinatra-support (1.2.2)
       sinatra (>= 1.0)
     socksify (1.7.1)
+    stackprof (0.2.12)
     telegram-bot-ruby (0.8.6.1)
       faraday
       inflecto
@@ -383,7 +390,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
-    unicorn (5.4.0)
+    unicorn (5.4.1)
       kgio (~> 2.6)
       raindrops (~> 0.7)
     unicorn-worker-killer (0.4.4)
@@ -398,7 +405,8 @@ GEM
     webrobots (0.1.2)
     will_paginate (3.1.6)
     xml-simple (1.1.5)
-    yajl-ruby (1.4.0)
+    xmlrpc (0.3.0)
+    yajl-ruby (1.4.1)
 
 PLATFORMS
   ruby
@@ -411,14 +419,17 @@ DEPENDENCIES
   bestchange_rates!
   block_io
   btce
+  chartkick
   cloudinary
   colorize
+  daemons
   ezcrypto
   faraday
   faraday_middleware
   fog
   geocoder
   google_currency
+  groupdate
   gruff
   haml
   hash_syntax
@@ -427,6 +438,7 @@ DEPENDENCIES
   kramdown
   logger
   mechanize
+  memory_profiler
   money
   open_exchange_rates
   pg (= 0.21.0)
@@ -451,6 +463,7 @@ DEPENDENCIES
   sinatra-sequel (= 0.9.0)
   sinatra-support
   socksify
+  stackprof
   telegram-bot-ruby
   thin
   time_diff

@@ -1,6 +1,7 @@
 class Bot < Sequel::Model(:bot)
   include TSX::Billing
   include TSX::Currency
+  include TSX::Context
 
   ACTIVE = 1
   INACTIVE = 0
@@ -184,6 +185,38 @@ class Bot < Sequel::Model(:bot)
     end
   end
 
+  def support_line(web = nil)
+    line = ''
+    if !self.support.nil?
+      if self.support.split(',').empty?
+        line = self.support
+      else
+        self.support.split(',').each do |sup|
+          if web.nil?
+            line << "[@#{sup}](t.me/#{sup}), "
+          else
+            line << "<a href='#{sup}'>http://t.me/#{sup}</a>, "
+          end
+        end
+      end
+      line.chomp!(', ')
+    else
+      line = "[@no_nickname](t.me/no_nickname), "
+    end
+    line
+  end
+
+  def pick_one_game
+    p = Gameplay.
+        select(Sequel.as(:game__id, :game_id)).
+        join(:plugin, :plugin__id => :game__plugin).
+        where(:game__bot => self.id, :game__status => Gameplay::ACTIVE).
+        exclude('plugin.job is NOT NULL').
+        order(Sequel.desc(:game__last_run)).last
+    Gameplay[p[:game_id]].update(last_run: Time.now)
+    return p
+  end
+
   def cities_full_clear
     ccts = ''
     cities = City.
@@ -363,23 +396,6 @@ class Bot < Sequel::Model(:bot)
         uniq
   end
 
-  def support_line
-    @support_line = ''
-    if !self.support.nil?
-      if self.support.split(',').empty?
-        @support_line = self.support
-      else
-        self.support.split(',').each do |sup|
-          @support_line << "<a class='no-underline normal blue' href='http://t.me/#{sup}'>@#{sup}</a>, "
-        end
-      end
-      @support_line.chomp!(', ')
-    else
-      @support_line = "[@no_nickname](t.me/no_nickname), "
-    end
-    @support_line
-  end
-
   def nickname(trunc = 15)
     finish_name = (self.underscored_name == 1 ? '_bot' : 'bot')
     "<a class='blue normal' href='https://t.me/#{self.tele}#{finish_name}'>@#{(self.tele + finish_name)}</a>"
@@ -488,8 +504,19 @@ class Bot < Sequel::Model(:bot)
     prc = Price.find(product: product.id, bot: self.id)
     Trade.
         join(:item, :item__id => :trade__item).
-        where(item__bot: self.id, trade__status: [Trade::FINISHED, Trade::FINALIZED], :item__prc => prc.id, :trade__closed => dat..dat + 1.day).count(:trade__id)
+        where(item__bot: self.id, trade__status: [Trade::FINISHED, Trade::FINALIZED], :item__prc => prc.id, :trade__closed => dat..dat + 1.day).
+        count(:trade__id)
   end
+
+  def amount_sales_by_product_and_date(product, dat)
+    prc = Price.find(product: product.id, bot: self.id)
+    r = Trade.
+        select(Sequel.function("sum", :trade__amount)).
+        join(:item, :item__id => :trade__item).
+        where(item__bot: self.id, trade__status: [Trade::FINISHED, Trade::FINALIZED], :item__prc => prc.id, :trade__closed => dat..dat + 1.day)
+    r[0][:sum].nil? ?  0 : r[0][:sum]
+  end
+
 
   def prod_qnts(prod)
     prices = Price.dataset.distinct(:price__id).where(product: prod.id, bot: self.id).map{|x| x.id}
@@ -501,15 +528,15 @@ class Bot < Sequel::Model(:bot)
   end
 
   def has_active_game?
-    !Gameplay.find(bot: self.id, status: Gameplay::ACTIVE).nil?
+    Gameplay.find(bot: self.id, status: Gameplay::ACTIVE).nil?
   end
 
   def active_game
-    if self.has_active_game?
-      Gameplay.find(bot: self.id, status: Gameplay::ACTIVE)
-    else
-      nil
-    end
+    Gameplay.where(bot: self.id, status: Gameplay::ACTIVE).order(Sequel.asc(:last_run)).limit(1).first
+  end
+
+  def active_games
+    Gameplay.where(bot: self.id, status: Gameplay::ACTIVE)
   end
 
   def sales_amount_by_product_and_date_and_qnt(city, dat, pric)

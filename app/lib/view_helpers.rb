@@ -160,7 +160,7 @@ module TSX
     end
 
     def btn_wallet
-      icon('credit_card', 'Кошелек')
+      icon('credit_card', 'Кабинет')
     end
 
     def btn_bots_welcome_web
@@ -459,15 +459,17 @@ module TSX
     def best_bot
       lines = ""
       b = Vote::best_this_month
-      lines << "*Авторитет*\nЛучший шоп по мнению самих пользователей.\n\n"
-      lines << "#{b.nickname_md} 🎖️🎖️🎖️\nОтзывы #{icon('+1')} #{Rank::positive(b.beneficiary)} #{icon('-1')} #{Rank::negative(b.beneficiary)}\nВ наличии *#{kladov(b.active_items)}*\nГорода *#{b.cities_full_clear}*\n#{b.description}"
-      lines
+      if !b.nil?
+        lines << "*Авторитет*\nЛучший шоп по мнению самих пользователей.\n\n"
+        lines << "#{b.nickname_md} 🎖️🎖️🎖️\nОтзывы #{icon('+1')} #{Rank::positive(b.beneficiary)} #{icon('-1')} #{Rank::negative(b.beneficiary)}\nВ наличии *#{kladov(b.active_items)}*\nГорода *#{b.cities_full_clear}*\n#{b.description}"
+        lines
+      end
     end
 
     def main_top
       lines = ""
       bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(status: 1, listed: 1, risky: 0).order(Sequel.desc(:vars__today_sales)).limit(5)
-      lines << "\n*Топ-5*\nЛучшие 5 магазинов нашей системы. Рейтинг обновляется несколько раз в день автоматически. В Топ5 находятся только качественные продавцы.\n\n"
+      lines << "\n*Топ-5*\nЛучшие магазины нашей системы. Рейтинг обновляется несколько раз в день автоматически.\n\n"
       top = 1
       bots.each do |b|
         case top
@@ -489,8 +491,8 @@ module TSX
 
     def bots_welcome
       lines = ""
-      lines << "*Основной топ*\nРейтинг розничных продавцов и ботов нашей системы. Рейтинг обновляется каждый день на основание данных за прошедший день.\n\n"
-      bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(status: 1, listed: 1, risky: 0).order(Sequel.desc(:vars__today_sales))
+      lines << "*Остальные магазины*\nТоп остальных магазинов системы. Список формируется по колиечству продаж за вчера..\n\n"
+      bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(status: 1, listed: 1).order(Sequel.desc(:vars__today_sales)).offset(5)
       top = 1
       bots.each do |b|
         lines  << ("#{icon('small_orange_diamond')} #{b.nickname_md} #{b.awards} #{b.cities}\n") if b.cities

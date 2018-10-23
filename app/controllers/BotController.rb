@@ -9,32 +9,19 @@ class BotController < TSX::ApplicationController
 
   post '/hook/*' do
     begin
-      # [200, {}, ['---------------------- COULD NOT PROCESS']]
       mess = ''
       token = params[:splat].first
       @bot = Telegram::Bot::Client.new(token)
-      _tsx_bot = Bot.find(token: token)
-      # if _tsx_bot.master.nil?
-      @tsx_bot = _tsx_bot
-      # else
-      #   @tsx_bot = Bot[_tsx_bot.master]
-      # end
+      @tsx_bot = Bot.find(token: token)
       @tsx_host = request.host
-      if @bot && @tsx_bot
-        parse_update(request.body)
-        setup_sessa
-        if !hb_client
-          mess = "Возникла проблема при регистрации вашего никнейма. Обратитесь в поддержку."
-        elsif @tsx_bot.inactive?
-          mess = "Бот на техобслуживании."
-        elsif hb_client.banned?
-          mess = "Вы забанены. Удачи."
-        else
-          show_typing
-          call_handler
-          log_update
-        end
-      end
+      parse_update(request.body)
+      setup_sessa
+      raise 'Возникла проблема при регистрации вашего никнейма. Обратитесь в поддержку.' if !hb_client
+      raise "Бот на техобслуживании." if @tsx_bot.inactive?
+      raise "Вы забанены. Удачи." if hb_client.banned?
+      show_typing
+      call_handler
+      log_update
     rescue Telegram::Bot::Exceptions::ResponseError => re
       hb_client.status = Client::CLIENT_BANNED
       hb_client.save

@@ -72,7 +72,6 @@ module TSX
     end
 
     def handle(handler)
-      puts handler.colorize(:red)
       sset('tsx_handler', handler)
     end
 

@@ -39,10 +39,6 @@ module TSX
         reply_picture 'easy_sample.jpg'
       end
 
-      def referals
-        reply_simple 'welcome/referals'
-      end
-
       def rules
         reply_simple 'welcome/rules'
       end

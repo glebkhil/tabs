@@ -1,6 +1,6 @@
 module TSX
   module Controllers
-    module Plugin
+    module Wallet
 
       def save_voting(data)
         Vote.create(
@@ -59,7 +59,6 @@ module TSX
         serp if cur_game.conf('question').to_s != 'true'
       rescue
         reply_inline "welcome/#{cur_game.title}", gam: cur_game
-        serp
       end
 
       def save_game_res(data = nil)

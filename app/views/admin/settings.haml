@@ -1,14 +1,14 @@
 %form{action: url('/settings'), method: 'post'}
   %input{type: 'hidden', name: 'overview_bot', value: @overview_bot.id}
-  %h2 Настройки
-  %p Настройки вашей учетной записи. Настройки бота автопродаж, настройки онлайн магазина.
-  %h3 Токен авторизации
+  %h1
+    Настройки
+    %b= @overview_bot.tele
+    -#Токен авторизации
+    -#%b.big.blue= hb_operator.my_token
+    -#%br
+    -#%span.dark
+    -#  Все что нужно для входа в личный кабинет это токен авторизации. Ваш токен авторизации ниже.
   %p
-    Все что нужно для входа в личный кабинет это токен авторизации. Ваш токен авторизации ниже.
-    %br
-    Сохраните этот токен, так как никакой возможности восстановить его не будет.
-  %p
-    %b.big.blue= hb_operator.my_token
   - if hb_bot.activated == 0
     %h3 Открыть магазин
     %p
@@ -16,42 +16,62 @@
     %p
       %form{action: url('/activate_shop'), method: 'post'}
         %input{type: 'submit', value: 'Активировать'}
-  - if hb_operator.has_notify?(hb_bot)
-    %h3 Сервисный бот
-    %p
-      Сервисный бот привязан к этой учетной записи. Теперь Вы будете получать
-      %br
-      уведомления в Телеграм. Это значительно ускорит проведение сделок.
-    %p.big
-      = icn('id')
-      - n = Team.find(bot: hb_bot.id, client: hb_operator.id).notify
-      %b= n
-      = Client[n].username
-  - else
-    %h3 Сервисный бот
-    %p
-      Для того, чтобы быстро реагировать на запросы Ваших клиентов, зайдите в сервисный бот
-      %a.bold.blue{href: "http://t.me/DarksideRobot"} @DarksideRobot.
-      %br
-      Введите токен авторизации. Пока доступны уведомления в мессенджере Телеграм.
+  -#- if hb_operator.has_notify?(hb_bot)
+  -#  %h3 Сервисный бот
+  -#  %p
+  -#    Сервисный бот привязан к этой учетной записи. Теперь Вы будете получать
+  -#    %br
+  -#    уведомления в Телеграм. Это значительно ускорит проведение сделок.
+  -#  %p.big
+  -#    = icn('id')
+  -#    - n = Team.find(bot: hb_bot.id, client: hb_operator.id).notify
+  -#    %b= n
+  -#    = Client[n].username
+  -#- else
+  -#  %h3 Сервисный бот
+  -#  %p
+  -#    Для того, чтобы быстро реагировать на запросы Ваших клиентов, зайдите в сервисный бот
+  -#    %a.bold.blue{href: "http://t.me/DarksideRobot"} @DarksideRobot.
+  -#    %br
+  -#    Введите токен авторизации. Пока доступны уведомления в мессенджере Телеграм.
   %h3 Общие настройки
-  %input{style: 'width: auto', size: 25, type: 'text', name: 'support', value: hb_bot.support, required: true, placeholder: 'Телеграм службы поддержки'}
+  %p.dark
+    Установите значения всех полей и подтвердите форму. Вы не сможете сохранить настройки, пока не заполните настройки полностью.
+  Название магазина
   %input{style: 'width: auto', size: 20, type: 'text', name: 'title', value: hb_bot.title, required: true, placeholder: 'Название магазина'}
-  %input{style: 'width: auto', size: 20, type: 'text', name: 'avatar', value: hb_bot.avatar, required: true, placeholder: 'Аватар магазина'}
   %br
-  %textarea{style: 'width: auto', cols: 80, rows: 6, name: 'description', required: true}= hb_bot.description
+  Прямая ссылка на лого
+  %input{style: 'width: auto', size: 60, type: 'text', name: 'avatar', value: hb_bot.avatar, required: true, placeholder: 'Аватар магазина'}
   %br
-  %input{style: 'width: auto', size: 15, type: 'text', name: 'discount_period', value: hb_bot.discount_period, required: true, placeholder: 'Скидка через'}
-  %input{style: 'width: auto', size: 15, type: 'text', name: 'discount', value: hb_bot.discount, required: true, placeholder: 'Скидка в процентах'}
-  %input{type: 'text', size: '22', name: 'icon_old', value: hb_bot.icon_old, placeholder: 'Иконка для старых кладов'}
-
-  %h3 Настройки Телеграм бота
-  %input{style: 'width: auto', size: 20, type: 'text', name: 'tele', value: hb_bot.tele, required: true, placeholder: 'Ник бота'}
-  %input{style: 'width: auto', size: 60, type: 'text', name: 'token', value: hb_bot.token, required: true, placeholder: 'Телеграм API токен'}
+  Скидка через, дн
+  %input{style: 'width: auto', size: 5, type: 'text', name: 'discount_period', value: hb_bot.discount_period, required: true, placeholder: 'Скидка через'}
+  Скидка, %
+  %input{style: 'width: auto', size: 5, type: 'text', name: 'discount', value: hb_bot.discount, required: true, placeholder: 'Скидка в процентах'}
+  Иконка для скидок
+  %input{type: 'text', size: '4', name: 'icon_old', value: hb_bot.icon_old, placeholder: 'Иконка для старых кладов'}
   %br
-  %input{style: 'width: auto', size: 10, type: 'text', name: 'retry_period', value: hb_bot.retry_period, required: true, placeholder: 'Easypay интервал'}
+  Ники операторов, через запятую
+  %input{style: 'width: auto', size: 25, type: 'text', name: 'support', value: hb_bot.support, required: true, placeholder: 'Телеграм службы поддержки'}
+  %br
+  Резерв клада на, мин
   %input{style: 'width: auto', size: 10, type: 'text', name: 'reserve_interval', value: hb_bot.reserve_interval, required: true, placeholder: 'Резервирование клада на'}
+  Реферальные, %
   %input{style: 'width: auto', size: 10, type: 'text', name: 'ref_rate', value: hb_bot.ref_rate, required: true, placeholder: 'Реферальные, %'}
+  %br
+  %textarea{style: 'width: auto', cols: 80, rows: 3, name: 'description', required: true}= hb_bot.description
+  %br
+  Текущий статус бота
+  %select{name: 'status'}
+    %option{value: Bot::ACTIVE, selected: @overview_bot.status == Bot::ACTIVE} Активный
+    %option{value: Bot::INACTIVE, selected: @overview_bot.status == Bot::INACTIVE} Неактивный
+  %h3 Настройки Телеграм бота
+  %p.dark
+    Установите ник вашего бота и API token. После сохранения настроек, новый бот автоматически включится.
+  Ник бота
+  %input{style: 'width: auto', size: 20, type: 'text', name: 'tele', value: hb_bot.tele, required: true, placeholder: 'Ник бота'}
+  %br
+  Telegram API token
+  %input{style: 'width: auto', size: 60, type: 'text', name: 'token', value: hb_bot.token, required: true, placeholder: 'Телеграм API токен'}
   -#- OVERVIEW.each do |d|
   -#  - d.each do |colname, cols|
   -#    %h3= colname.to_s
@@ -75,7 +95,7 @@
   -#            = COL_OPTIONS.first[key.to_sym][1]
   -#    %br
   %h3 Иконки бота
-  %p
+  %p.dark
     Выбирайте emoji из списка доступных. Бот будет использовать назначенные Вами иконки или возьмет иконки по умолчанию.
     %br
     Список доступных иконок
@@ -89,8 +109,4 @@
           = icn(val)
           = comment
           %input{type: 'text', size: '22', name: key, value: val}
-  %div.clear= "&#160;"
   %input{type: 'submit', value: 'Сохранить все настройки'}
-  %select{name: 'status'}
-    %option{value: Bot::ACTIVE, selected: @overview_bot.status == Bot::ACTIVE} Активный
-    %option{value: Bot::INACTIVE, selected: @overview_bot.status == Bot::INACTIVE} Неактивный

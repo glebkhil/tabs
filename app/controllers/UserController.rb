@@ -45,11 +45,36 @@ module TSX
       redirect back
     end
 
-    post '/add_game' do
-      redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot) and !hb_operator.is_operator?(hb_bot)
-      Gameplay.create(bot: hb_bot.id, title: params[:title] || "название", config: JSON.dump(YAML.load(params[:config])), status: Gameplay::ACTIVE)
-      flash['info'] = 'Плагин добавлен.'
-      redirect back
+    post '/apply_plugin' do
+      begin
+        redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot) and !hb_operator.is_operator?(hb_bot)
+        pl = Plugin[params[:plugin]]
+        conf = JSON.dump(YAML.load(params[:config]))
+        Gameplay.create(bot: hb_bot.id, title: pl.title, plugin: pl.id, config: conf, status: Gameplay::ACTIVE)
+        flash['info'] = 'Плагин добавлен.'
+        redirect back
+      rescue Sequel::UniqueConstraintViolation
+        flash['info'] = 'Точно такой же плугин уже включен прямо сейчас.'
+        redirect back
+      end
+    end
+
+    get '/stop_plugin/:game' do
+      begin
+        redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot) and !hb_operator.is_operator?(hb_bot)
+        Gameplay[params[:game]].delete
+        flash['info'] = 'Плагин удален.'
+        redirect back
+      rescue
+        flash['info'] = 'Точно такой же плугин уже включен прямо сейчас.'
+        redirect back
+      end
+    end
+
+
+    get '/plugin_config/:plugin' do
+      pl = Plugin[params[:plugin]]
+      pl.config.to_s
     end
 
     post '/add_warning' do

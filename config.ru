@@ -8,6 +8,7 @@ require_rel './app/lib/tsx'
 require_rel './app/lib'
 require_rel './app/models'
 require_rel './app/controllers/tsx'
+require_rel './app/lib/tsx/games'
 require_rel './app/controllers/ApplicationController'
 require_rel './app/controllers'
 

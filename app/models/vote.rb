@@ -10,6 +10,8 @@ class Vote < Sequel::Model(:vote)
       where(created: Date.today.beginning_of_month .. Date.today.end_of_month).
       group(:bot).order(Sequel.desc(:cnt)).limit(1).first[:bot]
     Bot[bot]
+  rescue
+    nil
   end
 
 end

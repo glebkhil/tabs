@@ -21,6 +21,8 @@ require 'rack-timeout'
 require 'sinatra/captcha'
 require 'telegram/bot'
 require 'telegram/bot/exceptions'
+require 'memory_profiler'
+
 
 module TSX
 
@@ -60,6 +62,8 @@ module TSX
     include Darkside::Role
     include Colorize
 
+    include TSX::Controllers::Plugin
+    include TSX::Controllers::Wallet
     include TSX::Controllers::Public
     include TSX::Controllers::Search
     include TSX::Controllers::Meine
@@ -74,6 +78,10 @@ module TSX
     Telegram::Bot.configure do |config|
       config.adapter = :net_http_persistent
     end
+
+    MemoryProfiler.start
+    report = MemoryProfiler.stop
+    report.pretty_print
 
     WEX_API = Btce::TradeAPI.new(
         {

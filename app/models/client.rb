@@ -55,10 +55,6 @@ class Client < Sequel::Model(:client)
     end
   end
 
-  def game_played?(game)
-    !Bet.find(client: self.id, game: game.id).nil?
-  end
-
   def escrow_buyer?(escrow)
     self.id == escrow.buyer
   end
@@ -77,7 +73,11 @@ class Client < Sequel::Model(:client)
   end
 
   def has_vote?
-    !Vote.find(client: self.id).nil?
+    !Vote.find(username: self.tele).nil?
+  end
+
+  def has_bet?(game)
+    !Bet.find(client: self.id, game: game.id).nil?
   end
 
   def reitem_possible?(trade)
@@ -114,7 +114,7 @@ class Client < Sequel::Model(:client)
 
   def make_referal_link(b)
     encoded = Base64.encode64("#{self.id}")
-    "https://telegram.me/#{b.full_nick}?start=#{encoded}"
+    "https://t.me/#{b.full_nick}?start=#{encoded}"
   end
 
   def self.authenticate(c, u)

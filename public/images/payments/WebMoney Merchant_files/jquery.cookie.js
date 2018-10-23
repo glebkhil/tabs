@@ -35,7 +35,7 @@
  * @type undefined
  *
  * @name $.cookie
- * @cat Plugins/Cookie
+ * @cat Games/Cookie
  * @author Klaus Hartl/klaus.hartl@stilbuero.de
  */
 
@@ -50,7 +50,7 @@
  * @type String
  *
  * @name $.cookie
- * @cat Plugins/Cookie
+ * @cat Games/Cookie
  * @author Klaus Hartl/klaus.hartl@stilbuero.de
  */
 jQuery.cookie = function(name, value, options) {

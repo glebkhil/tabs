@@ -1,7 +1,7 @@
 #{bread_crumbs}
 ****
 buts ||= []
-buts = keyboard(@list, 2) do |rec|
+buts = keyboard(@list, 3) do |rec|
   if rec.instance_of?(Product)
     "#{icon(rec[:entity_icon])} #{rec[:entity_russian]}"
   else
@@ -20,7 +20,7 @@ end
 if !@tsx_bot.custom_buttons
   buts << btn_bots_welcome
 else
-  buts << @tsx_bot.custom_buttons << [btn_bots_welcome, btn_abuse] 
+  buts << @tsx_bot.custom_buttons << [btn_bots_welcome, btn_abuse]
 end
 buts
 

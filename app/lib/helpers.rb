@@ -245,6 +245,10 @@ module TSX
       session['hb_filter_city'] || false
     end
 
+    def const_game(game)
+      "TSX::#{game.title.capitalize}".constantize
+    end
+
     def hb_dealing_bot
       Bot[session['hb_dealing_bot']] || false
     end
