@@ -70,6 +70,7 @@ module TSX
           gam = @tsx_bot.active_game
           gam.inc
           gam.update(last_run: Time.now)
+          puts "save_#{gam.title}".colorize(:green)
           send("save_#{gam.title}", data)
           serp
         end
