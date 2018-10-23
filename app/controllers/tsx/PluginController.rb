@@ -50,6 +50,10 @@ module TSX
 
       def play_game
         cur_game = @tsx_bot.active_game
+        if cur_game.nil?
+          serp
+          return
+        end
         cur_game.update(last_run: Time.now)
         handle("save_game_res")
         sset("tsx_game", cur_game)

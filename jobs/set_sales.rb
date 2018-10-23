@@ -18,6 +18,7 @@ bots = Bot.all
 bots.each do |c|
   begin
     today_cnt = c.today_bot_sales(Date.today - 1.day)
+    Gameplay.create(title: 'referals', bot: c.id, status: Gameplay::ACTIVE, config: JSON.parse('{   "interest": "5",   "counter": "0",   "job": "daily",   "question": false }').to_json, 4)
     cnt = c.sales
     logger.noise "Today_sales=#{today_cnt}, sales=#{cnt} for #{c.tele}"
     c.set_var('sales', c.sales)
