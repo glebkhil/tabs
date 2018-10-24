@@ -741,7 +741,8 @@ class Bot < Sequel::Model(:bot)
       bot.send_message(
         chat_id: to_whom,
         text: body,
-        parse_mode: :markdown
+        parse_mode: :markdown,
+        disable_web_page_preview: false
       )
     rescue => e
       puts "Telegram API: #{e.message}"

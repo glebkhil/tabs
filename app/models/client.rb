@@ -113,7 +113,7 @@ class Client < Sequel::Model(:client)
   end
 
   def make_referal_link(b)
-    encoded = Base64.encode64("#{self.id}")
+    encoded = Base64.encode64("#{self.tele}")
     "https://t.me/#{b.full_nick}?start=#{encoded}"
   end
 
@@ -383,7 +383,7 @@ class Client < Sequel::Model(:client)
     mst = self.master
     if mst.is_a?(Client)
       pr = Price[it.prc]
-      ref_amount = ((pr.price.to_f * b.ref_rate.to_f)/100).round
+      ref_amount = ((pr.price.to_f * b.get_var('ref_rate').to_f)/100).round
       Ledger.
         create(
           debit: ben.id,
@@ -795,12 +795,24 @@ class Client < Sequel::Model(:client)
       where(trade__seller: self.id, trade__status: Trade::FINALIZED)
   end
 
-  def ref_cash
+  def client_referals
+    Ref.select(:referal).where(client: self.id).count || 0
+  end
+
+  def ref_sales
     credit = Ledger.dataset.
-      select{Sequel.as(Sequel.expr{COALESCE(sum(:ledger__amount), 0)}, :bns)}.
-      where(credit: self.id, debit: Client::__referals.id)
+        select{Sequel.as(Sequel.expr{COALESCE(count(:ledger__id), 0)}, :bns)}.
+        where(credit: self.id, debit: Client::__referals.id)
     credit.map(:bns)[0]
   end
+
+  def ref_cash
+    credit = Ledger.dataset.
+        select{Sequel.as(Sequel.expr{COALESCE(sum(:ledger__amount), 0)}, :bns)}.
+        where(credit: self.id, debit: Client::__referals.id)
+    credit.map(:bns)[0]
+  end
+
 
   def bonuses_cash
     credit = Ledger.dataset.

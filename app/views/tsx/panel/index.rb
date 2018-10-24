@@ -3,9 +3,10 @@
 
 Клиент #{icon('id')} *#{hb_client.id}*
 Баланс *#{@tsx_bot.amo(hb_client.available_cash)}*
-
-Рефералов *#{@tsx_bot.amo(hb_client.referals.count)}*
-Реферальных продаж *#{@tsx_bot.sales.count}* на #{@tsx_bot.ref_sales}
+Актуальная [#{hb_client.make_referal_link(@tsx_bot)}](#{hb_client.make_referal_link(@tsx_bot)})
+Рефералов *#{ludey(hb_client.client_referals)}*
+Реф продаж *#{hb_client.sales.count}* на *#{@tsx_bot.amo(hb_client.ref_sales)}*
+Реферальные *#{@tsx_bot.get_var('ref_rate')}% с продажи*
 Доступно для вывода *#{@tsx_bot.amo(hb_client.ref_cash)}*
 ****
 help_buttons

@@ -14,6 +14,7 @@
   %tbody.no-shadow
     - @list.each do |ac|
       - acc = Client[ac[:id]]
+      - mst = acc.master
       %tr
         %td
           = icn('id')
@@ -34,7 +35,6 @@
           = "на"
           %b=  hb_bot.amo(spend.sum(:price))
         %td
-          - mst = acc.master
           = !mst ? 'без реферала' : "[#{mst.id}] <b class='blue'>@" + mst.username+ "</b>"
 %p
   = pagina @list

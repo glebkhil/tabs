@@ -22,7 +22,7 @@ module TSX
     end
 
     def ludey(cnt)
-      "#{cnt_bold(cnt)} #{Russian.p(cnt, "человек", "человека", "")}"
+      "#{cnt_bold(cnt)} #{Russian.p(cnt, "человек", "человека", "людей")}"
     end
 
     def otzivov(cnt)

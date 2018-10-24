@@ -102,7 +102,7 @@ module TSX
     def hardcoded_handler?
       res = false
       begin
-        tem "asuming variable is not empty"
+        # tem "asuming variable is not empty"
         res = HAMDLERS.fetch(clear_text.to_sym)
       rescue
         return false if callback_query?
@@ -123,8 +123,9 @@ module TSX
       if @payload.text
         cmd = @payload.text.split(' ').first
         if cmd == '/start' && "/#{ref}" != '/start'
-          decoded = Base64.decode64(clear_text)
-          master = Client[decoded]
+          decoded = Base64.decode64(@payload.text.split(' ').last)
+          puts "DECODED: #{decoded}"
+          master = Client.find(tele: decoded, bot: @tsx_bot.id)
           if !master.nil?
             return master
           else
@@ -140,11 +141,14 @@ module TSX
 
     def parse_method
 
-      referal = has_referal?
-      if referal != false
-        if referal.id != hb_client.id
-          blue "Adding @#{hb_client.username} as referal to @#{referal.username}"
-          Ref.find_or_create(referal: hb_client.id, client: referal.id)
+      master = has_referal?
+      tem "GOT REF #{master.inspect}"
+      if master != false
+        if master.id != hb_client.id
+          blue "Adding hb_client: @#{hb_client.username} as referal to :@#{master.username}"
+          ref_bot = Bot[master.bot]
+          @tsx_bot.say(master.tele, "👬 Пользователь `@#{hb_client.username}` зарегистрировался как ваш реферал.")
+          Ref.create(client: master.id, referal: hb_client.id)
           return ['start', nil]
         end
       end
@@ -152,8 +156,8 @@ module TSX
       # hardcoded handler
       # ust call it without params
       mess = hardcoded_handler?
-      tem "#{mess} command in hardcoded list."
-      tem "skipping other conditions."
+      # tem "#{mess} command in hardcoded list."
+      # tem "skipping other conditions."
       return [mess, nil] if mess != false
 
       # not in hardcoded handlers list

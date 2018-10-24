@@ -70,6 +70,7 @@ module TSX
 
       def save_game_res(data = nil)
         gam = sget('tsx_game')
+        gam.inc
         if gam.question?
           puts "calling save_#{gam.title} method".blue
           public_send("save_#{gam.title}".to_sym, data.to_s)
