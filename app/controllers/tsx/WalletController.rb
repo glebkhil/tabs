@@ -3,7 +3,7 @@ module TSX
     module Wallet
 
       def panel
-        reply_simple 'panel/index', layout: hb_layout, locals: {links: true}
+        reply_simple 'panel/index', layout: hb_layout
       end
 
       def cashout

@@ -2,16 +2,16 @@ module TSX
   module Controllers
     module Plugin
 
-      def save_voting(data)
+      def save_voting(data = nil)
         Vote.create(
-            bot: data.to_i,
+            bot: @tsx_bot.id,
             username: hb_client.username
         )
         update_message "#{icon(@tsx_bot.icon_success)} Спасибо! Ваш голос очень важен, так как он участвует в голосовании за *Лучший Бот Месяца*. Лучший бот будет особо отмечен на странице *Рекомендуем*. Всего в этом месяце проголосовало *#{ludey(Vote::voted_this_month)}*."
       end
 
       def save_lottery(data)
-        gam = @tsx_bot.active_game
+        gam = sget('tsx_game')
         Bet.create(
             number: data.to_i,
             client: hb_client.id,
@@ -48,6 +48,7 @@ module TSX
 
       def play_game
         cur_game = @tsx_bot.active_game
+        puts cur_game.inspect
         if cur_game.nil?
           puts "GAME IS NIL".blue
           serp
@@ -59,6 +60,7 @@ module TSX
           cur_game.update(last_run: Time.now)
           sset("tsx_game", cur_game)
           reply_inline "welcome/#{cur_game.title}", gam: cur_game
+          cur_game.inc
           if !cur_game.question?
             puts "NOT A QUESTION".blue
             serp
@@ -70,16 +72,10 @@ module TSX
 
       def save_game_res(data = nil)
         gam = sget('tsx_game')
-        gam.inc
-        if gam.question?
-          puts "calling save_#{gam.title} method".blue
-          public_send("save_#{gam.title}".to_sym, data.to_s)
-        else
-          puts "skippin. just show SERP".blue
-          sdel('tsx_game')
-          unhandle
-          serp
-        end
+        puts gam.inspect
+        puts "calling save_#{gam.title} method".blue
+        public_send("save_#{gam.title}".to_sym, data.to_s)
+        serp
       end
 
     end
