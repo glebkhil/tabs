@@ -47,7 +47,7 @@ module TSX
 
       def play_game
         cur_game = @tsx_bot.active_game
-        prize_lottery(cur_game)
+        prize_lottery(cur_game) if !cur_game.nil?
         cur_game.update(last_run: Time.now) if !cur_game.nil?
         puts cur_game.inspect
         if cur_game.nil?
