@@ -23,10 +23,11 @@ class Gameplay < Sequel::Model(:game)
   def can_post?(client)
     case self.title
       when 'lottery'
-        if Bet.find(client: client.id, game: self.id).nil? && self.available_numbers.count > 0
+        if Bet.find(client: client.id, game: self.id).nil?
           return true
+        elsif !self.available_numbers.nil? or self.available_numbers.count > 0
+          return false
         end
-        return false
       when 'voting'
         if Vote.find(username: client.username, bot: client.bot).nil?
           return true
@@ -42,6 +43,7 @@ class Gameplay < Sequel::Model(:game)
 
   def available_numbers
     rng = eval("#{self.conf('range')}")
+    puts rng.inspect
     Bet.where(game: self.id).each do |num|
       [rng] - [num.number]
     end
