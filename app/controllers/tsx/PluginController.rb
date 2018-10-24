@@ -47,7 +47,7 @@ module TSX
 
       def play_game
         cur_game = @tsx_bot.active_game
-        cur_game.update(last_run: Time.now)
+        cur_game.update(last_run: Time.now) if !cur_game.nil?
         puts cur_game.inspect
         if cur_game.nil?
           puts "GAME IS NIL".blue
