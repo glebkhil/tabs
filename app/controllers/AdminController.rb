@@ -874,8 +874,19 @@ module TSX
       haml :'admin/add_items', layout: hb_layout
     end
 
-    get '/chart' do
-      haml :'admin/chart', layout: hb_layout, locals: {bot: hb_bot}
+    get '/chart/:product' do
+      @ch = Array.new
+      @product = Product[params[:product]]
+      @hash = {}
+      # hb_bot.products.each do |prc|
+      #   prod = Product[prc.product]
+      @ch = DB.fetch("select to_char( created, 'DD-MM-YYYY') as dom, count(*) as sales from item where created < '#{Date.today.at_end_of_month}' and created > '#{Date.today.at_beginning_of_month}' and product = #{@product.id} group by dom, product")
+      @ch.each do |d|
+        @hash.merge!({Date.parse(d[:dom]) => d[:sales]})
+        # {"2018-10-13"=> "4", "2018-10-14"=> "17", "2018-10-11"=> "14", "2018-10-15"=> "10", "2018-10-23" => "16"}
+      end
+      # end
+      haml :'admin/chart', layout: hb_layout
     end
 
     get '/add_escrow' do

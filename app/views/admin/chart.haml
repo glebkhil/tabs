@@ -1,2 +1,2 @@
--#= line_chart [CSV.read("#{ROOT}/public/base/2-10-2018.csv")]
-= line_chart bot.today_bot_sales(Date.today)
+-#= line_chart [{name: @product.russian, data: @ch.map {|m| {Date.parse(m[:dom]) => m[:sales] }}}]
+= line_chart @hash, xtitle: "Time",  ytitle: "Sales", legend: true
