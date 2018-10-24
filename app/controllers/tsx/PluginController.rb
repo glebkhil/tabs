@@ -42,12 +42,12 @@ module TSX
           Spam.create(bot: @tsx_bot.id, kind: Spam::BOT_CLIENTS, label: 'Победа числа в лотерею', text: "🚨🚨🚨 Дорогие друзья! Победило число *#{winner_num}*. Клиенту с ником @#{winner.username} пополнен баланс на #{@tsx_bot.active_game.conf('amount')}", status: Spam::NEW)
           puts "DEACTIVATING GAME".colorize(:white_on_red)
           @gam.update(status: Gameplay::GAMEOVER)
-          @tsx_bot.active_game.inc
         end
       end
 
       def play_game
         cur_game = @tsx_bot.active_game
+        cur_game.update(last_run: Time.now)
         puts cur_game.inspect
         if cur_game.nil?
           puts "GAME IS NIL".blue
@@ -57,9 +57,8 @@ module TSX
           serp
         else
           puts "CANPOST. UPDATING GAME LAST RUN".blue
-          cur_game.update(last_run: Time.now)
           sset("tsx_game", cur_game)
-          reply_inline "welcome/#{cur_game.title}", gam: cur_game
+          reply_inline "welcome/#{cur_game.title}", gam: cur_game, b: @tsx_bot
           cur_game.inc
           if !cur_game.question?
             puts "NOT A QUESTION".blue
@@ -75,6 +74,7 @@ module TSX
         puts gam.inspect
         puts "calling save_#{gam.title} method".blue
         public_send("save_#{gam.title}".to_sym, data.to_s)
+        sdel('tsx_game')
         serp
       end
 
