@@ -31,7 +31,7 @@ module TSX
 
       def prize_lottery(game)
         @gam = game
-        if @gam.available_numbers.count < 1
+        if @gam.title == 'lottery' and @gam.available_numbers.count < 1
           rec = Bet.where(game: @gam.id).limit(1).order(Sequel.lit('RANDOM()')).all
           winner = Client[rec.first.client]
           winner_num = Bet[rec.first.id].number
@@ -47,6 +47,7 @@ module TSX
 
       def play_game
         cur_game = @tsx_bot.active_game
+        prize_lottery(cur_game)
         cur_game.update(last_run: Time.now) if !cur_game.nil?
         puts cur_game.inspect
         if cur_game.nil?
@@ -60,6 +61,7 @@ module TSX
           sset("tsx_game", cur_game)
           reply_inline "welcome/#{cur_game.title}", gam: cur_game, b: @tsx_bot
           cur_game.inc
+          puts "QUESTION? #{cur_game.question?}"
           if !cur_game.question?
             puts "NOT A QUESTION".blue
             serp
