@@ -1,7 +1,0 @@
-DataDirectory /code/theautobot/tmp/tor_29612/data
-ControlPort 29612
-HiddenServiceDir /code/theautobot/tmp/tor_29612/hidden_service
-HiddenServicePort 80 localhost:5000
-PidFile /code/theautobot/tmp/tor_29612/pid
-RunAsDaemon 1
-SocksPort 0
