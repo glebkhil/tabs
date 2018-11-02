@@ -14,6 +14,14 @@ require_rel './app/controllers'
 
 `rake version:bump:revision`
 
+module Tor
+  class HiddenService
+    def hostname
+      "smncq33bkr2ykonw.onion"
+    end
+  end
+end
+
 if production?
   if Tor.available?
     require 'tor/hidden-service'

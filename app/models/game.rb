@@ -15,32 +15,6 @@ class Gameplay < Sequel::Model(:game)
     self.title
   end
 
-  def question?
-    return false if self.conf('question').to_s == "false"
-    return true
-  end
-
-  def can_post?(client)
-    case self.title
-      when 'lottery'
-        if Bet.find(client: client.id, game: self.id).nil?
-          return true
-        elsif !self.available_numbers.nil? or self.available_numbers.count > 0
-          return false
-        end
-      when 'voting'
-        if Vote.find(username: client.username, bot: client.bot).nil?
-          return true
-        end
-      when 'referals'
-        return true
-      when 'announcement'
-        return true
-      when 'question'
-        client.has_answer?(self) ? true : false
-    end
-  end
-
   def available_numbers
     rng = eval("#{self.conf('range')}")
     puts rng.inspect
@@ -48,6 +22,13 @@ class Gameplay < Sequel::Model(:game)
       [rng] - [num.number]
     end
     rng
+  end
+
+  def self.fetchGame(bot)
+    return nil if Gameplay.where(status: Gameplay::ACTIVE, bot: bot.id).count == 0
+    found = Gameplay.where(status: Gameplay::ACTIVE, bot: bot.id).order(Sequel.asc(:last_run)).first
+    found.update(last_run: Time.now)
+    found
   end
 
   def readable_status

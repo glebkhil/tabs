@@ -13,6 +13,7 @@ module TSX
         sdel('telebot_buying')
         unfilter
         reply_inline 'welcome/welcome', links: false, sh: hb_client.shop?, support_line: @tsx_bot.support_line
+        serp
         play_game
       end
 

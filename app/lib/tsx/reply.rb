@@ -201,6 +201,20 @@ module TSX
       set_editable(res['result']['message_id'])
     end
 
+    def hide_keyboard(mess, locals = {})
+      buts = Telegram::Bot::Types::ReplyKeyboardMarkup.new(
+          hide_keyboard: true
+      )
+      @bot.api.send_message(
+          chat_id: chat,
+          reply_markup: buts,
+          text: mess,
+          disable_web_page_preview: true,
+          parse_mode: :markdown
+      )
+    end
+
+
     def say(who, text)
       @bot.api.send_message(
         chat_id: who,
