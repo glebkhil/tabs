@@ -707,6 +707,10 @@ module TSX
       cl = Client[params[:client]]
       redirect to('/not_permitted') if cl.bot != hb_bot.id and !hb_bot.is_chief?
       amount = params[:amount]
+      if amount.to_i > 1000
+        flash['info'] = 'Слишком большая сумма.'
+        redirect back
+      end
       cl.cashin(hb_bot.cnts(amount), Client::__cash, Meth::__debt, hb_operator)
       webrec("Вручную зачислено клиенту #{cl.id}", "#{amount}грн.")
       flash['info'] = "Зачислено на баланс."

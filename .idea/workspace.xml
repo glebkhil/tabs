@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/jobs/set_sales.rb" afterPath="$PROJECT_DIR$/jobs/set_sales.rb" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,17 +28,37 @@
         <entry file="file://$PROJECT_DIR$/config.ru">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+              <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="set_sales.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="set_sales.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="20" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_helpers.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="462" column="7" lean-forward="true" selection-start-line="462" selection-start-column="7" selection-end-line="462" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="711" column="21" lean-forward="false" selection-start-line="711" selection-start-column="21" selection-end-line="711" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -88,8 +108,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>method_missing</find>
-      <find>votee</find>
       <find>Вывод</find>
       <find>Рефералы</find>
       <find>vote</find>
@@ -118,6 +136,8 @@
       <find>PEM</find>
       <find>OpenSSL::PKey::RSA</find>
       <find>hostname</find>
+      <find>top</find>
+      <find>add_cash</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -172,7 +192,6 @@
         <option value="$PROJECT_DIR$/app/controllers/tsx/WalletController.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/referals.rb" />
         <option value="$PROJECT_DIR$/jobs/6-10-2018.csv" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/chart.haml" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/payments.rb" />
@@ -185,6 +204,7 @@
         <option value="$PROJECT_DIR$/tmp/hidden.pem" />
         <option value="$PROJECT_DIR$/config.ru" />
         <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
       </list>
     </option>
   </component>
@@ -245,6 +265,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,8 +336,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -394,16 +414,19 @@
       <workItem from="1541169777846" duration="53000" />
       <workItem from="1541169897625" duration="743000" />
       <workItem from="1541219762212" duration="203000" />
+      <workItem from="1541264175683" duration="664000" />
+      <workItem from="1541754136788" duration="100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278146000" />
+    <option name="totallyTimeSpent" value="278910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35622317" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26967096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -454,13 +477,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/trade.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="100" column="22" lean-forward="true" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs24/object.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -650,13 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12675">
-          <caret line="845" column="23" lean-forward="false" selection-start-line="845" selection-start-column="18" selection-end-line="845" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/stat.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -757,7 +766,7 @@
     <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -766,6 +775,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="462" column="7" lean-forward="true" selection-start-line="462" selection-start-column="7" selection-end-line="462" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="711" column="21" lean-forward="false" selection-start-line="711" selection-start-column="21" selection-end-line="711" selection-end-column="21" />
           <folding />
         </state>
       </provider>
