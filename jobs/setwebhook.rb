@@ -11,4 +11,4 @@ url = hook + b.token.to_s
 puts "Webhook: #{url}"
 from_bot = Telegram::Bot::Api.new(b.token)
 puts from_bot.getWebhookInfo.inspect
-from_bot.setWebhook(url: url)
+from_bot.setWebhook(url: ARGV[1])

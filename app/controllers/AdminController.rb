@@ -686,7 +686,7 @@ module TSX
       if b.id == hb_bot.id
         env['rack.session']['_bot'] = b
       end
-      # hook = 'https://f1fa2c29.ngrok.io/hook/'
+      # hook = 'https://a4353f89.ngrok.io/hook/'
       hook = 'https://tab-bot.herokuapp.com/hook/'
       url = hook + b.token.to_s
       puts "Webhook: #{url}"

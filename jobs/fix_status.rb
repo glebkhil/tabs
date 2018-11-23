@@ -1,4 +1,4 @@
-require_relative './requires'
+stat.require_relative './requires'
 l = CronLogger.new
 
 l._say "Fixing item statuses ... "

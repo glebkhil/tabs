@@ -38,12 +38,17 @@ module TSX
         not_permitted if hb_client.id != 202849
         client = data.split(';').first
         amount = data.split(';').last
-        cl = Client[client.to_i]
-        puts "ADDING CASH ----------"
-        cents = @tsx_bot.cnts(amount)
-        cl.cashin(cents, Client::__cash, Meth::__debt, hb_client)
-        # webrec("Через бот зачислено клиенту #{cl.username}", "#{amount}грн.")
-        reply_message "Сумма *#{amount}грн.* зачилена на счет клиенту #{icon('id')} *#{cl.id}* @#{cl.username}"
+        if amount > 1000
+          handle('do_add_cash')
+          reply_message "Максимальная сумма пополнения 1000грн."
+        else
+          cl = Client[client.to_i]
+          puts "ADDING CASH ----------"
+          cents = @tsx_bot.cnts(amount)
+          cl.cashin(cents, Client::__cash, Meth::__debt, hb_client)
+          # webrec("Через бот зачислено клиенту #{cl.username}", "#{amount}грн.")
+          reply_message "Сумма *#{amount}грн.* зачилена на счет клиенту #{icon('id')} *#{cl.id}* @#{cl.username}"
+        end
       end
 
       def clearbot(data)
