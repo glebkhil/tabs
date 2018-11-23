@@ -7,10 +7,10 @@ puts "Today WEX exchange rate: #{rats}"
 
 logger.noise "Setting sales ... "
 
-sls = Vars.where('today_sales is not null and today_sales > 0').order(Sequel.desc(:today_sales))
-# bots = Bot.all
-sls.each do |sl|
-  c = Bot[sl[:bot]]
+# sls = Vars.where('today_sales is not null and today_sales > 0').order(Sequel.desc(:today_sales))
+sls = Bot.all
+sls.each do |c|
+  # c = Bot[sl[:bot]]
   begin
     today_cnt = c.today_bot_sales(Date.today - 1.day)
     cnt = c.sales

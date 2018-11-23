@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/MeineController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/MeineController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/stat.haml" afterPath="$PROJECT_DIR$/app/views/admin/stat.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/welcome/bots.rb" afterPath="$PROJECT_DIR$/app/views/tsx/welcome/bots.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/fix_status.rb" afterPath="$PROJECT_DIR$/jobs/fix_status.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/setwebhook-full.rb" afterPath="$PROJECT_DIR$/jobs/setwebhook-full.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/setwebhook.rb" afterPath="$PROJECT_DIR$/jobs/setwebhook.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/update_proxies.rb" afterPath="$PROJECT_DIR$/jobs/update_proxies.rb" />
+      <change beforePath="$PROJECT_DIR$/jobs/set_sales.rb" afterPath="$PROJECT_DIR$/jobs/set_sales.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,21 +24,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="set_sales.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="set_sales.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state relative-caret-position="165">
+              <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bots.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bots.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/tsx/welcome/bots.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_helpers.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="490" column="146" lean-forward="true" selection-start-line="490" selection-start-column="146" selection-end-line="490" selection-end-column="146" />
               <folding />
             </state>
           </provider>
@@ -111,21 +114,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="verify_payments.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jobs/verify_payments.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Рефералы</find>
       <find>vote</find>
       <find>def vote</find>
       <find>btn_wa</find>
@@ -155,6 +147,7 @@
       <find>add_cash</find>
       <find>settings</find>
       <find>/stat</find>
+      <find>bots_we</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -213,7 +206,6 @@
         <option value="$PROJECT_DIR$/app/controllers/tsx/PluginController.rb" />
         <option value="$PROJECT_DIR$/tmp/hidden.pem" />
         <option value="$PROJECT_DIR$/config.ru" />
-        <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook-full.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/MeineController.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
@@ -222,6 +214,7 @@
         <option value="$PROJECT_DIR$/jobs/fix_status.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/stat.haml" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/bots.rb" />
+        <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
       </list>
     </option>
   </component>
@@ -460,12 +453,12 @@
       <workItem from="1542694762340" duration="597000" />
       <workItem from="1542804936736" duration="134000" />
       <workItem from="1542862234346" duration="57000" />
-      <workItem from="1542992671490" duration="238000" />
+      <workItem from="1542992671490" duration="574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283143000" />
+    <option name="totallyTimeSpent" value="283479000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -677,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6930">
-          <caret line="462" column="7" lean-forward="false" selection-start-line="462" selection-start-column="7" selection-end-line="462" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jobs/setwebhook-full.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -829,18 +815,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tsx/welcome/bots.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="490" column="146" lean-forward="true" selection-start-line="490" selection-start-column="146" selection-end-line="490" selection-end-column="146" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           <folding />
         </state>
       </provider>
