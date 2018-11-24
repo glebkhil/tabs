@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/admin/add_items.haml" afterPath="$PROJECT_DIR$/app/views/admin/add_items.haml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_items.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add_items.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/add_items.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
@@ -73,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="967" column="46" lean-forward="true" selection-start-line="967" selection-start-column="46" selection-end-line="967" selection-end-column="46" />
+            <state relative-caret-position="287">
+              <caret line="854" column="44" lean-forward="false" selection-start-line="854" selection-start-column="44" selection-end-line="854" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -96,8 +97,8 @@
       <file leaf-file-name="chart.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/chart.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="65" lean-forward="false" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+            <state relative-caret-position="135">
+              <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
               <folding>
                 <marker date="1543079184108" expanded="true" signature="616:815" ph="{...}" />
                 <marker date="1543079184108" expanded="true" signature="741:810" ph="{...}" />
@@ -136,7 +137,6 @@
     <findStrings>
       <find>client_re</find>
       <find>client_referals</find>
-      <find>chart</find>
       <find>take_free</find>
       <find>@gam</find>
       <find>reply_som</find>
@@ -164,6 +164,7 @@
       <find>/chart</find>
       <find>dist</find>
       <find>districts</find>
+      <find>chart</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -227,10 +228,10 @@
         <option value="$PROJECT_DIR$/app/views/partials/products_input.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/stat.haml" />
         <option value="$PROJECT_DIR$/jobs/calc_charts.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/chart.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/batch.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/add_items.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
       </list>
     </option>
   </component>
@@ -524,12 +525,12 @@
       <workItem from="1542694762340" duration="597000" />
       <workItem from="1542804936736" duration="134000" />
       <workItem from="1542862234346" duration="57000" />
-      <workItem from="1542992671490" duration="12798000" />
+      <workItem from="1542992671490" duration="13021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295703000" />
+    <option name="totallyTimeSpent" value="295926000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -938,34 +939,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="967" column="46" lean-forward="true" selection-start-line="967" selection-start-column="46" selection-end-line="967" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/stat.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/chart.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="65" lean-forward="false" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
-          <folding>
-            <marker date="1543079184108" expanded="true" signature="616:815" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="741:810" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="845:1055" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="983:1050" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="1082:1344" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="1296:1339" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -992,6 +970,29 @@
             <marker date="1543079395554" expanded="true" signature="2246:2444" ph="{...}" />
             <marker date="1543079395554" expanded="true" signature="2362:2439" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/chart.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <marker date="1543079184108" expanded="true" signature="616:815" ph="{...}" />
+            <marker date="1543079184108" expanded="true" signature="741:810" ph="{...}" />
+            <marker date="1543079184108" expanded="true" signature="845:1055" ph="{...}" />
+            <marker date="1543079184108" expanded="true" signature="983:1050" ph="{...}" />
+            <marker date="1543079184108" expanded="true" signature="1082:1344" ph="{...}" />
+            <marker date="1543079184108" expanded="true" signature="1296:1339" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="854" column="44" lean-forward="false" selection-start-line="854" selection-start-column="44" selection-end-line="854" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>

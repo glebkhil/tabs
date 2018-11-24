@@ -852,7 +852,7 @@ module TSX
 
     get '/chart/product/:p/district/:d/city/:c' do
       r = {}
-      Stat.select(:day, :sales).where(bot: hb_bot.id, product: params[:p], city: params[:c], district: params[:d]).each do |d|
+      Stat.select(:day, :sales).where(day: Date.today.beginning_of_month..Date.today.end_of_month, bot: hb_bot.id, product: params[:p], city: params[:c], district: params[:d]).each do |d|
         r[d.day.to_s] = d.sales
       end
       prod = Product[params[:p]]
