@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/add_items.haml" afterPath="$PROJECT_DIR$/app/views/admin/add_items.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/batch.haml" afterPath="$PROJECT_DIR$/app/views/admin/batch.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/chart.haml" afterPath="$PROJECT_DIR$/app/views/admin/chart.haml" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/MeineController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/MeineController.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MeineController.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MeineController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/MeineController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+            <state relative-caret-position="379">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,7 +93,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chart.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chart.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/chart.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -215,7 +212,6 @@
         <option value="$PROJECT_DIR$/tmp/hidden.pem" />
         <option value="$PROJECT_DIR$/config.ru" />
         <option value="$PROJECT_DIR$/jobs/setwebhook-full.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/tsx/MeineController.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
         <option value="$PROJECT_DIR$/jobs/update_proxies.rb" />
         <option value="$PROJECT_DIR$/jobs/fix_status.rb" />
@@ -234,6 +230,7 @@
         <option value="$PROJECT_DIR$/app/views/admin/add_items.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/batch.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/chart.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/tsx/MeineController.rb" />
       </list>
     </option>
   </component>
@@ -527,12 +524,12 @@
       <workItem from="1542694762340" duration="597000" />
       <workItem from="1542804936736" duration="134000" />
       <workItem from="1542862234346" duration="57000" />
-      <workItem from="1542992671490" duration="13645000" />
+      <workItem from="1542992671490" duration="13793000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296550000" />
+    <option name="totallyTimeSpent" value="296698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -949,14 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/MeineController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/add_items.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -995,6 +984,14 @@
             <marker date="1543080496543" expanded="true" signature="1083:1345" ph="{...}" />
             <marker date="1543080496543" expanded="true" signature="1297:1340" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/MeineController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
