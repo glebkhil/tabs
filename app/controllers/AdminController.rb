@@ -954,13 +954,17 @@ module TSX
       redirect back
     end
 
-    get '/districts_by_city/city/:city' do
+    get '/districts_by_city/city/:city/full/:yesno' do
       # cit = City.find_or_create(id: params['city'].to_s.chomp.to_i, country: Country[hb_bot.get_var('country')].id)
       cit = City[params[:city]]
       if cit.nil?
         partial 'partials/district_input', locals: {placeholder: 'Выберите город', list: nil, dist_disabled: true}
       else
-        dists = Client::districts_by_city(cit, hb_bot.id)
+        if params[:yesno] == 'yes'
+          dists = Client::districts_by_city(cit, hb_bot.id)
+        else
+          dists = District.where(city: cit.id)
+        end
         partial 'partials/district_input', locals: {placeholder: 'Выберите район', list: dists, dist_disabled: false, item: params[:city]}
       end
     end
