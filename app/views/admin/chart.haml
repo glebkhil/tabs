@@ -1,2 +1,35 @@
--#= line_chart [{name: @product.russian, data: @ch.map {|m| {Date.parse(m[:dom]) => m[:sales] }}}]
-= line_chart @hash, xtitle: "Time",  ytitle: "Sales", legend: true
+%form{:method=>'post', :action=>'/stat', autocomplete: 'on', enctype: 'multipart/form-data'}
+  %select#city{name: 'b22_city', onchange: "update_districts()"}
+    %option{value: "", disabled: true, selected: true} Выберите город
+    - hb_bot.cities_list.each do |ci|
+      %option{value: ci[:cid]}= ci[:rus]
+  %select.hide{:name => 'b22_district', id: 'b22_d', required: true, autocomplete: 'off', onchange: "update_products()"}
+    = partial 'partials/district_input', locals: {list: nil}
+  %select#prod.hide{name: 'b22_product', onchange: "update_chart()", required: true}
+:javascript
+  function update_districts() {
+    city = $('#city').val()
+    $.get("#{url('/districts_by_city/city/')}" + city).
+      done(function(data) {
+        $('#b22_d').show();
+        $('#b22_d').html(data);
+      })
+  }
+  function update_products() {
+    dist = $('#b22_d').val()
+    $.get("#{url('/products_by_district/city/')}" + city + '/district/' + dist).
+      done(function(data) {
+        $('#prod').show();
+        $('#prod').html(data);
+      })
+  }
+  function update_chart() {
+    city = $('#city').val()
+    product = $('#prod').val()
+    district = $('#b22_d').val()
+    $.get("#{url('/chart/product/')}" + product + "/district/" + district + "/city/" + city).
+      done(function(data) {
+        $('#chartik').html(data);
+      })
+  }
+%div#chartik

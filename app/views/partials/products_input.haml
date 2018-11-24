@@ -1,5 +1,5 @@
 - if !list.empty?
-  %option{value: '', disabled: true, selected: true} Выберите фасовку
-  - list.each do |price, details|
-    %option{value: price}= "#{details.keys[0]} за #{hb_bot.amo(details.values[0])}"
+  %option{value: '', disabled: true, selected: true} Выберите продукт
+  - list.each do |p|
+    %option{value: p[:entity_id]}= p[:entity_russian]
 

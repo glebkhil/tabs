@@ -1,4 +1,5 @@
 - if !list.nil? && list.count > 0
   - list.each do |d|
-    %option{value: d.id}= d.russian
+    - pr = District.find(russian: d.russian)
+    %option{value: pr.id}= pr.russian
 

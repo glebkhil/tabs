@@ -850,6 +850,17 @@ module TSX
       haml :'admin/statement', layout: hb_layout
     end
 
+    get '/chart/product/:p/district/:d/city/:c' do
+      r = {}
+      Stat.select(:day, :sales).where(bot: hb_bot.id, product: params[:p], city: params[:c], district: params[:d]).each do |d|
+        r[d.day.to_s] = d.sales
+      end
+      prod = Product[params[:p]]
+      @data = ["name": prod.russian, "data" => r]
+      puts @data.inspect
+      line_chart @data
+    end
+
     get '/stat*' do
       @cities = hb_bot.cities_list
       @city = City.find(russian: params[:splat].first.gsub('/', ''))
@@ -878,18 +889,7 @@ module TSX
       haml :'admin/add_items', layout: hb_layout
     end
 
-    get '/chart/:product' do
-      @ch = Array.new
-      @product = Product[params[:product]]
-      @hash = {}
-      # hb_bot.products.each do |prc|
-      #   prod = Product[prc.product]
-      @ch = DB.fetch("select to_char( created, 'DD-MM-YYYY') as dom, count(*) as sales from item where created < '#{Date.today.at_end_of_month}' and created > '#{Date.today.at_beginning_of_month}' and product = #{@product.id} group by dom, product")
-      @ch.each do |d|
-        @hash.merge!({Date.parse(d[:dom]) => d[:sales]})
-        # {"2018-10-13"=> "4", "2018-10-14"=> "17", "2018-10-11"=> "14", "2018-10-15"=> "10", "2018-10-23" => "16"}
-      end
-      # end
+    get '/chart' do
       haml :'admin/chart', layout: hb_layout
     end
 
@@ -960,7 +960,7 @@ module TSX
       if cit.nil?
         partial 'partials/district_input', locals: {placeholder: 'Выберите город', list: nil, dist_disabled: true}
       else
-        dists = District.where(city: cit.id)
+        dists = Client::districts_by_city(cit, hb_bot.id)
         partial 'partials/district_input', locals: {placeholder: 'Выберите район', list: dists, dist_disabled: false, item: params[:city]}
       end
     end
@@ -970,6 +970,13 @@ module TSX
       prcs = ps.prices_hash(hb_bot)
       partial 'partials/prices_input', locals: {placeholder: 'Выберите фасовку', list: prcs, dist_disabled: false}
     end
+
+    get '/products_by_district/city/:c/district/:d' do
+      dist = District[params[:d]]
+      prods = Client::products_by_district_sold(dist, hb_bot.id)
+      partial 'partials/products_input', locals: {placeholder: 'Выберите продукт', list: prods, dist_disabled: false}
+    end
+
 
     post '/save_escrow' do
       city = City[params['b22_city'].to_i]
