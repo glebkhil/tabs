@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
       <change beforePath="$PROJECT_DIR$/jobs/calc_charts.rb" afterPath="$PROJECT_DIR$/jobs/calc_charts.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,6 +19,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MeineController.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/tsx/MeineController.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -80,16 +89,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="287">
               <caret line="854" column="44" lean-forward="false" selection-start-line="854" selection-start-column="44" selection-end-line="854" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="products_input.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/products_input.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -526,12 +525,12 @@
       <workItem from="1542694762340" duration="597000" />
       <workItem from="1542804936736" duration="134000" />
       <workItem from="1542862234346" duration="57000" />
-      <workItem from="1542992671490" duration="13100000" />
+      <workItem from="1542992671490" duration="13433000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296005000" />
+    <option name="totallyTimeSpent" value="296338000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -704,14 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/MeineController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -985,6 +976,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="854" column="44" lean-forward="false" selection-start-line="854" selection-start-column="44" selection-end-line="854" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/MeineController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
           <folding />
         </state>
       </provider>
