@@ -893,10 +893,11 @@ module TSX
       r = {}
       @disctricts_sales = []
       Client::districts_by_city(City[38], hb_bot.id).each do |di|
-        Stat.select(:day, :sales).where(day: Date.today.beginning_of_month..Date.today.end_of_month, bot: hb_bot.id, district: params[:d]).each do |d|
-          r[d.day.to_s] = d.sales
+        df = District.find(russian: di.russian)
+        Stat.select(:day, :sales).where(day: Date.today.beginning_of_month..Date.today.end_of_month, bot: hb_bot.id, district: df.id).each do |d|
+          r[Date.parse(d.day.to_s).to_s] = d.sales
         end
-        @disctricts_sales.push(["name": di.russian, "data" => r])
+        @disctricts_sales.push("name": di.russian, "data" => r)
       end
       haml :'admin/chart', layout: hb_layout
     end

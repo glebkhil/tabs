@@ -34,4 +34,5 @@
   }
 %div#chartik
 %h3 Продажи по районам за месяц
-= bar_chart @disctricts_sales
+= line_chart @disctricts_sales.map do |goal|
+  - {name: goal[:name], data: goal[:data].first}
