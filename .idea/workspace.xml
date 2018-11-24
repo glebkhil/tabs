@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/batch.haml" afterPath="$PROJECT_DIR$/app/views/admin/batch.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/chart.haml" afterPath="$PROJECT_DIR$/app/views/admin/chart.haml" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/add_items.haml" afterPath="$PROJECT_DIR$/app/views/admin/add_items.haml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +23,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="batch.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="batch.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/batch.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
@@ -41,21 +38,26 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="add_items.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/add_items.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="35" column="66" lean-forward="false" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+              <folding>
+                <marker date="1543079395554" expanded="true" signature="1986:2218" ph="{...}" />
+                <marker date="1543079395554" expanded="true" signature="2112:2213" ph="{...}" />
+                <marker date="1543079395554" expanded="true" signature="2246:2444" ph="{...}" />
+                <marker date="1543079395554" expanded="true" signature="2362:2439" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="stat.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/stat.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="district_input.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/district_input.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -178,7 +180,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/partials/head.haml" />
         <option value="$PROJECT_DIR$/public/base/2-10-2018.csv" />
         <option value="$PROJECT_DIR$/config/config.rb" />
         <option value="$PROJECT_DIR$/app/lib/tsx/games/referals.rb" />
@@ -229,6 +230,7 @@
         <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/chart.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/batch.haml" />
+        <option value="$PROJECT_DIR$/app/views/admin/add_items.haml" />
       </list>
     </option>
   </component>
@@ -522,12 +524,12 @@
       <workItem from="1542694762340" duration="597000" />
       <workItem from="1542804936736" duration="134000" />
       <workItem from="1542862234346" duration="57000" />
-      <workItem from="1542992671490" duration="12681000" />
+      <workItem from="1542992671490" duration="12798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295586000" />
+    <option name="totallyTimeSpent" value="295703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -584,7 +586,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tmp/tor_14402/hidden_service/hostname" />
     <entry file="file://$PROJECT_DIR$/tmp/tor_10579/hidden_service/hostname" />
     <entry file="file://$PROJECT_DIR$/tmp/tor_41148/hidden_service/private_key">
       <provider selected="true" editor-type-id="text-editor">
@@ -977,6 +978,19 @@
             <marker date="1543079232906" expanded="true" signature="1936:2037" ph="{...}" />
             <marker date="1543079232906" expanded="true" signature="2070:2268" ph="{...}" />
             <marker date="1543079232906" expanded="true" signature="2186:2263" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/add_items.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="35" column="66" lean-forward="false" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+          <folding>
+            <marker date="1543079395554" expanded="true" signature="1986:2218" ph="{...}" />
+            <marker date="1543079395554" expanded="true" signature="2112:2213" ph="{...}" />
+            <marker date="1543079395554" expanded="true" signature="2246:2444" ph="{...}" />
+            <marker date="1543079395554" expanded="true" signature="2362:2439" ph="{...}" />
           </folding>
         </state>
       </provider>
