@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/jobs/calc_charts.rb" afterPath="$PROJECT_DIR$/jobs/calc_charts.rb" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/add_items.haml" afterPath="$PROJECT_DIR$/app/views/admin/add_items.haml" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/batch.haml" afterPath="$PROJECT_DIR$/app/views/admin/batch.haml" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/chart.haml" afterPath="$PROJECT_DIR$/app/views/admin/chart.haml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="calc_charts.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calc_charts.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jobs/calc_charts.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -27,8 +29,8 @@
       <file leaf-file-name="MeineController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/MeineController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+            <state relative-caret-position="454">
+              <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -38,12 +40,12 @@
         <entry file="file://$PROJECT_DIR$/app/views/admin/batch.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="30" column="66" lean-forward="false" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
+              <caret line="30" column="65" lean-forward="false" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
               <folding>
-                <marker date="1543079232906" expanded="true" signature="1810:2042" ph="{...}" />
-                <marker date="1543079232906" expanded="true" signature="1936:2037" ph="{...}" />
-                <marker date="1543079232906" expanded="true" signature="2070:2268" ph="{...}" />
-                <marker date="1543079232906" expanded="true" signature="2186:2263" ph="{...}" />
+                <marker date="1543080486872" expanded="true" signature="1810:2041" ph="{...}" />
+                <marker date="1543080486872" expanded="true" signature="1935:2036" ph="{...}" />
+                <marker date="1543080486872" expanded="true" signature="2069:2267" ph="{...}" />
+                <marker date="1543080486872" expanded="true" signature="2185:2262" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -53,12 +55,12 @@
         <entry file="file://$PROJECT_DIR$/app/views/admin/add_items.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
-              <caret line="35" column="66" lean-forward="false" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+              <caret line="35" column="65" lean-forward="false" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
               <folding>
-                <marker date="1543079395554" expanded="true" signature="1986:2218" ph="{...}" />
-                <marker date="1543079395554" expanded="true" signature="2112:2213" ph="{...}" />
-                <marker date="1543079395554" expanded="true" signature="2246:2444" ph="{...}" />
-                <marker date="1543079395554" expanded="true" signature="2362:2439" ph="{...}" />
+                <marker date="1543080481402" expanded="true" signature="1986:2217" ph="{...}" />
+                <marker date="1543080481402" expanded="true" signature="2111:2212" ph="{...}" />
+                <marker date="1543080481402" expanded="true" signature="2245:2443" ph="{...}" />
+                <marker date="1543080481402" expanded="true" signature="2361:2438" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -94,18 +96,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chart.haml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="chart.haml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/chart.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="165">
+              <caret line="11" column="66" lean-forward="false" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
               <folding>
-                <marker date="1543079184108" expanded="true" signature="616:815" ph="{...}" />
-                <marker date="1543079184108" expanded="true" signature="741:810" ph="{...}" />
-                <marker date="1543079184108" expanded="true" signature="845:1055" ph="{...}" />
-                <marker date="1543079184108" expanded="true" signature="983:1050" ph="{...}" />
-                <marker date="1543079184108" expanded="true" signature="1082:1344" ph="{...}" />
-                <marker date="1543079184108" expanded="true" signature="1296:1339" ph="{...}" />
+                <marker date="1543080496543" expanded="true" signature="616:816" ph="{...}" />
+                <marker date="1543080496543" expanded="true" signature="742:811" ph="{...}" />
+                <marker date="1543080496543" expanded="true" signature="846:1056" ph="{...}" />
+                <marker date="1543080496543" expanded="true" signature="984:1051" ph="{...}" />
+                <marker date="1543080496543" expanded="true" signature="1083:1345" ph="{...}" />
+                <marker date="1543080496543" expanded="true" signature="1297:1340" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -227,11 +229,11 @@
         <option value="$PROJECT_DIR$/app/views/partials/district_input.haml" />
         <option value="$PROJECT_DIR$/app/views/partials/products_input.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/stat.haml" />
-        <option value="$PROJECT_DIR$/app/views/admin/chart.haml" />
-        <option value="$PROJECT_DIR$/app/views/admin/batch.haml" />
-        <option value="$PROJECT_DIR$/app/views/admin/add_items.haml" />
         <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
         <option value="$PROJECT_DIR$/jobs/calc_charts.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/add_items.haml" />
+        <option value="$PROJECT_DIR$/app/views/admin/batch.haml" />
+        <option value="$PROJECT_DIR$/app/views/admin/chart.haml" />
       </list>
     </option>
   </component>
@@ -525,12 +527,12 @@
       <workItem from="1542694762340" duration="597000" />
       <workItem from="1542804936736" duration="134000" />
       <workItem from="1542862234346" duration="57000" />
-      <workItem from="1542992671490" duration="13433000" />
+      <workItem from="1542992671490" duration="13645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296338000" />
+    <option name="totallyTimeSpent" value="296550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -931,59 +933,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/batch.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="66" lean-forward="false" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
-          <folding>
-            <marker date="1543079232906" expanded="true" signature="1810:2042" ph="{...}" />
-            <marker date="1543079232906" expanded="true" signature="1936:2037" ph="{...}" />
-            <marker date="1543079232906" expanded="true" signature="2070:2268" ph="{...}" />
-            <marker date="1543079232906" expanded="true" signature="2186:2263" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/add_items.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="35" column="66" lean-forward="false" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
-          <folding>
-            <marker date="1543079395554" expanded="true" signature="1986:2218" ph="{...}" />
-            <marker date="1543079395554" expanded="true" signature="2112:2213" ph="{...}" />
-            <marker date="1543079395554" expanded="true" signature="2246:2444" ph="{...}" />
-            <marker date="1543079395554" expanded="true" signature="2362:2439" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/chart.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <marker date="1543079184108" expanded="true" signature="616:815" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="741:810" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="845:1055" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="983:1050" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="1082:1344" ph="{...}" />
-            <marker date="1543079184108" expanded="true" signature="1296:1339" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="854" column="44" lean-forward="false" selection-start-line="854" selection-start-column="44" selection-end-line="854" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/MeineController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -993,6 +946,55 @@
         <state relative-caret-position="105">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/MeineController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/add_items.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="35" column="65" lean-forward="false" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+          <folding>
+            <marker date="1543080481402" expanded="true" signature="1986:2217" ph="{...}" />
+            <marker date="1543080481402" expanded="true" signature="2111:2212" ph="{...}" />
+            <marker date="1543080481402" expanded="true" signature="2245:2443" ph="{...}" />
+            <marker date="1543080481402" expanded="true" signature="2361:2438" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/batch.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="65" lean-forward="false" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+          <folding>
+            <marker date="1543080486872" expanded="true" signature="1810:2041" ph="{...}" />
+            <marker date="1543080486872" expanded="true" signature="1935:2036" ph="{...}" />
+            <marker date="1543080486872" expanded="true" signature="2069:2267" ph="{...}" />
+            <marker date="1543080486872" expanded="true" signature="2185:2262" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/chart.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="66" lean-forward="false" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
+          <folding>
+            <marker date="1543080496543" expanded="true" signature="616:816" ph="{...}" />
+            <marker date="1543080496543" expanded="true" signature="742:811" ph="{...}" />
+            <marker date="1543080496543" expanded="true" signature="846:1056" ph="{...}" />
+            <marker date="1543080496543" expanded="true" signature="984:1051" ph="{...}" />
+            <marker date="1543080496543" expanded="true" signature="1083:1345" ph="{...}" />
+            <marker date="1543080496543" expanded="true" signature="1297:1340" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

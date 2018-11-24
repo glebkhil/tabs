@@ -28,7 +28,7 @@
 :javascript
   function update_districts() {
     city = $('#city').val()
-    $.get("#{url('/districts_by_city/city/')}" + city + '/full/yes').
+    $.get("#{url('/districts_by_city/city/')}" + city + '/full/no').
       done(function(data) {
         $('#b22_d').html(data);
         $('#show_btn').hide();

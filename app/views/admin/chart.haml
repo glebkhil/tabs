@@ -9,7 +9,7 @@
 :javascript
   function update_districts() {
     city = $('#city').val()
-    $.get("#{url('/districts_by_city/city/')}" + city + '/full/no').
+    $.get("#{url('/districts_by_city/city/')}" + city + '/full/yes').
       done(function(data) {
         $('#b22_d').show();
         $('#b22_d').html(data);
