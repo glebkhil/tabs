@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/bot.rb" afterPath="$PROJECT_DIR$/app/models/bot.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/client.rb" afterPath="$PROJECT_DIR$/app/models/client.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/stat.rb" afterPath="$PROJECT_DIR$/app/models/stat.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/chart.haml" afterPath="$PROJECT_DIR$/app/views/admin/chart.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/stat.haml" afterPath="$PROJECT_DIR$/app/views/admin/stat.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/partials/district_input.haml" afterPath="$PROJECT_DIR$/app/views/partials/district_input.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/partials/products_input.haml" afterPath="$PROJECT_DIR$/app/views/partials/products_input.haml" />
       <change beforePath="$PROJECT_DIR$/jobs/calc_charts.rb" afterPath="$PROJECT_DIR$/jobs/calc_charts.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="calc_charts.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="calc_charts.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/calc_charts.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -82,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chart.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chart.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/chart.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
@@ -203,13 +195,13 @@
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/welcome.rb" />
         <option value="$PROJECT_DIR$/app/models/stat.rb" />
         <option value="$PROJECT_DIR$/app/models/client.rb" />
-        <option value="$PROJECT_DIR$/jobs/calc_charts.rb" />
         <option value="$PROJECT_DIR$/app/models/bot.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/district_input.haml" />
         <option value="$PROJECT_DIR$/app/views/partials/products_input.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/chart.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/stat.haml" />
         <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
+        <option value="$PROJECT_DIR$/jobs/calc_charts.rb" />
       </list>
     </option>
   </component>
@@ -503,12 +495,12 @@
       <workItem from="1542694762340" duration="597000" />
       <workItem from="1542804936736" duration="134000" />
       <workItem from="1542862234346" duration="57000" />
-      <workItem from="1542992671490" duration="12038000" />
+      <workItem from="1542992671490" duration="12196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294943000" />
+    <option name="totallyTimeSpent" value="295101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -863,14 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/calc_charts.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/district_input.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -952,6 +936,14 @@
             <marker date="1543072574277" expanded="true" signature="1069:1331" ph="{...}" />
             <marker date="1543072574277" expanded="true" signature="1283:1326" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/calc_charts.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
